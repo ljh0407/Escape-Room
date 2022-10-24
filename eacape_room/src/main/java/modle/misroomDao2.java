@@ -90,4 +90,24 @@ public class misroomDao2 extends misroomDAO{
 		} catch (Exception e) {System.out.println("임시비번업뎃"+e);}
 		return false;
 	}
+	
+	public boolean mwrite(misrNoticeDto mirDto) {
+		String sql = "insert into notice(ntitle,"
+				+ " ncontent)values(?,?)";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mirDto.getNtitle());
+			ps.setString(2, mirDto.getNcontent());
+			ps.executeUpdate(); return true;
+			
+		} catch (Exception e) {System.out.println(e);}
+		return false;
+	}
+	
+	
+	
+	
 }
+
+
+
