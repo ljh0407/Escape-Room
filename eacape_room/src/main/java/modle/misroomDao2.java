@@ -85,9 +85,19 @@ public class misroomDao2 extends misroomDAO{
 			ps.setString(1, ranstr);
 			ps.setString(2, mid);
 			ps.executeUpdate();
-			System.out.println("다오되니");
 			return true;
 		} catch (Exception e) {System.out.println("임시비번업뎃"+e);}
 		return false;
+	}
+	//7.회원아이디->회원번호고은시[10/24]
+	public int getMno(String mid) {
+		String sql = "select * from misroom where mid= ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mid);
+			rs = ps.executeQuery();
+			if(rs.next()) return rs.getInt(1);
+		} catch (Exception e) {System.out.println("회원번호 오류"+e);}
+			return 0;
 	}
 }

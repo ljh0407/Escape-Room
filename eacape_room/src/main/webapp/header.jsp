@@ -16,6 +16,10 @@
 			<li> <a href="/eacape_room/member/misrID.jsp">아이디 찾기</a> </li>
 			<li> <a href="/eacape_room/member/misrPW.jsp">비밀번호 찾기</a> </li>
 		</ul>
+		<!-- 고은시[10/24] -->
+		<ul>
+			<li> <a href="/eacape_room/member/write.jsp">문의사항</a> </li>
+		</ul>
 	</div>
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
