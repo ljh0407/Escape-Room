@@ -15,6 +15,7 @@
 			<li> <a href="/eacape_room/member/misrLogin.jsp">로그인</a> </li>
 			<li> <a href="/eacape_room/member/misrID.jsp">아이디 찾기</a> </li>
 			<li> <a href="/eacape_room/member/misrPW.jsp">비밀번호 찾기</a> </li>
+			<li> <a href="/eacape_room/member/reviewboard.jsp">비밀번호 찾기</a> </li>
 		</ul>
 	</div>
 	<!-- jquery 라이브러리 (api)-->

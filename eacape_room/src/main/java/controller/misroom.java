@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modle.misroomDTO;
-import modle.misroomDao2;
+import model.misroomDTO;
+import model.misroomDao2;
 
 @WebServlet("/misroom")
 public class misroom extends HttpServlet {

@@ -1,4 +1,4 @@
-package modle;
+package model;
 
 public class misroomDao2 extends misroomDAO{
 	
