@@ -18,7 +18,8 @@
 			console.log(re)
 			if(re == 'true'){
 				alert('문의사항이 등록되었습니다')
-				//location.href = location.href
+				//고은시[10/25]
+				location.href = "/eacape_room/board/misrQuestionslist.jsp"
 			}else{
 				alert('문의사항 등록이 실패했습니다')
 			}

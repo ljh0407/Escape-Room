@@ -27,7 +27,7 @@
 			<li> <a href="/eacape_room/member/misrPW.jsp">비밀번호 찾기</a> </li>
 		</ul>	<!-- 상단메뉴 끝 -->
 	
-	<div class="webbox">
+	<div class="webbox">               
 		<ul class="hd_manu">
 			<li> <a href="/eacape_room/member/write.jsp">문의사항</a> </li>
 		</ul>
