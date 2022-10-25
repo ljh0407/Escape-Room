@@ -92,6 +92,7 @@ public class misroomDao2 extends misroomDAO{
 		} catch (Exception e) {System.out.println("임시비번업뎃"+e);}
 		return false;
 	}
+	
 	//7.회원아이디->회원번호고은시[10/24]
 	public int getMno(String mid) {
 		String sql = "select * from misroom where mid= ?";
