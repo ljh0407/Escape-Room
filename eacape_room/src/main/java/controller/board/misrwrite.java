@@ -1,4 +1,4 @@
-package controller;
+package controller.board;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,21 +6,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import modle.QuestionsDAO;
 import modle.misroomDao2;
 
-/**
- * Servlet implementation class misrLogin
- */
-@WebServlet("/misrLogin")
-public class misrLogin extends HttpServlet {
+
+@WebServlet("/board/misrwrite")
+public class misrwrite extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public misrLogin() {
+    public misrwrite() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +27,15 @@ public class misrLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mid = request.getParameter("mid");
-		String mpw = request.getParameter("mpw");
-		
-		int result = misroomDao2.getInstance().login(mid, mpw);
-		
-		if(result == 1) {
-			//객체생성 로그인 성공하면 세션에 메모리할당
-			HttpSession session = request.getSession();
-							//(식별자 , 데이터)
-			session.setAttribute("mid", mid);	
-		}
+		//고은시[10/24]
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		// 회원번호
+		int mno = misroomDao2.getInstance().getMno( (String) request.getSession().getAttribute("mid"));
+		System.out.println("*:"+mno);
+		// db처리
+		boolean result = QuestionsDAO.getIncetance().write(btitle, bcontent, mno);
+		//응답
 		response.getWriter().print(result);
 	}
 
