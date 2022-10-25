@@ -38,7 +38,7 @@ public class misrLogin extends HttpServlet {
 			//객체생성 로그인 성공하면 세션에 메모리할당
 			HttpSession session = request.getSession();
 							//(식별자 , 데이터)
-			session.setAttribute(mid, mid);	
+			session.setAttribute("mid", mid);	
 		}
 		response.getWriter().print(result);
 	}

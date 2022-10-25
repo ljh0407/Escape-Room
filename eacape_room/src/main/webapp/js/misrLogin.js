@@ -14,8 +14,11 @@
 		success : function(re){
 			console.log(re)
 			if(re === '1'){
+				//고은시[10/24]
 				alert('성공')
-				location.href = "/jspkoeunsi/header.jsp";
+				
+				location.href = "/eacape_room/header.jsp";
+				
 			}else if(re === '2'){
 				alert('비밀번호가 다릅니다')
 				loginbox.innerHTML = "비밀번호가 다릅니다";

@@ -31,8 +31,8 @@ public class misrwrite extends HttpServlet {
 		String btitle = request.getParameter("btitle");
 		String bcontent = request.getParameter("bcontent");
 		// 회원번호
-		int mno = misroomDao2.getInstance().getMno((String) request.getSession().getAttribute("mid"));
-		System.out.println(mno);
+		int mno = misroomDao2.getInstance().getMno( (String) request.getSession().getAttribute("mid"));
+		System.out.println("*:"+mno);
 		// db처리
 		boolean result = QuestionsDAO.getIncetance().write(btitle, bcontent, mno);
 		//응답
