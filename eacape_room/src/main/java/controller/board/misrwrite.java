@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modle.QuestionsDAO;
-import modle.misroomDao2;
+import model.QuestionsDAO;
+import model.misroomDao2;
 
 
 @WebServlet("/board/misrwrite")

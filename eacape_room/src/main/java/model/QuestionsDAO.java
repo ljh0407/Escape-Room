@@ -1,4 +1,6 @@
-package modle;
+package model;
+
+import model.misroomDAO;
 
 public class QuestionsDAO extends misroomDAO{
 	private static QuestionsDAO hdao = new QuestionsDAO();

@@ -1,4 +1,7 @@
-package modle;
+package model;
+
+import model.misroomDAO;
+import model.misroomDTO;
 
 public class misroomDao2 extends misroomDAO{
 	
