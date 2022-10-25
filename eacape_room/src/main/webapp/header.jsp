@@ -30,6 +30,8 @@
 	<div class="webbox">
 		<ul class="hd_manu">
 			<li> <a href="/eacape_room/member/write.jsp">문의사항</a> </li>
+			<li> <a href="/eacape_room/member/misrNotice.jsp">공지사항</a> </li>
+			
 		</ul>
 	</div>
 	

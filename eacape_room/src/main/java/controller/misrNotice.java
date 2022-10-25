@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modle.misrNoticeDto;
-import modle.misroomDao2;
+import model.misrNoticeDao;
+import model.misrNoticeDto;
+import model.misroomDAO;
+import model.misroomDao2;
+
+
 
 
 @WebServlet("/misrNotice")
@@ -24,22 +28,28 @@ public class misrNotice extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
+		String ntitle =	request.getParameter("ntitle");	System.out.println(ntitle);
+		String ncontent = request.getParameter("ncontent"); System.out.println(ncontent);
+		
+		int mno = misroomDao2.getInstance().getMno( (String) request.getSession().getAttribute("mid"));
+		System.out.println(mno);
+		/*
+		 * misrNoticeDto misrDto = new misrNoticeDto(0, ntitle, ncontent, ntitle, 0, 0,
+		 * ); misrNoticeDao misrNoticeDao = new misrNoticeDao();
+		 */
+		
+		
+		boolean result = misrNoticeDao.getInstance().mwrite(ntitle, ncontent);
+		System.out.println(result);
+		response.getWriter().print(result);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			
-	request.setCharacterEncoding("UTF-8");
-	String ntitle =	request.getParameter("ntitle");	System.out.println(ntitle);
-	String ncontent = request.getParameter("ncontent"); System.out.println(ncontent);
-	
-	misrNoticeDto misrDto = new misrNoticeDto(0, ntitle, ncontent, null, 0);
-	
-	misroomDao2 misroomDao2 = new misroomDao2();
-	boolean result = misroomDao2.mwrite(misrDto);
-	response.getWriter().print(result);
-	
+
 		
 		
 	}

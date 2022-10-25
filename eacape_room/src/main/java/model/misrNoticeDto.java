@@ -6,17 +6,21 @@ public class misrNoticeDto {
     private String ntitle;		
 	private String ncontent;			
     private String ndate; 		
-	private int bview;	
-	
+	private int nview;	
+	private int mno;
+	private String mid;
+
 	public misrNoticeDto() {}
 
-	public misrNoticeDto(int nno, String ntitle, String ncontent, String ndate, int bview) {
+	public misrNoticeDto(int nno, String ntitle, String ncontent, String ndate, int nview, int mno, String mid) {
 		super();
 		this.nno = nno;
 		this.ntitle = ntitle;
 		this.ncontent = ncontent;
 		this.ndate = ndate;
-		this.bview = bview;
+		this.nview = nview;
+		this.mno = mno;
+		this.mid = mid;
 	}
 
 	public int getNno() {
@@ -51,19 +55,37 @@ public class misrNoticeDto {
 		this.ndate = ndate;
 	}
 
-	public int getBview() {
-		return bview;
+	public int getNview() {
+		return nview;
 	}
 
-	public void setBview(int bview) {
-		this.bview = bview;
+	public void setNview(int nview) {
+		this.nview = nview;
+	}
+
+	public int getMno() {
+		return mno;
+	}
+
+	public void setMno(int mno) {
+		this.mno = mno;
+	}
+
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 
 	@Override
 	public String toString() {
 		return "misrNoticeDto [nno=" + nno + ", ntitle=" + ntitle + ", ncontent=" + ncontent + ", ndate=" + ndate
-				+ ", bview=" + bview + "]";
+				+ ", nview=" + nview + ", mno=" + mno + ", mid=" + mid + "]";
 	}
+	
+	
 	
 	
 	
