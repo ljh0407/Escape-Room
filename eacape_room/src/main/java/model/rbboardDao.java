@@ -13,13 +13,12 @@ public class rbboardDao extends misroomDAO {
 	
 	
 	// 10/24 이종훈 리뷰게시판 글등록
-	public boolean rbwrite(int rbscore , String rbcontent , int mno) {
-		String sql = "insert into rbboard( rbscore , rbcontent , mno) values( ?, ?, ? )";
+	public boolean rbwrite(String rbtitle , String rbcontent ) {
+		String sql = "insert into rbboard( rbtitle , rbcontent ) values( ?, ? )";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, rbscore); // 점수
+			ps.setString(1, rbtitle); // 점수
 			ps.setString(2, rbcontent); // 게시물내용 
-			ps.setInt(3, mno); // 게시물내용 
 			ps.executeUpdate(); return true;
 		} catch (Exception e) {System.out.println(e);}return false;
 	}

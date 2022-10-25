@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modle.misrNoticeDto;
-import modle.misroomDao2;
+import model.misrNoticeDto;
+import model.misroomDao2;
 
 
 @WebServlet("/misrNotice")

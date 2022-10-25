@@ -3,6 +3,7 @@ package model;
 public class rbboardDto {
 	
 	private int rbno;  			// 리뷰 게시물 번호
+	private String rbtitle;		// 리뷰 제목
     private int rbscore ; 		// 리뷰 점수
     private String rbcontent;	// 리뷰내용
     private String rbdate; 		// 리뷰 작성일
@@ -10,9 +11,10 @@ public class rbboardDto {
     private int mno;  			// 회원번호
     
     
-	public rbboardDto(int rbno, int rbscore, String rbcontent, String rbdate, int rbview, int mno) {
+	public rbboardDto(int rbno, String rbtitle, int rbscore, String rbcontent, String rbdate, int rbview, int mno) {
 		super();
 		this.rbno = rbno;
+		this.rbtitle = rbtitle;
 		this.rbscore = rbscore;
 		this.rbcontent = rbcontent;
 		this.rbdate = rbdate;
@@ -28,6 +30,16 @@ public class rbboardDto {
 
 	public void setRbno(int rbno) {
 		this.rbno = rbno;
+	}
+
+
+	public String getRbtitle() {
+		return rbtitle;
+	}
+
+
+	public void setRbtitle(String rbtitle) {
+		this.rbtitle = rbtitle;
 	}
 
 
@@ -79,9 +91,9 @@ public class rbboardDto {
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
-
     
     
+	
     
     
     

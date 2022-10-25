@@ -1,4 +1,4 @@
-package controller;
+package controller.board;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,22 +12,26 @@ import model.rbboardDao;
 /**
  * Servlet implementation class rbboard
  */
-@WebServlet("/rbboard")
+@WebServlet("/board/rbboard")
 public class rbboard extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	// 요청
-	request.setCharacterEncoding("UTF-8");
-	int rbno = Integer.parseInt(request.getParameter("rbno") );
-	String rbcontent = request.getParameter("rbcontent");
-	int mno = Integer.parseInt(request.getParameter("mno"));
+	request.setCharacterEncoding("UTF-8"); // 한글요청
+	String rbtitle = request.getParameter("rbtitle") ; 
+	System.out.println(rbtitle);
+	String rbcontent = request.getParameter("rbcontent");		System.out.println(rbcontent);
 	
 	// dao 처리
+	boolean result = rbboardDao.getInstance().rbwrite( rbtitle , rbcontent );
+	System.out.println(result);
 	
-	
-	boolean result = rbboardDao.getInstance().rbwrite()
+	// 응답
+	response.getWriter().print(result);
 	
 	}
+	
+	
 	private static final long serialVersionUID = 1L;
        
     /**

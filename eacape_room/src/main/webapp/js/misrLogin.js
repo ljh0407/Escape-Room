@@ -14,8 +14,9 @@
 		success : function(re){
 			console.log(re)
 			if(re === '1'){
+				
 				//고은시[10/24]
-				alert('성공')
+				alert('성공'); 
 				
 				location.href = "/eacape_room/header.jsp";
 				
@@ -27,5 +28,7 @@
 				loginbox.innerHTML = "존재하지않는 아이디입니다";
 			}
 		}
+				
+				
 	})
 }
