@@ -16,7 +16,7 @@ public class rbboardDao extends misroomDAO {
 	
 	// 10/24 이종훈 리뷰게시판 글등록
 	public boolean rbwrite(int rbscore , String rbcontent , int mno) {
-		String sql = "insert into reviewboard( rbscore , rbcontent , mno) vlaues( ? ,? ? )";
+		String sql = "insert into rbboard( rbscore , rbcontent , mno) values( ?, ?, ? )";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, rbscore); // 점수

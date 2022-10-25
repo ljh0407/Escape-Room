@@ -12,7 +12,7 @@
 		<h2> 후기 게시판 </h2>
 		<textarea class="rbcontetnt" rows="20px;" cols="40px;" placeholder="300자이내로 작성해주세요."></textarea>
 		<button onclick="review()">평점주기</button>
-		<button onclick="rewrite()">글쓰기</button>
+		<button onclick="rbwrite()">글쓰기</button>
 		
 		
 		

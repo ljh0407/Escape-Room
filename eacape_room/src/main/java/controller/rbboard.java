@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.rbboardDao;
+
 /**
  * Servlet implementation class rbboard
  */
@@ -16,11 +18,14 @@ public class rbboard extends HttpServlet {
 
 	// 요청
 	request.setCharacterEncoding("UTF-8");
-	int rbno = (String)request.getParameter("rbno");
+	int rbno = Integer.parseInt(request.getParameter("rbno") );
 	String rbcontent = request.getParameter("rbcontent");
-	int mno = (String)request.getParameter("mno");
+	int mno = Integer.parseInt(request.getParameter("mno"));
 	
-	boolean result = rb
+	// dao 처리
+	
+	
+	boolean result = rbboardDao.getInstance().rbwrite()
 	
 	}
 	private static final long serialVersionUID = 1L;
