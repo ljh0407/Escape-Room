@@ -16,6 +16,7 @@
 				<th>번호</th> <th>아이디</th> <th>작성일</th> <th>댓글 수</th>
 			</tr>
 		</table>
+		
 	</div>
 	
 	<script type="text/javascript" src="../js/board/misrQuestionslist.js"></script>
