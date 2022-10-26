@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+ *{	 
+	margin: 0px;	padding: 0px;
+	text-decoration: none;
+	list-style: none;
+	color: white;
+	font-family: '맑은 고딕';
+	background-color: #110c09;
+
+}
+
+.webbox{
+	width: 1500px;
+	margin: 0 auto;
+	
+}
+
+.hd_top{
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0px 20px 0px;
+}
+.hd_login{
+	display: flex;
+	font-size: 15px;
+	align-items: center;
+}
+ 
