@@ -1,5 +1,5 @@
 // 10/24 이종훈
-
+// 1. 글등록
 function rbwrite(){
 	
 	let info = {
@@ -14,14 +14,19 @@ function rbwrite(){
 			if( re === 'true'){
 				alert('글등록성공')
 				alert('gd')
-				location.lreload(); 
+				location.reload(); 
 			}else{alert('글등록실패')}alert('gd')
 			
 		}
 		
 	})
 	
+// 2. 글 목록 출력
+function getrblist(){
 	
+	
+	
+}	
 	
 	
 /*	console.log(rbcontetnt) // rbcontetnt : 후기 게시물내용
