@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-		<!-- 사용자 header.css -->
-		<link rel="stylesheet" href="/eacape_room/css/header.css">
+		
 </head>
 <body>
 	<h3>메인</h3>
@@ -17,46 +16,28 @@
 	<ul class="hd_sub">	<!-- 상단메뉴 -->
 	<!-- 비로그인 메뉴 -->
 	<% if(loginid == null){ %>
-			<li> <a href="/eacape_room/member/misroom.jsp">회원가입</a> </li>
-			<li> <a href="/eacape_room/member/misrLogin.jsp">로그인</a> </li>
+			<li> <a href="/room/user/usersingup.jsp">회원가입</a> </li>
+			<li> <a href="/room/user/userlogin.jsp">로그인</a> </li>
 	<%}else if(loginid.equals("admin")){//관리자로그인 햇다 %>
-				<li> <a href="/jspweb/admin/dashboard.jsp">관리자페이지</a> </li>
+				<li> <a href="#">관리자페이지</a> </li>
 		
 	<%}else{//로그인 햇다 %>
 			<li> <%= loginid %>님 안녕하세요 </li>
-			<li> <a href="/eacape_room/member/misrLogout.jsp">로그아웃</a> </li>
+			<li> <a href="/room/header.jsp">로그아웃</a> </li>
 	<% } %>
-			<li> <a href="/eacape_room/member/misrID.jsp">아이디 찾기</a> </li>
-			<li> <a href="/eacape_room/member/misrPW.jsp">비밀번호 찾기</a> </li>
+			<li> <a href="/room/user/userid.jsp">아이디 찾기</a> </li>
+			<li> <a href="/room/user/userPW.jsp">비밀번호 찾기</a> </li>
 		</ul>	<!-- 상단메뉴 끝 -->
 
 	
 	<div class="webbox">
 		<ul class="hd_manu">
-			<li> <a href="/eacape_room/member/write.jsp">문의사항</a> </li>
-			<li> <a href="/eacape_room/member/misrNotice.jsp">공지사항</a> </li>
-			
+			<li> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
+			<li> <a href="#">공지사항</a> </li>
+			<li> <a href="#">리뷰</a> </li>
 		</ul>
 	</div>
 	
-	
-	<div class="webbox">	<!-- 웹박스 전체 div -->
-		<div class="hd_top">	<!-- 상단 헤더 -->
-			<div>	<!-- 로고가 들어갈 자리 -->
-				<span class="hd_title">
-					<a href="/eacape_room/index.jsp">방탈출 카페</a>
-				</span>
-			</div>
-			
-			<ul class="hd_login">
-				<li> <a href="/eacape_room/member/misrLogin.jsp">로그인</a> </li>
-				<li> <a href="/eacape_room/member/misroom.jsp">회원가입</a> </li>
-			
-				<li> <a href="/eacape_room/member/misrID.jsp">아이디 찾기</a> </li>
-				<li> <a href="/eacape_room/member/misrPW.jsp">비밀번호 찾기</a> </li>
-			</ul>
-		</div>	<!-- 상단 헤더 -->
-	</div>	<!-- 웹박스 전체 div -->
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
