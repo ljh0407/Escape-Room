@@ -1,20 +1,23 @@
 package model;
 
 public class boardDTO {
+	//고은시[10/26] db첨부파일 추가로 수정
 	private int bno;
 	private String btitle;
 	private String bcontent;
+	private String bfile;
 	private String bdate;
 	private String reply;
 	private int mno;
 	public boardDTO() {
 		super();
 	}
-	public boardDTO(int bno, String btitle, String bcontent, String bdate, String reply, int mno) {
+	public boardDTO(int bno, String btitle, String bcontent, String bfile, String bdate, String reply, int mno) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
 		this.bcontent = bcontent;
+		this.bfile = bfile;
 		this.bdate = bdate;
 		this.reply = reply;
 		this.mno = mno;
@@ -37,6 +40,12 @@ public class boardDTO {
 	public void setBcontent(String bcontent) {
 		this.bcontent = bcontent;
 	}
+	public String getBfile() {
+		return bfile;
+	}
+	public void setBfile(String bfile) {
+		this.bfile = bfile;
+	}
 	public String getBdate() {
 		return bdate;
 	}
@@ -57,8 +66,8 @@ public class boardDTO {
 	}
 	@Override
 	public String toString() {
-		return "boardDTO [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bdate=" + bdate
-				+ ", reply=" + reply + ", mno=" + mno + "]";
+		return "boardDTO [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bfile=" + bfile
+				+ ", bdate=" + bdate + ", reply=" + reply + ", mno=" + mno + "]";
 	}
 	
 	

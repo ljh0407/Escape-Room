@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 고은시 10/25 문의사항 목록 출력 -->
+	<!-- 고은시 10/26 문의사항 목록 출력성공 -->
 	<%@include file="../header.jsp" %>
 	
 	<div class="webbox">
