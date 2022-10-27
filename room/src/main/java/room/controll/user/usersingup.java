@@ -35,8 +35,9 @@ public class usersingup extends HttpServlet {
 		//결과제어
 		boolean result = userDao.getInstance().signup(dto);
 		System.out.println(result);	
-		if(result) {System.out.println("회원가입성공");}
-		else{System.out.println("회원가입 실패");}
+		//고은시[10/27] 회원가입 후 페이지 전환
+		if(result) {response.sendRedirect("/jspweb/member/login.jsp");}
+		else {System.out.println("/jspweb/member/signup.jsp");}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

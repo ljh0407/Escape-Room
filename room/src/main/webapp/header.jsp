@@ -24,7 +24,7 @@
 		
 	<%}else{//로그인 햇다 %>
 			<li> <%= loginid %>님 안녕하세요 </li>
-			<li> <a href="/room/header.jsp">로그아웃</a> </li>
+			<li> <a href="/room/userlogin.jsp">로그아웃</a> </li>
 	<% } %>
 			<li> <a href="/room/user/userid.jsp">아이디 찾기</a> </li>
 			<li> <a href="/room/user/userPW.jsp">비밀번호 찾기</a> </li>
@@ -40,7 +40,6 @@
 	
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
 	
 </body>
 </html>

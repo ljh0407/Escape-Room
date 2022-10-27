@@ -31,12 +31,30 @@ public class qDao extends Dao{
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				QDTO dto = new QDTO(
-						rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),
-						rs.getString(5),rs.getString(6),rs.getInt(7));
+					rs.getInt(1), rs.getString(2), rs.getString(3),
+					rs.getString(4), rs.getString(5), rs.getString(6),
+					rs.getInt(7), rs.getInt(8));
 				list.add(dto);
 			}
 			return list;
 		} catch (Exception e) {System.out.println("출력오류"+e);}
 			return null;
 	}
+	public QDTO getboard(int bno) {
+		String sql = "select q.* , r.mid from room r , Questions q where r.mno = q.mno and bno =" +bno;
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				QDTO qdto = new QDTO(
+						rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getString(5), rs.getString(6),
+						rs.getInt(7), rs.getInt(8));
+				System.out.println("다오"+qdto);
+				return qdto;
+			}
+		} catch (Exception e) {System.out.println("글조회"+e);}
+		return null;
+	}
+	
 }
