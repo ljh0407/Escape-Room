@@ -1,29 +1,57 @@
 @charset "UTF-8";
+/* 시작 */
 
- *{	 
-	margin: 0px;	padding: 0px;
-	text-decoration: none;
-	list-style: none;
-	color: white;
-	font-family: '맑은 고딕';
-	background-color: #110c09;
-
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{ /* 전체 */
+	margin: 0px; padding: 0px; /* 여백의 미 */
+	text-decoration: none;	
+	list-style: none;		/* 글머리 */
+	color: black;			/* 글자색깔맞춤 */
+	font-family: '맑은 고딕';	
 }
 
 .webbox{
-	width: 1500px;
-	margin: 0 auto;
-	
+	width: 1200px;	
+	margin: 0 auto; /* 가운데 정렬 */
 }
+/*----------상단------------------*/
 
 .hd_top{
-	display: flex;
+	display: flex;	
 	justify-content: space-between;
-	margin: 10px 0px 20px 0px;
+	margin: 10px 0px 20px 0px;	
 }
-.hd_login{
-	display: flex;
-	font-size: 15px;
-	align-items: center;
+.hd_sub{
+		display: flex;
+		font-size: 13px;
+		align-items: center;
+	}
+.hd_sub li{ margin-left: 20px; }
+.hd_title a{ font-family: "BMJUA"; font-size: 40px;}
+
+/*--하단--*/
+
+.hd_menu{
+	border: 10px solid red;
 }
- 
+
+.hd_menu li{
+	width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+.hd_menu one{
+	background: skyblue;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+
