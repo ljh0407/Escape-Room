@@ -9,6 +9,7 @@
 		
 </head>
 <body>
+	<div class="webbox">
 	<h3>메인</h3>
 	<!-- 고은시[10/25] -->
 	<% String loginid = (String)session.getAttribute("mid"); %>
@@ -30,7 +31,6 @@
 		</ul>	<!-- 상단메뉴 끝 -->
 
 	
-	<div class="webbox">
 		<ul class="hd_manu">
 			<li> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
 			<li> <a href="#">공지사항</a> </li>
