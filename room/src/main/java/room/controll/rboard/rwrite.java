@@ -32,7 +32,9 @@ public class rwrite extends HttpServlet {
 		String rcontent = multi.getParameter("rcontent"); System.out.println("내용 : "+ rcontent);
 		String rfile = multi.getParameter("rfile"); 	System.out.println("첨부파일 : "+rfile);
 		//로그인 성공한 아이디 [세션] 호출
-		String mid = (String)request.getAttribute("mid");
+		//String mid = (String)request.getAttribute("mid"); // 아 여기가.... 세션이 아니였네요...
+		// 일단 세션 호출 하실때
+		String mid = (String)request.getSession().getAttribute("mid"); 
 		
 		int mno = userDao.getInstance().getMno(mid); 
 		System.out.println("id"+mid);
