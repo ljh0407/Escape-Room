@@ -24,7 +24,7 @@
 		
 	<%}else{//로그인 햇다 %>
 			<li> <%= loginid %>님 안녕하세요 </li>
-			<li> <a href="/room/header.jsp">로그아웃</a> </li>
+			<li> <a href="/room/user/userlogout.jsp">로그아웃</a> </li>
 	<% } %>
 			<li> <a href="/room/user/userid.jsp">아이디 찾기</a> </li>
 			<li> <a href="/room/user/userPW.jsp">비밀번호 찾기</a> </li>
@@ -34,7 +34,7 @@
 		<ul class="hd_manu">
 			<li> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
 			<li> <a href="#">공지사항</a> </li>
-			<li> <a href="#">리뷰</a> </li>
+			<li> <a href="/room/rboard/jsp/rwrite.jsp">리뷰</a> </li>
 		</ul>
 	</div>
 	
