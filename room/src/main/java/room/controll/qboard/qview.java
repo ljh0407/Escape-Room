@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 
@@ -31,36 +32,42 @@ public class qview extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("통신");
-		//고은시 [10/27] 개별 글 조회
-		//선택한 게시물 번호 요청
-		int bno = (Integer)request.getSession().getAttribute("bno");
-		System.out.println("요청"+bno);
-		//다오처리
-		QDTO qdto = qDao.getIncetance().getboard(bno);
-		//개별글 확인
+		//고은시 새 서블릿(기존 서블릿 삭제)[10/28] 개별 글 조회
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		System.out.println("서블릿"+bno);
+		//다오 처리
+		QDTO qdto = qDao.getIncetance().getqboard(bno);
+		
+		//상세게시물 호출
 		JSONObject object = new JSONObject();
-			object.put("bno",qdto.getBno());
-			object.put("btitle",qdto.getBtitle());
-			object.put("bcontent",qdto.getBcontent());
-			object.put("bfile",qdto.getBfile());
-			object.put("bdate",qdto.getBdate());
-			object.put("reply",qdto.getReply());
-			object.put("bview",qdto.getBview());
-			object.put("mno",qdto.getMno());
+		object.put("bno", qdto.getBno());
+		object.put("btitle", qdto.getBtitle());
+		object.put("bcontent", qdto.getBcontent());
+		object.put("bfile", qdto.getBfile());
+		object.put("bdate", qdto.getBdate());
+		object.put("reply", qdto.getReply());
+		object.put("mid", qdto.getMno());
 		
+		
+		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
-		System.out.println("서블릿"+object);
-		//삭제
-		
+		System.out.println("서블렛오브젝트"+object);
+		System.out.println("서블렛결과"+bno);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//고은시 상세게시물 세션에 저장[10/28]
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		
+		//세션객체
+		HttpSession session = request.getSession();
+		//클릭한 게시물 번호 세션저장
+		session.setAttribute("bno", bno);
+		//로그인한 아이디
+		String mid = (String)session.getAttribute("mid");
 	}
 
 }

@@ -49,5 +49,4 @@ public class qwrite extends HttpServlet {
 	      response.setCharacterEncoding("UTF-8");
 	      response.getWriter().print(result);
 	}
-
 }

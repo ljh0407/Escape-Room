@@ -4,26 +4,25 @@
  alert('내 게시글')
  
  qview()
- 
  function qview(){
+	alert('조회')
 	$.ajax({
 		url : "/room/qview",
 		async : false ,	/* 동기식 */
 		success : function( re ){
+			console.log(re)
 			let q = JSON.parse(re)
-			console.log(q)
-			document.querySelector('.bno').innerHTML = board.bno;
-			document.querySelector('.btitle').innerHTML = board.btitle;
-			document.querySelector('.bcontent').innerHTML = board.bcontent;
-			document.querySelector('.bfile').innerHTML = board.bfile;
-			document.querySelector('.mid').innerHTML = board.mid;
-			//파일
-			if( board.bfile !== null ){	// null , undefined , 0 , false
-				let filelink = '<a href="../board/filedown?bfile='+board.bfile+'">'+board.bfile+'</a>'
-				// ' ' : 전체 문자열 처리
-				// " " : 전체 문자열내 문자열 구분  
-				document.querySelector('.bfile').innerHTML = filelink;
-			}
+			console.log(q.bno)
+			alert('선택')
+			let html = ''
+			document.querySelector('.bno').innerHTML = q.bno;
+			document.querySelector('.btitle').innerHTML = q.btitle;
+			document.querySelector('.bcontent').innerHTML = q.bcontent;
+			document.querySelector('.reply').innerHTML = q.reply;
+			document.querySelector('.mid').innerHTML = q.mid;
+			document.querySelector('.bfile').innerHTML = q.bfile;
+			
+			document.querySelector('table').innerHTML += html
 		}
 	})
 }

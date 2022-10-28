@@ -40,7 +40,8 @@ public class qDao extends Dao{
 		} catch (Exception e) {System.out.println("출력오류"+e);}
 			return null;
 	}
-	public QDTO getboard(int bno) {
+	//3.고은시[10/28] 개별글조회
+	public QDTO getqboard(int bno) {
 		String sql = "select q.* , r.mid from room r , Questions q where r.mno = q.mno and bno =" +bno;
 		try {
 			ps = con.prepareStatement(sql);

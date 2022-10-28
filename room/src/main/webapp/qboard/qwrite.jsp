@@ -19,7 +19,7 @@
          첨부파일 <input type="file" class="bfile" id="bfile" name="bfile">
          <button type="button" onclick="bwrite()">등록하기</button>
       </form>
-      <a href="/room/qboard/qboardlist.jsp">목록</a>
+      <a href="/room/qboard/qlist.jsp">목록</a>
    </div>
 
    <!-- jquery 라이브러리 (api)-->

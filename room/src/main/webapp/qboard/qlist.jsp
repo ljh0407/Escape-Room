@@ -11,12 +11,12 @@
    <%@include file="../header.jsp" %>
    
    <div class="webbox">
-      <table>
+      <table class="qtable">
          <tr>
-            <th>번호</th> <th>아이디</th> <th>작성일</th> <th>댓글 수</th>
+            <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>댓글 수</th>
          </tr>
       </table>
-      
+      <div> <a href="/room/qboard/qwrite.jsp">글쓰기</a> </div>
    </div>
    
    <script type="text/javascript" src="../qboard/qjs/qlist.js"></script>

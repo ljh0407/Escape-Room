@@ -19,12 +19,12 @@
 	<% if(loginid == null){ %>
 			<li> <a href="/room/user/usersingup.jsp">회원가입</a> </li>
 			<li> <a href="/room/user/userlogin.jsp">로그인</a> </li>
-	<%}else if(loginid.equals("admin")){//관리자로그인 햇다 %>
+	<%}else if(loginid.equals("admin")){//관리자로그인 햇다 %>   
 				<li> <a href="#">관리자페이지</a> </li>
 		
 	<%}else{//로그인 햇다 %>
 			<li> <%= loginid %>님 안녕하세요 </li>
-			<li> <a href="/room/userlogin.jsp">로그아웃</a> </li>
+			<li> <a href="/room/user/userlogout.jsp">로그아웃</a> </li>
 	<% } %>
 			<li> <a href="/room/user/userid.jsp">아이디 찾기</a> </li>
 			<li> <a href="/room/user/userPW.jsp">비밀번호 찾기</a> </li>
@@ -32,7 +32,7 @@
 
 	
 		<ul class="hd_manu">
-			<li> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
+			<li> <a href="/room/qboard/qlist.jsp">문의사항</a> </li>
 			<li> <a href="#">공지사항</a> </li>
 			<li> <a href="#">리뷰</a> </li>
 		</ul>
