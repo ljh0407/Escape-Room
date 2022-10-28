@@ -1,43 +1,55 @@
 @charset "UTF-8";
 /* 시작 */
-
-@font-face {
-    font-family: 'BMJUA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+/* ============= 전체 CSS ================== */
+@font-face {	/* 폰트 ( 눈누 ) */
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-*{ /* 전체 */
+*{ 				/* 전체 공통 */
 	margin: 0px; padding: 0px; /* 여백의 미 */
 	text-decoration: none;	
 	list-style: none;		/* 글머리 */
-	color: black;			/* 글자색깔맞춤 */
-	font-family: '맑은 고딕';	
+	color: white;			/* 글자색깔맞춤 */
+	font-family: '맑은 고딕';
+	 
 }
 
+/* ============= 전체 CSS END ================== */
+
+/* ============= 상단바 CSS ================== */
+/* ============= 로고 로그인 관련 ============= */
 .webbox{
-	width: 1200px;	
-	margin: 0 auto; /* 가운데 정렬 */
+	width: 1920px;	
+	/*margin: 0 auto; /* 가운데 정렬 */
+	background-color: #111111;
+	height: 80px;
 }
-/*----------상단------------------*/
 
 .hd_top{
 	display: flex;	
-	justify-content: space-between;
-	margin: 10px 0px 20px 0px;	
+	justify-content: space-around;
+	margin: 0px 10px 30px 5px;	
 }
 .hd_sub{
 		display: flex;
 		font-size: 13px;
 		align-items: center;
+		
 	}
 .hd_sub li{ margin-left: 20px; }
-.hd_title a{ font-family: "BMJUA"; font-size: 40px;}
 
-/*--하단--*/
+.hd_title a{ font-family: "GongGothicMedium"; font-size: 40px;}
+
+/* ============= 상단바 CSS END ================== */
+
+/* ==============index CSS =================== */
 
 .hd_menu{
-	border: 10px solid red;
+	background-color: #141412;
+	width: 1920px;
+	height: 800px;
 }
 
 .hd_menu li{
@@ -54,4 +66,11 @@
     left: 30px;
 }
 
-
+.img1{	/* 문의사항 */
+	width: 230%;
+	height: 300%;
+	position: relative;
+  	top: 400%;
+  	left: 400%;
+  	
+}

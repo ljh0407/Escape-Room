@@ -5,22 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+		<!-- 사용자 정의 css 호출  -->
+		<link rel="stylesheet" href="/room/css/index.css">
 </head>
 <body>
 		<%@include file="header.jsp" %>
 		
 		<ul class="hd_menu">
-				<li class="one"> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
+				<li class="one"> <a href="/room/qboard/qwrite.jsp"><img class="img1" alt="" src="/room/img/문의사항.png"></a> </li>	<!-- 문의사항 -->
 				<li class="two"> <a href="#">공지사항</a> </li>
 				<li class="three"> <a href="#">리뷰</a> </li>
+				
 		</ul>
 		
-		<div>
-			<p style="text-align:center; color: red;">푸터 자리</p> 
-			<p style="text-align:center; color: red;">27일에 header 페이지 마무리 작업</p> 
-			<p style="text-align:center; color: red;">28~29일 로그인 관련 마무리 하기 </p>
-		</div>
 		
+		<%-- <%@include file="Footer.jsp" %> --%>
 		
 </body>
 </html>
