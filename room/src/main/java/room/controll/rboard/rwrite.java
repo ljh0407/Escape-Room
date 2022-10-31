@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.oreilly.servlet.MultipartRequest;
@@ -20,7 +21,7 @@ import room.model.dao.userDao;
 import room.model.dto.RDTO;
 
 /**
- * Servlet implementation class dfsf
+ * Servlet implementation class 
  */
 @WebServlet("/rboard/rwrite")
 public class rwrite extends HttpServlet {
@@ -37,7 +38,7 @@ public class rwrite extends HttpServlet {
 		String rcontent = multi.getParameter("rcontent"); System.out.println("내용 : "+ rcontent);
 		String rfile = multi.getParameter("rfile"); 	System.out.println("첨부파일 : "+rfile);
 		//로그인 성공한 아이디 [세션] 호출
-		//String mid = (String)request.getAttribute("mid"); // 아 여기가.... 세션이 아니였네요...
+		//String mid = (String)request.getAttribute("mid"); 
 		// 일단 세션 호출 하실때
 		String mid = (String)request.getSession().getAttribute("mid"); 
 		
@@ -52,7 +53,28 @@ public class rwrite extends HttpServlet {
 	
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		// 글리스트 출력
+		
+		ArrayList<RDTO> list = new rdao().getInstance().getrlist();	
+		// 변환
+		JSONArray array = new JSONArray();
+		for( int i = 0 ; i<list.size(); i++) {
+			JSONObject object = new JSONObject();
+			object.put("rno", list.get(i).getRno());
+			object.put("rtitle", list.get(i).getRtitle());
+			object.put("rcontent", list.get(i).getRcontent());
+			object.put("rscore", list.get(i).getRscore());
+			object.put("rfile", list.get(i).getRfile());
+			object.put("rcomment", list.get(i).getRcomment());
+			object.put("rdate", list.get(i).getRdate());
+			object.put("rview", list.get(i).getRview());
+			object.put("mno", list.get(i).getMno());
+			array.add(object);
+		}
+		
+		//응답
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(array); System.out.println("서블릿"+array);
 		
 	}
 	private static final long serialVersionUID = 1L;

@@ -1,20 +1,20 @@
 
-
+getrlist()
 function setwrite(){   // 글쓰기 메소드 이종훈
 	let form = document.querySelector("form")
 	let formdata = new FormData(form)
-	console.log(formdata)
 	 // 2. 
    $.ajax({
       url : "/room/rboard/rwrite" ,
       // 3. * 첨부파일 일경우 
-      type : 'post' , 
+      type : "post" , 
       data : formdata , 
       processData : false ,
       contentType : false ,
       success : function(re){
 		if( re == 'true'){ 
 			alert('글등록 완료')
+	console.log(formdata)
 		}else{alert('글등록 실패')}
 	
 		}
@@ -22,3 +22,35 @@ function setwrite(){   // 글쓰기 메소드 이종훈
 
 	
 } 
+
+
+
+// 글 리스트
+
+function getrlist(){
+	alert('글보기')
+	
+	$.ajax({
+		url : '/room/rboard/rwrite',
+		type : "get",
+		success : function(re){
+			
+			let rboard = JSON.parse(re)
+			let html = ''; 	
+			console.log(rboard)
+						
+			for(let i = 0 ; i < rboard.length ; i++){
+				let r = rboard[i]
+				html += '<tr>'+
+				'<td>'+r.rno+'</td>' + 		// 게시물번호
+				'<td>'+r.rtitle+'</td>'+	// 제목
+				'<td>'+r.rdate+'</td>'+		// 작성일
+				'<td>'+r.rview+'</td>'+		// 조회수
+				'<td>'+r.mno+'	</td>'+		// 회원번호
+				'</tr>';
+			}
+			document.querySelector('.rlisttable').innerHTML += html
+		}
+		
+	})
+}
