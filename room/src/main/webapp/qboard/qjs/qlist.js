@@ -25,15 +25,3 @@
 		}
 	})
 }
-//상세페이지로 이동
- function viewload( bno ){
-	console.log(bno)
-	$.ajax({
-		url : "/room/qview" , 
-		data : { "bno" : bno },
-		success : function( re ){
-			console.log(re)
-			location.href = "/room/qboard/qview.jsp"
-		}
-	})
-}
