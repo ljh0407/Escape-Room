@@ -37,11 +37,14 @@ public class qlist extends HttpServlet {
 			object.put("bdate",list.get(i).getBdate());
 			object.put("reply",list.get(i).getReply());
 			object.put("mno",list.get(i).getMno());
+			object.put("mid",list.get(i).getMid());
 			array.add(object);
 		}
-				
+			
+		System.out.println( array.toString() );
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

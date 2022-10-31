@@ -43,12 +43,10 @@ public class qwrite extends HttpServlet {
 	      String bfile = multi.getFilesystemName("bfile");
 	      // 회원번호
 	      int mno = userDao.getInstance().getMno((String) request.getSession().getAttribute("mid"));
-	      System.out.println("회원번호 : " + mno );
 	      // db처리
 	      boolean result = qDao.getIncetance().write(btitle, bcontent, bfile, mno);
 	      //응답
 	      response.setCharacterEncoding("UTF-8");
 	      response.getWriter().print(result);
 	}
-
 }

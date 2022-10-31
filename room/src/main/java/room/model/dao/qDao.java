@@ -25,18 +25,37 @@ public class qDao extends Dao{
 	//2.문의사항list 고은시 [10/26] 완료
 	public ArrayList<QDTO> getlist(){
 		ArrayList<QDTO> list = new ArrayList<>();
-		String sql ="select * from Questions";
+		String sql ="select Questions.* , room.mid from Questions , room where Questions.mno = room.mno";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				QDTO dto = new QDTO(
-						rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),
-						rs.getString(5),rs.getString(6),rs.getInt(7));
+					rs.getInt(1), rs.getString(2), rs.getString(3),
+					rs.getString(4), rs.getString(5), rs.getString(6),
+					rs.getInt(7),  rs.getString(8) );
 				list.add(dto);
 			}
 			return list;
 		} catch (Exception e) {System.out.println("출력오류"+e);}
-			return null;
+		return null;
 	}
+	//3.고은시[10/28] 개별글조회
+	public QDTO getqboard(int bno) {
+		String sql = "select q.* , r.mid from room r , Questions q where r.mno = q.mno and bno =" +bno;
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				QDTO qdto = new QDTO(
+						rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getString(5), rs.getString(6),
+						rs.getInt(7),  rs.getString( 8 ));
+				System.out.println("다오"+qdto);
+				return qdto;
+			}
+		} catch (Exception e) {System.out.println("글조회"+e);}
+		return null;
+	}
+	
 }

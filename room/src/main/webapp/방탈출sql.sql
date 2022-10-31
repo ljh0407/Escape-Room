@@ -10,18 +10,7 @@ create table room(
     mphone varchar(15)
 );
 
-
-
-
-
 select * from room;
-
-insert into room(mname,mid,mpw,mphone) values ('고은시','rhdmstl2222','rhdmstl2222','010-9023-2204');
-
-select * from room where mname = '고은시' and mphone= '010-9023-2204';
-
-select * from room where mid = 'rhdmstl0422' and mphone= '010-9023-2204';
-
 
 drop table if exists rboard;
 create table rboard(
