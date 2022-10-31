@@ -28,3 +28,31 @@ create table rboard(
 );
 
 select * from rboard;
+
+
+drop table if exists Questions;
+
+create table Questions(
+   bno int auto_increment primary key ,
+    btitle varchar(100) ,
+    bcontent varchar(100) ,
+    bfile longtext, -- 첨부파일
+    bdate datetime default now(),
+    reply varchar(1000), -- 댓글
+    mno int not null,
+    constraint mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade   -- 회원 탈퇴시 
+);
+
+
+
+create table notice(
+   nno int auto_increment primary key,
+    ntitle      varchar(1000) NOT NULL,       -- 제목
+   ncontent   longtext NULL,            -- 내용
+    ndate       datetime default now() NOT NULL   , -- 작성일
+   nview      int default 0 NOT NULL,   -- 조회수
+    mno int not null,
+    constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
+);
+
+select * from notice;
