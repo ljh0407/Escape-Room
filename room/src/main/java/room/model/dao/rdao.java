@@ -23,30 +23,25 @@ public class rdao extends Dao{
 	         ps.setInt(4, mno);
 	         ps.executeUpdate(); return true;
 	      }catch (Exception e) { System.out.println(e); } return false;
-	   }
+	  }
 	  
 	  
 	  // 글 리스트
-	  public ArrayList<RDTO> getrlist (RDTO dto){
+	  public ArrayList<RDTO> getrlist (RDTO dto){ // 게시물번호 , 제목 , 작성일 ,조회수 , 회원번호 = 이름
 	      ArrayList<RDTO> list = new ArrayList<>();
-	      String sql = "select * from rboard";
+	      String sql = "select rno,rtitle,rdate,rview,mno from rboard";
 
 	      try {
 	         ps = con.prepareStatement(sql);
 	         rs = ps.executeQuery();
 	         while( rs.next() ) {
 	            RDTO dto = new RDTO(
-	                  rs.getInt(1),    rs.getString(2),
-	                  rs.getString(3), rs.getInt(4),
-	                  rs.getString(5), rs.getInt(6), 
-	                  rs.getString(7)  rs.getInt(8),
-	                  rs.getInt(9) ) ;
-	            	list.add(dto);
+	                rs.getInt , rs.getString()
 	         }
 	      }catch (Exception e) {System.out.println(e);}
 	      return list;
+	  }
+	  
+	  
+	  
 
-	  
-	  
-	  
-}

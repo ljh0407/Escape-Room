@@ -25,15 +25,13 @@ public class rlist extends HttpServlet {
 		
 		// dao처리
 		RDTO dto = 
-				rdao.getInstance().getrlist(rno);
+				rdao.getInstance().getrlist();
 		
 		ArrayList<rdao>
 		// dto --> JSON형변환
 		JSONObject object = new JSONObject();
 		object.put("rno", dto.getRno());
 		object.put("rtitle", dto.getRtitle());
-		object.put("rscore", dto.getRscore());
-		object.put("rfile", dto.getRfile());
 		object.put("rdate", dto.getRdate());
 		object.put("rview", dto.getRview());
 		object.put("mno", dto.getMno());
