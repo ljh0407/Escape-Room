@@ -29,7 +29,7 @@ public class qwrite extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파일추가
-	      String upload = request.getSession().getServletContext().getRealPath("/qupload");
+	      String upload = request.getSession().getServletContext().getRealPath("/qboard/qupload");
 	      MultipartRequest multi = new MultipartRequest(
 	            request, 
 	            upload,
@@ -43,6 +43,7 @@ public class qwrite extends HttpServlet {
 	      String bfile = multi.getFilesystemName("bfile");
 	      // 회원번호
 	      int mno = userDao.getInstance().getMno((String) request.getSession().getAttribute("mid"));
+	      System.out.println("회원번호 : " + mno );
 	      // db처리
 	      boolean result = qDao.getIncetance().write(btitle, bcontent, bfile, mno);
 	      //응답

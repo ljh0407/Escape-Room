@@ -1,5 +1,9 @@
 package room.model.dao;
 
+import java.util.ArrayList;
+
+import room.model.dto.RDTO;
+
 public class rdao extends Dao{
 
 	private static rdao rdao = new rdao();
@@ -21,4 +25,28 @@ public class rdao extends Dao{
 	      }catch (Exception e) { System.out.println(e); } return false;
 	   }
 
+	  public ArrayList<rdao> getrlist (RDTO dto){
+	      ArrayList<rdao> list = new ArrayList<>();
+	      String sql = "select * from rboard";
+	      
+	      try {
+	         ps = con.prepareStatement(sql);
+	         rs = ps.executeQuery();
+	         while( rs.next() ) {
+	            RDTO dto = new RDTO(
+	                  rs.getInt(1),    rs.getString(2),
+	                  rs.getString(3), rs.getInt(4),
+	                  rs.getString(5), rs.getInt(6), 
+	                  rs.getString(7)  rs.getInt(8),
+	                  rs.getInt(9) ) ;
+	            	list.add(dto);
+	         }
+	      }catch (Exception e) {System.out.println(e);}
+	      return list;
+	  }
+	                  
+
+	  
+	  
+	  
 }
