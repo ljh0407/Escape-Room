@@ -14,6 +14,7 @@ $.ajax({
 	success: function(re){
 		if(re == 'true'){
 			alert('글등록')
+			location.href = "/room/nboard/nlist.jsp"
 	}else{
 		alert('글등록실패')
          }

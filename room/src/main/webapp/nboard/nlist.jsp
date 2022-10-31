@@ -8,16 +8,14 @@
 </head>
 <body>
 		<%@include file="../header.jsp" %>
-			<div class= "webbox">
-			
-			<a href="nwrite.jsp">글쓰기</a>
-			<table>		
+			<div class= "webbox">	
+			<table class="ntable">		
 				<tr>
-					<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th> <!-- 2. 제목클릭시 상세페이지 -->
-					<th> 작성일 </th> <th> 조회수 </th>
+					<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th> <th> 작성일 </th> <th> 조회수 </th>
 				</tr>
 			
 			</table>	
+			<div><a href="nwrite.jsp">글쓰기</a></div>
 			</div>
 			
 		<script src="../nboard/njs/nlist.js"  type="text/javascript"></script>

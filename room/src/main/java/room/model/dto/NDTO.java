@@ -3,10 +3,10 @@ package room.model.dto;
 public class NDTO {
 
 private int	nno; 
-private String    ntitle;		
-private String	ncontent	;
-private  String  ndate 	;	
-private	int nview		;
+private String  ntitle;		
+private String	ncontent;
+private  String  ndate;	
+private	int nview;
 private  int  mno ;
 private String mid;
 

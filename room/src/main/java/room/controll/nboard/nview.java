@@ -8,41 +8,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import room.model.dao.ndao;
-import room.model.dao.userDao;
-
-
-@WebServlet("/nwrite")
-public class nwrite extends HttpServlet {
+@WebServlet("/nview")
+public class nview extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public nwrite() {
+    public nview() {
         super();
-     
+        // TODO Auto-generated constructor stub
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-}
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		//글쓰기 10-27 주혁
-
-				
-	
-		String ntitle =	request.getParameter("ntitle");		
-		String ncontent =request.getParameter("ncontent");
 		
-		
-		int mno = userDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
-		boolean result = 
-			ndao.getInstance().nwirte(ntitle, ncontent, mno);
-		//응답
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(result);
+	
 	
 	
 	}
