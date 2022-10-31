@@ -33,7 +33,7 @@
 	
 		<ul class="hd_manu">
 			<li> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
-			<li> <a href="#">공지사항</a> </li>
+			<li> <a href="/room/nboard/nwrite.jsp">공지사항</a> </li>
 			<li> <a href="/room/rboard/jsp/rwrite.jsp">리뷰</a> </li>
 		</ul>
 	</div>
