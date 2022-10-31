@@ -20,7 +20,7 @@
 			<div> <!-- 로고 -->
 				<span class="hd_title">
 					<a href="/room/index.jsp">room escape</a>	
-				</span>
+				</span>	
 			</div>
 			
 		<!-- 고은시[10/25] -->
@@ -50,6 +50,7 @@
 			</ul> -->	<!-- index로 이동 -->
 	</div>	<!-- webbox div end -->
 	
+		
 		
 		
 		<!-- jquery 라이브러리 (api)-->

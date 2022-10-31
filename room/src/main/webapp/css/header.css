@@ -11,8 +11,9 @@
 	margin: 0px; padding: 0px; /* 여백의 미 */
 	text-decoration: none;	
 	list-style: none;		/* 글머리 */
-	color: white;			/* 글자색깔맞춤 */
+	 color: #551a8b;			/* 글자색깔맞춤 */ 
 	font-family: '맑은 고딕';
+	
 	 
 }
 
@@ -23,54 +24,29 @@
 .webbox{
 	width: 1920px;	
 	/*margin: 0 auto; /* 가운데 정렬 */
-	background-color: #111111;
+	background-color: white;
 	height: 80px;
+		
 }
 
 .hd_top{
 	display: flex;	
 	justify-content: space-around;
-	margin: 0px 10px 30px 5px;	
+	margin: 0px 10px 30px 5px;
+	color: white;	
 }
-.hd_sub{
+.hd_sub {
 		display: flex;
 		font-size: 13px;
 		align-items: center;
 		
 	}
-.hd_sub li{ margin-left: 20px; }
+.hd_sub li{ margin-left: 20px;  }
 
-.hd_title a{ font-family: "GongGothicMedium"; font-size: 40px;}
+.hd_title a{ font-family: "GongGothicMedium"; font-size: 40px; }
 
 /* ============= 상단바 CSS END ================== */
 
 /* ==============index CSS =================== */
 
-.hd_menu{
-	background-color: #141412;
-	width: 1920px;
-	height: 800px;
-}
 
-.hd_menu li{
-	width: 100px;
-    height: 100px;
-    display: inline-block;
-    text-align: center;
-}
-
-.hd_menu one{
-	background: skyblue;
-    position: fixed;
-    top: 30px;
-    left: 30px;
-}
-
-.img1{	/* 문의사항 */
-	width: 230%;
-	height: 300%;
-	position: relative;
-  	top: 400%;
-  	left: 400%;
-  	
-}

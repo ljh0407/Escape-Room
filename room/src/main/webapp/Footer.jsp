@@ -5,13 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+		<!-- 사용자 정의 css 호출  -->
+		<link rel="stylesheet" href="/room/css/Footer.css">
+		<!-- font Awesome 아이콘 사용 -->
+		<script src="https://kit.fontawesome.com/274b11aa35.js" crossorigin="anonymous"></script>
 </head>
 <body>
 		
-		<div>
-			<p style="text-align:center; color: red;">푸터 자리</p> 
+		
+		<div class="Footer">
+			<p style="text-align:left; color: white;">문의전화 : 010-9999-9999</p> 
+			<p style="text-align:left; color: white;">오시는길 : 경기도 안산시 단원구 강우빌딩 5층</p> 
+			<p style="text-align:left; color: white;">등등 더 추가하기 </p> 
+			<!-- font Awesome  -->
+			<i class="fa-brands fa-instagram"></i>
+			<i class="fa-brands fa-twitter"></i>
+			<i class="fa-brands fa-facebook"></i>
+		</div>	
+		
 			
-		</div>		
 	
 </body>
 </html>

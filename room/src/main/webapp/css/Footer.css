@@ -1,2 +1,13 @@
 @charset "UTF-8";
 
+.Footer{
+	background-color: lightsteelblue;
+	width: 1920px;
+	height: 200px;
+}
+
+.Footer i{
+	font-size: 25px;
+}
+
+

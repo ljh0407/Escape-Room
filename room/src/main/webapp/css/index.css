@@ -1,10 +1,104 @@
 @charset "UTF-8";
 
-
-*{
-	
+.hd_menu{
+	background-color: gainsboro;
+	width: 1920px;
+	height: 800px;
 }
 
+.hd_menu li{
+	width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+.hd_menu one{
+	background: skyblue;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+.img1{	/* 문의사항 */
+	width: 230%;
+	height: 300%;
+	position: relative;
+  	top: 400%;
+  	left: 400%;
+  	
+}
+
+/*====================================================================*/
+
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400");	
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 30px;
+}
+.container .thumbex {
+  margin: 23% 1% 5%;
+  margin-right: 5px;
+ /*  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  height: 300px;
+  flex: 1; */
+ 
+}
+
+.container .thumbex .thumbnail {
+  overflow: hidden;
+  min-width: 250px;
+  height: 300px;
+  width: 250px;
+  position: relative;
+  opacity: 0.88;
+  backface-visibility: hidden;
+  transition: all 0.4s ease-out;
+  background: #d3d3d3;
+}
+.container .thumbex .thumbnail img {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  height: 115%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+.container .thumbex .thumbnail span {
+  position: absolute;
+  z-index: 2;
+  top: calc(150px - 20px);
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 50px;
+  margin: 0 45px;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease-out;
+}
+.container .thumbex .thumbnail:hover {
+  backface-visibility: hidden;
+  transform: scale(1.15, 1.15);
+  opacity: 1;
+}
+.container .thumbex .thumbnail:hover span {
+  opacity: 0;
+}
 
 
 
