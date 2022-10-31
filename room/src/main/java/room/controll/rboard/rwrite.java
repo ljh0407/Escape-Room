@@ -52,25 +52,7 @@ public class rwrite extends HttpServlet {
 	
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 요청
-		int rno = (Integer)request.getSession().getAttribute("rno");
-		
-		// dao처리
-		RDTO dto = 
-				rdao.getInstance().getrlist(rno);
-		
-		public ArrayList<rdao>
-		// dto --> JSON형변환
-		JSONObject object = new JSONObject();
-		object.put("rno", dto.getRno());
-		object.put("rtitle", dto.getRtitle());
-		object.put("rcontent", dto.getRcontent());
-		object.put("rscore", dto.getRscore());
-		object.put("rfile", dto.getRfile());
-		object.put("rcomment", dto.getRcomment());
-		object.put("rdate", dto.getRdate());
-		object.put("rview", dto.getRview());
-		object.put("mno", dto.getMno());
+	
 		
 	}
 	private static final long serialVersionUID = 1L;

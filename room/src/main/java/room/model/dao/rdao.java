@@ -11,7 +11,7 @@ public class rdao extends Dao{
 
 	
 	
-	
+	  // 글등록
 	  public boolean setrwrite( String rtitle , String rcontent , String rfile , int mno ) {
 	      String sql = "insert into rboard( rtitle , rcontent , rfile , mno ) "
 	            + " values( ? , ? , ? , ? )";
@@ -24,11 +24,13 @@ public class rdao extends Dao{
 	         ps.executeUpdate(); return true;
 	      }catch (Exception e) { System.out.println(e); } return false;
 	   }
-
-	  public ArrayList<rdao> getrlist (RDTO dto){
-	      ArrayList<rdao> list = new ArrayList<>();
+	  
+	  
+	  // 글 리스트
+	  public ArrayList<RDTO> getrlist (RDTO dto){
+	      ArrayList<RDTO> list = new ArrayList<>();
 	      String sql = "select * from rboard";
-	      
+
 	      try {
 	         ps = con.prepareStatement(sql);
 	         rs = ps.executeQuery();
@@ -43,8 +45,6 @@ public class rdao extends Dao{
 	         }
 	      }catch (Exception e) {System.out.println(e);}
 	      return list;
-	  }
-	                  
 
 	  
 	  
