@@ -57,5 +57,17 @@ public class qDao extends Dao{
 		} catch (Exception e) {System.out.println("글조회"+e);}
 		return null;
 	}
+	//4.글삭제[10/31]고은시미완
+	public boolean qdelete(int bno) {
+		String sql = " delete from Questions where bno = "+bno;
+		try {
+			ps = con.prepareStatement(sql);
+			//삭제된 레코드수가 1개이상일때
+			if(ps.executeUpdate() == 1) {
+				return true;
+			}
+		} catch (Exception e) {System.out.println("삭제오류"+e);}
+			return false;
+	}
 	
 }
