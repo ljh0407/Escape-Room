@@ -26,8 +26,10 @@
 			
 			//삭제고은시[10/31]미완
 			let btnbox = document.querySelector('.btnbox')
-			console.log('버튼')
+			console.log(btnbox+'버튼')
+			console.log(q.btnaction)
 			if( q.btnaction == true ){
+				alert('삭제')
 				// 삭제 버튼 활성화
 				let deletebtn = '<button onclick="qdelete('+q.bno+')"> 삭제 </button>'
 				btnbox.innerHTML += deletebtn;

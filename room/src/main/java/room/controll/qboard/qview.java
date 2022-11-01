@@ -38,7 +38,7 @@ public class qview extends HttpServlet {
 		//다오 처리
 		QDTO qdto = qDao.getIncetance().getqboard(bno);
 		
-		//상세게시물 호출
+		//상세게시물 호출[11/01]호출수정
 		JSONObject object = new JSONObject();
 		object.put("bno", qdto.getBno());
 		object.put("btitle", qdto.getBtitle());
@@ -46,12 +46,21 @@ public class qview extends HttpServlet {
 		object.put("bfile", qdto.getBfile());
 		object.put("bdate", qdto.getBdate());
 		object.put("reply", qdto.getReply());
-		object.put("mid", qdto.getMno());
+		object.put("bview", qdto.getBview());
+		object.put("mno", qdto.getMno());
+		object.put("mid", qdto.getMid());
+		
+		//삭제버튼활성화 고은시[11/01]
+		String mid = (String)request.getSession().getAttribute("mid");
+		if(mid != null && mid.equals(qdto.getMid())) {
+			object.put("btnaction", true);
+		}
+		response.setCharacterEncoding(mid);
+		object.put("button", true);
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
-		System.out.println("서블렛오브젝트"+object);
-		System.out.println("서블렛결과"+bno);
+		
 	}
 
 	/**

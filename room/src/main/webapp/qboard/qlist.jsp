@@ -13,7 +13,7 @@
    <div class="webbox">
       <table class="qtable">
          <tr>
-            <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>댓글 수</th>
+            <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>답변확인</th>
          </tr>
       </table>
       <div> <a href="/room/qboard/qwrite.jsp">글쓰기</a> </div>

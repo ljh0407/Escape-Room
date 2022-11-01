@@ -1,13 +1,14 @@
 package room.model.dto;
 
 public class QDTO {
-	//고은시[10/26] db첨부파일 추가로 수정
+	//고은시[11/01] 필드 수정
 	private int bno;
 	private String btitle;
 	private String bcontent;
 	private String bfile;
 	private String bdate;
 	private String reply;
+	private int bview;
 	private int mno;
 	private String mid;
 
@@ -15,7 +16,7 @@ public class QDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public QDTO(int bno, String btitle, String bcontent, String bfile, String bdate, String reply, int mno,
+	public QDTO(int bno, String btitle, String bcontent, String bfile, String bdate, String reply, int bview, int mno,
 			String mid) {
 		super();
 		this.bno = bno;
@@ -24,6 +25,7 @@ public class QDTO {
 		this.bfile = bfile;
 		this.bdate = bdate;
 		this.reply = reply;
+		this.bview = bview;
 		this.mno = mno;
 		this.mid = mid;
 	}
@@ -76,6 +78,13 @@ public class QDTO {
 		this.reply = reply;
 	}
 
+	public int getBview() {
+		return bview;
+	}
+
+	public void setBview(int bview) {
+		this.bview = bview;
+	}
 
 	public int getMno() {
 		return mno;
@@ -96,9 +105,7 @@ public class QDTO {
 	@Override
 	public String toString() {
 		return "QDTO [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bfile=" + bfile + ", bdate="
-				+ bdate + ", reply=" + reply + ", mno=" + mno + ", mid=" + mid + "]";
+				+ bdate + ", reply=" + reply + ", bview=" + bview + ", mno=" + mno + ", mid=" + mid + "]";
 	}
-	
-	
-	
+
 }
