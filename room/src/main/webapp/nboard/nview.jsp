@@ -10,14 +10,18 @@
 	
 		<%@include file="../../header.jsp" %>
 		
-		<div>
+		<div class="webbox">
 			<h3> 공지사항</h3>
-			<table>
+			<table class="ntable">
+				<tr><td>번호</td><td class="nno"> </td></tr>
 				<tr><td>제목</td><td class="ntitle"> </td></tr>
 				<tr><td>내용</td><td class="ncontent"></td></tr>
 				<tr><td>작성자</td><td class="mid"></td></tr>
 			</table>
-		
+	
+				<div class="btnbox">
+				<a href="nlist.jsp"><button>목록보기</button></a>
+				</div>	
 		</div>
 		
 		
