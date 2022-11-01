@@ -57,3 +57,22 @@
 		}
 	})
 }
+//3.댓글작성고은시[11/01]미완
+function qrwrite(){
+	let qrcontent = document.querySelector('.qrcontent').value
+	$.ajax({
+		url : "",
+		data : {"qrcontent" : qrcontent , "type" : "reply"},
+		type : "POST",
+		success : function(re){
+			console.log('함수'+re)
+			if( re == 1 ){
+				alert('답변완료')
+				location.reload
+			}else{
+				alert('관리자만 이용가능합니다')
+				location.href = "/room/user/userlogin.jsp"
+			}
+		}
+	})
+}
