@@ -38,7 +38,7 @@
 		}
 	})
 }
- //2.삭제고은시[10/31]미완
+ //2.삭제고은시[11/01]완성
  function qdelete(bno){
 	console.log('삭제'+bno)
 	$.ajax({

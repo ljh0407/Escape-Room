@@ -56,7 +56,7 @@ public class qDao extends Dao{
 		} catch (Exception e) {System.out.println("글조회"+e);}
 		return null;
 	}
-	//4.글삭제[10/31]고은시(11/01 dto수정해서 필드 수정)
+	//4.글삭제[10/31]고은시
 	public boolean qdelete(int bno) {
 		String sql = " delete from Questions where bno = "+bno;
 		try {
