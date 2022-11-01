@@ -36,17 +36,18 @@
 		
 		<%}else{//로그인 햇다 %>
 				<li> <%= loginid %>님 안녕하세요 </li>
-				<li> <a href="/room/header.jsp">Log out</a> </li>			<!-- 로그아웃 -->
+				<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>			<!-- 로그아웃 -->
 		<% } %>
 				<li> <a href="/room/user/userid.jsp">find ID</a> </li>		<!-- 아이디 찾기 -->
 				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	<!-- 비밀번호 찾기 -->
+				<li><a href="/room/rboard/jsp/rwrite.jsp">리뷰</a></li>
 			</ul>	<!-- 상단메뉴 끝 -->
 			
 		</div>	<!-- 상단 헤더 div end -->
+				<li class="three">  </li>
 			<!-- <ul class="hd_menu">
 				<li class="one"> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
 				<li class="two"> <a href="#">공지사항</a> </li>
-				<li class="three"> <a href="#">리뷰</a> </li>
 			</ul> -->	<!-- index로 이동 -->
 	</div>	<!-- webbox div end -->
 	

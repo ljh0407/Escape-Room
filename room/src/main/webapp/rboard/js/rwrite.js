@@ -14,6 +14,7 @@ function setwrite(){   // 글쓰기 메소드 이종훈
       success : function(re){
 		if( re == 'true'){ 
 			alert('글등록 완료')
+			location.href = location.href
 	console.log(formdata)
 		}else{alert('글등록 실패')}
 	
@@ -27,12 +28,11 @@ function setwrite(){   // 글쓰기 메소드 이종훈
 
 // 글 리스트
 
-function getrlist(){
-	alert('글보기')
+function getrlist(rno){
 	
 	$.ajax({
 		url : '/room/rboard/rwrite',
-		type : "get",
+		data : {"rno":rno},
 		success : function(re){
 			
 			let rboard = JSON.parse(re)
@@ -43,7 +43,7 @@ function getrlist(){
 				let r = rboard[i]
 				html += '<tr>'+
 				'<td>'+r.rno+'</td>' + 		// 게시물번호
-				'<td>'+r.rtitle+'</td>'+	// 제목
+				'<td onclick="rviewload('+r.rno+')">'+r.rtitle+'</td>'+	// 제목
 				'<td>'+r.rdate+'</td>'+		// 작성일
 				'<td>'+r.rview+'</td>'+		// 조회수
 				'<td>'+r.mno+'	</td>'+		// 회원번호
@@ -52,5 +52,19 @@ function getrlist(){
 			document.querySelector('.rlisttable').innerHTML += html
 		}
 		
+	})
+}
+
+// 상세페이지 이동 함수
+function rviewload(rno){
+	$.ajax({
+		url : '/room/rboard/rview',
+		data : { "rno" : rno },
+		type : "post",
+		success : function (re){
+			console.log("문자")
+			alert(re)
+			location.href = "/room/rboard/jsp/rview.jsp"
+		}
 	})
 }

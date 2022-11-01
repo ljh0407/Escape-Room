@@ -23,7 +23,7 @@
 
 			<table class="rlisttable">
 				<tr>
-					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원</th>
+					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
 				</tr>
 			</table>
 				<button type="button">글목록</button>			
