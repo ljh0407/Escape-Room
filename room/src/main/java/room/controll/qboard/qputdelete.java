@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import room.model.dao.qDao;
+import room.model.dto.QDTO;
 
 @WebServlet("/qputdelete")
 public class qputdelete extends HttpServlet {
@@ -38,8 +39,10 @@ public class qputdelete extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//삭제요청
 		int bno = Integer.parseInt(request.getParameter("bno"));
+		
 		//dao
 		boolean result = new qDao().qdelete(bno);
+		
 		//응답
 		response.getWriter().print(result);
 		System.out.println(result);

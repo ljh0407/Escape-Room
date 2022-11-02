@@ -59,6 +59,8 @@ public class qDao extends Dao{
 	//4.글삭제[10/31]고은시
 	public boolean qdelete(int bno) {
 		String sql = " delete from Questions where bno = "+bno;
+		System.out.println("다오"+sql);
+		System.out.println("다오"+bno);
 		try {
 			ps = con.prepareStatement(sql);
 			//삭제된 레코드수가 1개이상일때

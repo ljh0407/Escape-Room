@@ -11,10 +11,7 @@
 		success : function( re ){
 			alert( re )
 			let qboard = JSON.parse(re)
-			
-			
 			console.log(qboard)
-			
 			
 			for(let i = 0 ; i < qboard.length ; i++){
 				let q = qboard[i]

@@ -13,24 +13,15 @@ import org.json.simple.JSONObject;
 import room.model.dao.qDao;
 import room.model.dto.QDTO;
 
-/**
- * Servlet implementation class qview
- */
 @WebServlet("/qview")
 public class qview extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public qview() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//고은시 새 서블릿(기존 서블릿 삭제)[10/28] 개별 글 조회
 		int bno = (Integer) request.getSession().getAttribute("bno") ;
@@ -60,12 +51,10 @@ public class qview extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
+		System.out.println("서블렛"+object);
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	/////[고은시 11/02]아이디 세션저장//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//고은시 상세게시물 세션에 저장[10/28]
 		int bno = Integer.parseInt(request.getParameter("bno"));
