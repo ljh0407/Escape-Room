@@ -13,14 +13,38 @@ function nview(){
 		success:function(re){
 		let n = JSON.parse(re)
 		console.log(n)
-		let html = ''
+		
 		document.querySelector('.nno').innerHTML =n.nno;
 		document.querySelector('.ntitle').innerHTML =n.ntitle;
 		document.querySelector('.ncontent').innerHTML = n.ncontent;
 		document.querySelector('.mid').innerHTML = n.mid;
 		
-		document.querySelector('.ntable').innerHTML += html
+		console.log(n.btnaction)
+		let btnbox = document.querySelector('.btnbox')
+		if(n.btnaction == true){
+		//삭제 버튼
+		let deletebtn = '<button onclick="ndelete('+n.nno+')"> 삭제 </button>'	
+		btnbox.innerHTML += deletebtn;	
+		//수정버튼
+		let updatebtn = '<button><a href="../nboard/nupdate.jsp">수정</a></button>'	
+		btnbox.innerHTML += updatebtn;	
 		}
-		
+	
+		}
+	})
+}
+
+// 2. 게시물 삭제 함수
+function ndelete(nno){
+	$.ajax({
+		url:"/room/ndelete",
+		data : {"nno":nno},
+		success : function(re){
+			if( re==='true'){
+				alert('글삭제 성공');
+				location.href="/room/nboard/nlist.jsp"
+			}
+			else{alert('글삭제 실패')}
+		}
 	})
 }

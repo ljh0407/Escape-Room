@@ -16,6 +16,10 @@
 			
 			</table>	
 			<div><a href="nwrite.jsp">글쓰기</a></div>
+			<div class="pagebox">
+			
+			</div>
+			
 			</div>
 			
 		<script src="../nboard/njs/nlist.js"  type="text/javascript"></script>

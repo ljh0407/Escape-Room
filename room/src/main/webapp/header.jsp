@@ -32,11 +32,11 @@
 				<li> <a href="/room/user/usersingup.jsp">Sign Up</a> </li>	<!-- 회원가입 -->
 				<li> <a href="/room/user/userlogin.jsp">login</a> </li>		<!-- 로그인 -->
 		<%}else if(loginid.equals("admin")){//관리자로그인 햇다 %>
-					<li> <a href="#">관리자페이지</a> </li>
-		
+					<li> <a href="/room/admin/dashboard.jsp">관리자페이지</a> </li>
+					<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>
 		<%}else{//로그인 햇다 %>
 				<li> <%= loginid %>님 안녕하세요 </li>
-				<li> <a href="/room/header.jsp">Log out</a> </li>			<!-- 로그아웃 -->
+				<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>			<!-- 로그아웃 -->
 		<% } %>
 				<li> <a href="/room/user/userid.jsp">find ID</a> </li>		<!-- 아이디 찾기 -->
 				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	<!-- 비밀번호 찾기 -->

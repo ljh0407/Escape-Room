@@ -73,19 +73,73 @@ public class ndao extends Dao{
 		String sql = "delete from notice"
 				+ " where nno="+nno;
 		try {
-			ps= con.prepareStatement(sql);
+			ps = con.prepareStatement(sql);
 			int count = ps.executeUpdate();
 			if (count == 1) return true;
-		} catch (Exception e) {System.out.println(e);}
-		return false;
+		} catch (Exception e) {
+			System.out.println(e);
+		}return false;
 	}
+
 	
 	// 첨부파일이 없음
 	
 	//5. 게시물 수정
-	public boolean nupdate( int nno , String ntitle , String )
+	public boolean nupdate( int nno , String ntitle , String ncontent) {
 	
+		String sql = "update notice set ntitle = ? ,"
+				+ " ncontent = ? where nno =?";
+		try {
+			ps= con.prepareStatement(sql);
+			ps.setInt(3, nno);
+			ps.setString(1, ntitle);
+			ps.setString(2, ncontent);
+			ps.executeUpdate(); return true;
+		} catch (Exception e) {System.out.println(e);}
+		return false;
+	}
 	
+	//6. 조회수 증가
+	public void nviewupdate( int nno) {
+		String sql = " update notice "
+				+ " set nview = nview+1 "
+				+ " where nno = "+nno;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+		} catch (Exception e) {System.out.println(e);}
+				
+	}
+	
+	//7. 페이지( 전체게시물수)
+	public int gettotalsize() {
+		String sql ="select count(*) from notice";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) return rs.getInt(1);
+		} catch (Exception e) {System.out.println(e);} return 0;
+	}
 	
 	
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

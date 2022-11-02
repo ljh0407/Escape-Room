@@ -28,8 +28,19 @@ public class nlist extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		//주혁 
+		//1.요청 이 요청은 페이징처리 요청입니다
 		
+		int listsize= Integer.parseInt( request.getParameter("listsize"));		
+		//System.out.println(listsize); 3으로설정했었는데 3나오니 검색종료 확인용		
+		//2. 전체게시물수
+		int totalsize = ndao.getInstance().gettotalsize();
+		//3.전체 페이지수 계산
+		int totalpage = 0;
+		if( totalsize % listsize == 0) totalpage = totalsize /listsize; // 나머지가없으면
+		else totalpage = totalsize / listsize +1; // 나머지가 존재하면 나머지를 표시할페이지
+		//페이징처리 jsonobject
+		JSONObject boards = new JSONObject();
 		
 		// 형변환
 		ArrayList<NDTO> list = new ndao().getInstance().getlist();
@@ -47,9 +58,12 @@ public class nlist extends HttpServlet {
 			
 		}
 		System.out.println( array.toString() );
-		
+		//4.페이징
+		boards.put("totalpage", totalpage);
+		boards.put("data",array);
+		//응답
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(array);
+		response.getWriter().print(boards);
 		
 		
 	

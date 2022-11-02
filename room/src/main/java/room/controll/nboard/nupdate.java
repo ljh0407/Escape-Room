@@ -7,35 +7,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 import room.model.dao.ndao;
+import room.model.dto.NDTO;
 
 
-@WebServlet("/nviewload")
-public class nviewload extends HttpServlet {
+@WebServlet("/nupdate")
+public class nupdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public nviewload() {
+
+    public nupdate() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1.요청
-		int nno = Integer.parseInt(request.getParameter("nno"));
-		// 클릭 게시물 번호 세션 저장
-		request.getSession().setAttribute("nno",nno);
-		
-		ndao.getInstance().nviewupdate(nno);
-		
-	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	//요청
+	String ntitle = request.getParameter("ntitle");
+	String ncontent = request.getParameter("ncontent");
+	
+	int nno = (Integer)request.getSession().getAttribute("nno");
+	
+
+	//4. dao 처리
+	boolean result=	ndao.getInstance().nupdate(nno,ntitle,ncontent);
+	
+	//결과반환
+	
+	response.getWriter().print(result);
+	
 	}
 
 }

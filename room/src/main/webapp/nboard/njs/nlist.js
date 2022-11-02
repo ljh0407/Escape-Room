@@ -7,13 +7,16 @@
 
 list()
 function list(){
+	
+	let listsize = 3;
+	
 	$.ajax({
 		url: "/room/nlist",
+		data: {"listsize":listsize},
 		success:function(re){
 			let json = JSON.parse(re)
 			console.log(json)
 			let html = '';
-			alert('a1')
 			for(let i = 0; i < json.length; i++){
 				let n = json[i]
 				console.log(n)
@@ -27,6 +30,23 @@ function list(){
 					'</tr>';
 			}
 		document.querySelector('.ntable').innerHTML += html
+		
+		//1. 페이징버튼 html 구성
+		let pagehtml ='';
+			
+			// 2.이전버튼
+			pagehtml +="<button>이전</button>"
+			
+			//4. 페이지번호 버튼
+			for ( let i = 1; i<=10 ; i++){
+				pagehtml += "<button>"+i+"</button>"
+			}
+				
+			// 3.다음버튼
+			pagehtml +="<button>다음</button>"
+		
+		document.querySelector('.pagebox').innerHTML = pagehtml	
+		 
 		}
 	})
 }
@@ -34,7 +54,7 @@ function list(){
 
 function viewload(nno){
 	$.ajax({
-		url: "/room/nview",
+		url: "/room/nviewload",
 		type : "post", 
 		data:{"nno":nno},
 		success:function(re){

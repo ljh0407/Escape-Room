@@ -42,6 +42,12 @@ public class nview extends HttpServlet {
 		object.put("mno",dto.getNno());
 		object.put("mid",dto.getMid());
 			
+		//* 삭제 수정 버튼 활성화 식별변수 선언
+		String mid = (String)request.getSession().getAttribute("mid");
+		// 2. 로그인한 세션 현재 게시물 작성자 일치하면
+		if( mid != null && mid.equals(dto.getMid())) {
+			object.put("btnaction", true);
+		}
 		//응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
