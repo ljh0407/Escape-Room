@@ -15,23 +15,32 @@ public class ndao extends Dao{
 	
 	
 	// 글 입력
-	public boolean nwirte(String ntitle , String ncontent  , int mno) {
-	String sql = "insert into notice( ntitle , ncontent ,  mno) values(?,?,?)";
-	try {
-		ps=con.prepareStatement(sql);
-		ps.setString(1, ntitle);
-		ps.setString(2, ncontent);
-		ps.setInt(3, mno);
-		ps.executeUpdate(); 
-		return true;
-	} catch (Exception e) {System.out.println(e);}
-		return false;
-	}
-	
-	//글 출력
 	public ArrayList<NDTO> getlist(){
 		ArrayList<NDTO> list = new ArrayList<>();
 		String sql = "select notice.* , room.mid from notice , room where notice.mno = room.mno";
+		try {
+			ps= con.prepareStatement(sql);
+			rs= ps.executeQuery();
+			while(rs.next()) {
+			NDTO dto = new NDTO(
+					rs.getInt(1), rs.getString(2),
+					rs.getString(3) , rs.getString(4),
+					rs.getInt(5),rs.getInt(6),
+					rs.getString(7));
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {System.out.println("출력되나"+e);}
+		return null;
+	}
+	
+	//글 출력
+	// 글 출력한뒤 글 페이지 하기위에 코드가 좀 바뀜 -주혁- 11 03
+	public ArrayList<NDTO> getlist( int startrow, int listsize){
+		ArrayList<NDTO> list = new ArrayList<>();
+		String sql = "select notice.* , room.mid from notice , room "
+				+ " where notice.mno = room.mno "
+				+ " order by notice.ndate desc limit "+startrow+","+listsize;
 		try {
 			ps= con.prepareStatement(sql);
 			rs= ps.executeQuery();
