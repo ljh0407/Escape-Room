@@ -21,7 +21,14 @@
 				<button type="button">점수주기</button>
 			</form>
 
+			<table class="rlisttable">
+				<tr>
+					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
+				</tr>
+			</table>
+				<button type="button">글목록</button>			
 		</div>
+
 
 		<script type="text/javascript" src="../js/rwrite.js"></script>
 </body>

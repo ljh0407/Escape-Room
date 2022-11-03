@@ -36,15 +36,29 @@
 					<li> <a href="/room/admin/dashboard.jsp">관리자페이지</a> </li>
 					<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>
 		<%}else{//로그인 햇다 %>
+<<<<<<< HEAD
 				<li> <%= loginid %>님 안녕하세요 </li><!-- 로그아웃 -->
 				<!-- 고은시[11/01]로그아웃 경로수정 -->
+=======
+				<li> <%= loginid %>님 안녕하세요 </li>
+>>>>>>> branch '1031jonghun' of https://github.com/ljh0407/escape-room
 				<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>			<!-- 로그아웃 -->
 		<% } %>
 				<li> <a href="/room/user/userid.jsp">find ID</a> </li>		<!-- 아이디 찾기 -->
 				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	<!-- 비밀번호 찾기 -->
+				<li><a href="/room/rboard/jsp/rwrite.jsp">리뷰</a></li>
 			</ul>	<!-- 상단메뉴 끝 -->
 			
+<<<<<<< HEAD
 	
+=======
+		</div>	<!-- 상단 헤더 div end -->
+				<li class="three">  </li>
+			<!-- <ul class="hd_menu">
+				<li class="one"> <a href="/room/qboard/qwrite.jsp">문의사항</a> </li>
+				<li class="two"> <a href="#">공지사항</a> </li>
+			</ul> -->	<!-- index로 이동 -->
+>>>>>>> branch '1031jonghun' of https://github.com/ljh0407/escape-room
 	</div>	<!-- webbox div end -->
 		
 		
