@@ -28,9 +28,21 @@ public class rdao extends Dao{
 	  
 	  
 	  // 글 리스트
-	  public ArrayList<RDTO> getrlist(){
+	  public ArrayList<RDTO> getrlist( int startrow , int listsize ,String key, String keyword ){
 	      ArrayList<RDTO> list = new ArrayList<>();
-	      String sql = "select rboard.* , room.mid from rboard , room where rboard.mno = room.mno";
+	      String sql = "";
+	      if(!key.equals("") && !keyword.equals("") ) { // 검색이 있을경우 / 공백이 아닐경우
+	    	  sql = "select rb.* , r.mid "
+	    	  		+ "	 from room r , rboard rb "
+	    	  		+ "	 where r.mno = rb.mno and "+key+" like '%"+keyword+"%' "
+	    	  		+ "	 order by rb.rdate desc "
+	    	  		+ "	 limit "+startrow+" , "+listsize;     
+	      }else { // 검색이 없을경우
+	    	  sql = "select rb.* , r.mid from room r , rboard rb "
+	    			  +" where r.mno = rb.mno "
+	    			  +" order by rb.rdate desc limit "+startrow+" , "+listsize;
+	      }
+	    	  
 	      try {
 	    	  ps = con.prepareStatement(sql);
 	    	  rs = ps.executeQuery();
@@ -96,6 +108,25 @@ public class rdao extends Dao{
 			ps.setInt(2, rno );
 			ps.executeUpdate(); return true;
 		} catch (Exception e) {System.out.println(e);} return false;
+	  }
+	  
+	  
+	  // 전체 게시물 수 (페이징처리)
+	  public int gettotalsize( String key , String keyword ) {
+		  String sql = "";
+		  // 검색이 있을경우
+		  if( !key.equals("") && !keyword.equals("") ) {
+			  // 검색을 했을경우 찾고싶은 리스트만 출력
+			  sql = " select count(*) from room r , rboard rb where r.mno = rb.mno and "+key+" like '%"+keyword+"%'";
+		  }else { // 검색을 안했을경우 리스트 출력
+			sql = " select count(*) from room r , rboard rb where r.mno = rb.mno";
+		  }
+		  try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next() ) return rs.getInt(1);
+		} catch (Exception e) {System.out.println(e);}
+		  return 0;
 	  }
 	  
 }

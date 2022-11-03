@@ -33,7 +33,7 @@ select * from rboard;
 drop table if exists Questions;
 
 create table Questions(
-   bno int auto_increment primary key ,
+   	bno int auto_increment primary key ,
     btitle varchar(100) ,
     bcontent varchar(100) ,
     bfile longtext, -- 첨부파일
@@ -47,12 +47,28 @@ create table Questions(
 
 create table notice(
    nno int auto_increment primary key,
-    ntitle      varchar(1000) NOT NULL,       -- 제목
+   ntitle      varchar(1000) NOT NULL,       -- 제목
    ncontent   longtext NULL,            -- 내용
-    ndate       datetime default now() NOT NULL   , -- 작성일
+   ndate       datetime default now() NOT NULL   , -- 작성일
    nview      int default 0 NOT NULL,   -- 조회수
-    mno int not null,
-    constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
+   mno int not null,
+   constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
 
 select * from notice;
+
+create table admin(
+    replyno int auto_increment not null,
+    reply text not null,
+    bno int not null,
+    rno int not null,
+    constraint replyno_pk primary key ( replyno ),
+    constraint bno_fk1 foreign key ( bno ) references Questions( bno ) ,
+    constraint rno_fk1 foreign key ( rno ) references rboard( rno )
+);
+
+select * from admin;
+
+
+select count(*) from room m , rboard rb where r.mno = rb.mno and "+key+" like '%"+keyword+"%'; -- 게시물 검색 할때 쓰는 문법
+
