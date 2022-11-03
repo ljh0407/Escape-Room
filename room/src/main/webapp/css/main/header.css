@@ -11,8 +11,9 @@
 	margin: 0px; padding: 0px; /* 여백의 미 */
 	text-decoration: none;	
 	list-style: none;		/* 글머리 */
-	 color: #551a8b;			/* 글자색깔맞춤 */ 
+	color: black;			/* 글자색깔맞춤 */ 
 	font-family: '맑은 고딕';
+	
 	
 	 
 }
@@ -22,11 +23,11 @@
 /* ============= 상단바 CSS ================== */
 /* ============= 로고 로그인 관련 ============= */
 .webbox{
-	width: 1920px;	
 	/*margin: 0 auto; /* 가운데 정렬 */
 	background-color: white;
 	height: 80px;
-		
+	width: 80%;
+	margin: 0 auto;	
 }
 
 .hd_top{
@@ -47,6 +48,6 @@
 
 /* ============= 상단바 CSS END ================== */
 
-/* ==============index CSS =================== */
+
 
 

@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 .Footer{
-	background-color: lightsteelblue;
-	width: 1920px;
+	color: black;
 	height: 200px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .Footer i{

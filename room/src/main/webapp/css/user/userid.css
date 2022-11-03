@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.findidbox{
+	background-color: #fafafa;
+	height: 800px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;	
+    font-size: 20px;
+    font-family: 'GongGothicMedium';
+}
+
+
+
+.hdfind{
+	font-family: 'GongGothicMedium';
+	font-size: 40px;
+	color: #525ddd;
+}
+
+
+
+.find{
+	border-radius: 50px;
+    width: 15%;
+    padding: 2px 30px;
+    font-size: 20px;
+}
+
+
+.findidbox button{
+	width: 15%;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
