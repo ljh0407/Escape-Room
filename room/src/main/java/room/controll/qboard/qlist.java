@@ -27,7 +27,9 @@ public class qlist extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//요청 없음
 		//db[10/26]고은시
-		ArrayList<QDTO> list = new qDao().getIncetance().getlist();
+		System.out.println("Asdasdasdasd");
+		ArrayList<QDTO> list = qDao.getIncetance().getlist();
+		System.out.println("Asdasdasdasaad222");
 		JSONArray array = new JSONArray();
 		for(int i = 0 ; i < list.size() ; i++) {
 			JSONObject object = new JSONObject();

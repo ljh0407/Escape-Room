@@ -8,7 +8,7 @@
 </head>
 <body>
 	<!-- 고은시[10/27] 개별 글조회 -->
-	<!-- 비회원이 글쓰기를 할 수 있고 회원가입안해도 글쓰고 볼 수 있게 해보기 -->
+	<!-- [11/01]회원가입안해도 글쓰고 볼 수 있게 해보기 -->
 	<%@include file="../../header.jsp" %>
 	
 	<div> <!-- 글조회 -->
@@ -17,9 +17,9 @@
 			<tr> <td> 번호	</td>	<td class="bno">		</td> </tr>
 			<tr> <td> 제목	</td>	<td class="btitle">		</td> </tr>
 			<tr> <td> 내용	</td>	<td class="bcontent">	</td> </tr>
-			<tr> <td> 댓글 	</td>	<td class="reply">		<td> </tr>
 			<tr> <td> 작성자	</td>	<td class="mid">		<td> </tr>
 			<tr> <td> 파일	</td>	<td class="bfile">		<td> </tr>
+			<tr> <td> 댓글	</td>	<td class="reply">		<td> </tr>
 		</table>
 	</div>
 	
@@ -27,12 +27,16 @@
 		<a href="/room/qboard/qlist.jsp"><button>목록보기</button></a>	
 	</div>
 	
-	<div class="replybox"> <!-- 관리자만 댓글 -->
-	<%-- <!-- 관리자로그인 안되어 있으면 글 목록이동 -->
-	<% if( loginid == null ) response.sendRedirect("/room/qboard/qlist.jsp");  %>
-	<!-- 관리자로그인 되어있으면 댓글작성 -->
-	<% if( loginid == "admin" ) response.sendRedirect("#");  %> --%>
-		<textarea rows="" cols="" class="rcontent"></textarea>
+	<div class="replybox"> <!-- 고은시[11/01] 관리자만 댓글 수정중 -->
+	<%-- <%	
+		// 세션은 오브젝트로 들어가기때문에 형변환 필수
+		String mid = (String)session.getAttribute("mid");
+		if(mid == null || !mid.equals("admin")){
+			response.sendRedirect("/room/user/userlogin.jsp");
+		}
+	%> --%>
+									<!-- 고은시[11/01] 클래스명 수정 -->
+		<textarea rows="" cols="" class="qrcontent"></textarea>
 		<button type="button" onclick="rwrite()">댓글작성</button>
 	</div>
 	
