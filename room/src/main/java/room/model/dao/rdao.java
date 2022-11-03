@@ -64,9 +64,8 @@ public class rdao extends Dao{
 						rs.getInt(1),    rs.getString(2),
 	    				rs.getString(3), rs.getInt(4),
 	    				rs.getString(5), rs.getString(6), 
-	    				rs.getString(7),  rs.getInt(8),
+	    				rs.getString(7), rs.getInt(8),
 	    				rs.getInt(9) ) ; 
-				System.out.println("dto:"+dto );
 					return dto; 
 			}
 		} catch (Exception e) {System.out.println(e);}
@@ -88,5 +87,15 @@ public class rdao extends Dao{
 		} catch (Exception e) {System.out.println(e);} return false;
 	  }
 	  
+	  // 댓글작성 
+	  public boolean rewrite(String rcomment , int rno ) {
+		 String sql = "update rboard set rcomment = ? where rno = ? ";
+		  try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, rcomment);
+			ps.setInt(2, rno );
+			ps.executeUpdate(); return true;
+		} catch (Exception e) {System.out.println(e);} return false;
+	  }
 	  
 }

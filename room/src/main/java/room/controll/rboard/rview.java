@@ -44,11 +44,10 @@ public class rview extends HttpServlet {
 		// 로그인 했으면서 로그인아이디와 현재게시물의 작성자 아이디가 동일하면
 		object.put("btnaction", true);
 	}
-	
+
 	// 응답
 	response.setCharacterEncoding("UTF-8");
 	response.getWriter().print(object);
-	System.out.println("오브젝트2" + object);
 	}
 	
 	private static final long serialVersionUID = 1L;
@@ -58,7 +57,7 @@ public class rview extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	// 세션 생성
 		int rno = Integer.parseInt( request.getParameter("rno") );
 	
 		request.getSession().setAttribute("rno", rno);
