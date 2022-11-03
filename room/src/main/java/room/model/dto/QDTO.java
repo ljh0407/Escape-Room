@@ -11,6 +11,7 @@ public class QDTO {
 	private int bview;
 	private int mno;
 	private String mid;
+	
 
 	public QDTO() {
 		// TODO Auto-generated constructor stub

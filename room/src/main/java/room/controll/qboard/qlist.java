@@ -15,43 +15,52 @@ import org.json.simple.JSONObject;
 import room.model.dao.qDao;
 import room.model.dto.QDTO;
 
+/**
+ * Servlet implementation class qlist
+ */
 @WebServlet("/qlist")
 public class qlist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public qlist() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//요청 없음
-		//db[10/26]고은시
-		System.out.println("Asdasdasdasd");
 		ArrayList<QDTO> list = qDao.getIncetance().getlist();
-		System.out.println("Asdasdasdasaad222");
+		
 		JSONArray array = new JSONArray();
-		for(int i = 0 ; i < list.size() ; i++) {
+		
+		for( int i = 0 ;i<list.size() ; i++ ) {
 			JSONObject object = new JSONObject();
-			object.put("bno",list.get(i).getBno());
-			object.put("btitle",list.get(i).getBtitle());
-			object.put("bcontent",list.get(i).getBcontent());
-			object.put("bdate",list.get(i).getBdate());
-			object.put("reply",list.get(i).getReply());
-			object.put("mno",list.get(i).getMno());
-			object.put("mid",list.get(i).getMid());
+			object.put("bno", list.get(i).getBno() );
+			object.put("btitle", list.get(i).getBtitle() );
+			object.put("bcontent", list.get(i).getBcontent() );
+			object.put("bfile", list.get(i).getBfile() );
+			object.put("bdate", list.get(i).getBdate() );
+			object.put("reply", list.get(i).getReply() );
+			object.put("bview", list.get(i).getBview() );
+			object.put("mno", list.get(i).getMno() );
+			object.put("mid", list.get(i).getMid() );
 			array.add(object);
 		}
-			
-		System.out.println( array.toString() );
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(array);
 		
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(array);		
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
 	}
 
 }

@@ -30,6 +30,6 @@
 		</div>
 
 
-		<script type="text/javascript" src="../js/rwrite.js"></script>
+		<script type="text/javascript" src="/room/rboard/js/rwrite.js"></script>
 </body>
 </html>

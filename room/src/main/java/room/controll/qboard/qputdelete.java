@@ -38,7 +38,7 @@ public class qputdelete extends HttpServlet {
 	//////고은시[10/31]  삭제미완//////////
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//삭제요청
-		int bno = Integer.parseInt(request.getParameter("bno"));
+		int bno = (Integer)request.getSession().getAttribute("bno");
 		
 		//dao
 		boolean result = new qDao().qdelete(bno);

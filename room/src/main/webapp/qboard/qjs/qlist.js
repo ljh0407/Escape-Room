@@ -1,18 +1,11 @@
  
- alert('문의사항 목록')
- 
  let html = '';
- 
  list()
  function list(){
-	alert('ddd')
 	$.ajax({
 		url : "/room/qlist",
 		success : function( re ){
-			alert( re )
 			let qboard = JSON.parse(re)
-			console.log(qboard)
-			
 			for(let i = 0 ; i < qboard.length ; i++){
 				let q = qboard[i]
 				html += 

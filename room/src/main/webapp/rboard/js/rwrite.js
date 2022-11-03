@@ -64,7 +64,7 @@ function rviewload(rno){
 		success : function (re){
 			console.log("문자")
 			alert(re)
-			location.href = "/room/rboard/jsp/rview.jsp"
+			location.href = "/room/rboard/rview.jsp"
 		}
 	})
 }

@@ -58,13 +58,7 @@ public class qview extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//고은시 상세게시물 세션에 저장[10/28]
 		int bno = Integer.parseInt(request.getParameter("bno"));
-		
-		//세션객체
-		HttpSession session = request.getSession();
-		//클릭한 게시물 번호 세션저장
-		session.setAttribute("bno", bno);
-		//로그인한 아이디
-		String mid = (String)session.getAttribute("mid");
+		request.getSession().setAttribute("bno", bno);
 	}
 
 }

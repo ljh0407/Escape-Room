@@ -70,7 +70,6 @@ function relist(){
 			let html = ''
 			let rcomment = JSON.parse(re)
 			
-			html += 
 		}
 	})
 }

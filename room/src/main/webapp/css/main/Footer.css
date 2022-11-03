@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.Footer{
+	color: black;
+	height: 200px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.Footer i{
+	font-size: 25px;
+}
+
+

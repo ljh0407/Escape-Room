@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* 회원가입 css */
+.singup{
+	background-color: #fafafa;
+	height: 800px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pagetitle{
+	text-align: center;
+	font-size: 30px;
+}
+
+
+
+#mname{
+	background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#mid{
+	background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#mpw{
+	background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#mphone{
+	background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+
+/*  button css  */
+
+.signupbtnbox {
+	background: #c9db57;
+	width: 15%;
+	padding: 15px 10px;
+	font-size: 20px;
+	border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

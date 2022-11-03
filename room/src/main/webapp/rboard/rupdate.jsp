@@ -27,6 +27,6 @@
 		
 		</div>
 		
-		<script type="text/javascript" src="../js/rupdate.js"></script>
+		<script type="text/javascript" src="/room/rboard/js/rupdate.js"></script>
 </body>
 </html>

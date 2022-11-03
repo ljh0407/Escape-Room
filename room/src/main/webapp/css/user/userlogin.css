@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* 로그인 페이지 */
+
+.userlogin{
+	background-color: #fafafa;
+	height: 800px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.login{
+	font-family: 'GongGothicMedium';
+	font-size: 40px;
+	color: #525ddd;
+}
+
+.idbox{
+	font-family: 'GongGothicMedium';
+	display: contents;
+	
+}
+
+/* 로그인 입력 창 */
+.mloginbox{
+	border-radius: 50px;
+    width: 15%;
+    padding: 2px 30px;
+    font-size: 20px;
+}
+
+/* 로그인 버튼 */
+.loginbutton{
+	width: 15%;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

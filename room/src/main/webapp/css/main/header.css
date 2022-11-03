@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 시작 */
+/* ============= 전체 CSS ================== */
+@font-face {	/* 폰트 ( 눈누 ) */
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{ 				/* 전체 공통 */
+	margin: 0px; padding: 0px; /* 여백의 미 */
+	text-decoration: none;	
+	list-style: none;		/* 글머리 */
+	color: black;			/* 글자색깔맞춤 */ 
+	font-family: '맑은 고딕';
+	
+	
+	 
+}
+
+/* ============= 전체 CSS END ================== */
+
+/* ============= 상단바 CSS ================== */
+/* ============= 로고 로그인 관련 ============= */
+.webbox{
+	/*margin: 0 auto; /* 가운데 정렬 */
+	background-color: white;
+	height: 80px;
+	width: 80%;
+	margin: 0 auto;	
+}
+
+.hd_top{
+	display: flex;	
+	justify-content: space-around;
+	margin: 0px 10px 30px 5px;
+	color: white;	
+}
+.hd_sub {
+		display: flex;
+		font-size: 13px;
+		align-items: center;
+		
+	}
+.hd_sub li{ margin-left: 20px;  }
+
+.hd_title a{ font-family: "GongGothicMedium"; font-size: 40px; }
+
+/* ============= 상단바 CSS END ================== */
+
+
+
+

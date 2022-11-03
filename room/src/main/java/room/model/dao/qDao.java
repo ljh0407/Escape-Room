@@ -25,25 +25,20 @@ public class qDao extends Dao{
 	//2.문의사항list 고은시 [10/26] 완료(11/01 dto수정해서 필드 수정)
 	public ArrayList<QDTO> getlist(){
 		ArrayList<QDTO> list = new ArrayList<>();
-		String sql ="select Questions.* , room.mid from Questions , room where Questions.mno = room.mno";
+		String sql = "select Questions.* , room.mid from Questions , room where Questions.mno = room.mno";
 		try {
-			System.out.println( "ㅁㄴㅇㅁㄴㅇㅁㄴㅇ" );
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			System.out.println( rs.toString() );
-			System.out.println( "ㅁㄴㅇㅁㄴㅇㅁㄴㅇ121212" );
-			while( rs.next() ) {
-				QDTO dto = new QDTO(
-					rs.getInt(1), rs.getString(2), rs.getString(3),
-					rs.getString(4), rs.getString(5), rs.getString(6),
-					rs.getInt(7),  rs.getInt(8) ,rs.getString(9));
-				list.add(dto);
-				System.out.println( "ㅁㄴsdfsdfsdfㅁㄴㅇ121212" );
+			while( rs.next() ) { 
+				QDTO qdto = new QDTO(
+						rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), 
+						rs.getString(5), rs.getString(6), 
+						rs.getInt(7), rs.getInt(8), rs.getString(9));
+				list.add(qdto);
 			}
-			System.out.println( list.toString() );
-			return list;
-		} catch (Exception e) {System.out.println("출력오류"+e);}
-		return null;
+		}catch (Exception e) {System.out.println(e);}
+		return list;
 	}
 	//3.고은시[10/28] 개별글조회(11/01 dto수정해서 필드 수정)
 	public QDTO getqboard(int bno) {
