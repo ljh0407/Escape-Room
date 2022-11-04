@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* ======== 전체 div 영역 ======== */
+.theme01{
+	background-color: #fafafa;
+	height: 800px;
+}
+
+/* ===== themeimg 영역 ======== */
+
+.themeimg{
+	border: 1px solid;
+}
+
+.themeimg img{
+	color: red;
+}
+
