@@ -27,7 +27,7 @@ public class rdao extends Dao{
 	   }
 	  
 	  
-	  // 글 리스트
+	  // 글 리스트 모든글 출력
 	  public ArrayList<RDTO> getrlist( int startrow , int listsize ,String key, String keyword ){
 	      ArrayList<RDTO> list = new ArrayList<>();
 	      String sql = "";
