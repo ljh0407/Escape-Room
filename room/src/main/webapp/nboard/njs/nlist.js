@@ -5,14 +5,31 @@
 */
 
 let pageinfo= {
-	listsize : 3, //한페이지당 게시물 개수
-	page : 1
+	listsize : 5, //한페이지당 게시물 개수
+	page : 1,
+	key : '',
+	keyword: ''
 }
+
+
+function bsearch(){
+	//alert('검색확인')
+	let key = document.querySelector('.key').value
+	let keyword = document.querySelector('.keyword').value
+	
+	pageinfo.key = key
+	pageinfo.keyword = keyword
+	
+	list(1) //검색후 첫페이지 
+
+}
+
+
 
 list(1)
 function list(page){
 	
-	pageinfo.page =page;
+	 pageinfo.page =page;
 	
 	//console.log(listsize)
 	

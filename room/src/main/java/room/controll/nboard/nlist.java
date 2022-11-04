@@ -28,6 +28,16 @@ public class nlist extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 11.04 검색처리 주혁
+		request.setCharacterEncoding("UTF-8");
+		String key	=request.getParameter("key");
+		String keyword = request.getParameter("keyword");
+		
+		
+		
+		
+		
 		//주혁 
 		//1.요청 이 요청은 페이징처리 요청입니다
 		
@@ -35,8 +45,8 @@ public class nlist extends HttpServlet {
 		int listsize= Integer.parseInt( request.getParameter("listsize"));		
 		//System.out.println(listsize); 3으로설정했었는데 3나오니 검색종료 확인용		
 		
-		//2. 전체게시물수
-		int totalsize = ndao.getInstance().gettotalsize();
+		//2. 전체게시물수	2-1 검색된 게시물수				2-1key , keyword 넘겨줌
+		int totalsize = ndao.getInstance().gettotalsize(key,keyword);
 		System.out.println(totalsize);
 		//3.전체 페이지수 계산
 		int totalpage = 0;

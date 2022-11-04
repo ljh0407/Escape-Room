@@ -115,9 +115,16 @@ public class ndao extends Dao{
 	}
 	
 	//7. 페이지( 전체게시물수)
-	public int gettotalsize() {
-		String sql ="select count(*) from notice";
-		try {
+	public int gettotalsize(String key , String keyword) {
+		String sql = null;
+		// 검색이 있을경우
+		if(!key.equals("") && !keyword.equals("")) {
+		 sql ="select count(*) from notice where "+key+" like '%"+keyword+"%'";
+		}else {
+		// 검색이 없을경우
+		 sql ="select count(*) from notice";
+		}
+		 try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			if(rs.next()) return rs.getInt(1);
