@@ -18,7 +18,7 @@
 				<textarea rows="" cols="" name="rcontent" class="rcontent" placeholder="리뷰내용작성 300자 내외"></textarea><br>		
 				<input type="file" name="rfile" class="rfile">
 				<button type="button" onclick="setwrite()">글등록</button>
-				<button type="button">점수주기</button>
+				
 			</form>
 
 			<table class="rlisttable">

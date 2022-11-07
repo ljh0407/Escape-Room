@@ -51,7 +51,7 @@ public class rwrite extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 글리스트 출력 모든글
-		
+		/*
 		// 페이징처리
 				request.setCharacterEncoding("UTF-8"); // 한글인코딩
 				
@@ -103,6 +103,7 @@ public class rwrite extends HttpServlet {
 			object.put("rview", list.get(i).getRview());
 			object.put("mno", list.get(i).getMno());
 			array.add(object);
+			System.out.println("서블릿 : "+ array);
 		}
 		
 		rboards.put("totalpage", totalpage);	// 1. 전체페이지수
@@ -113,7 +114,7 @@ public class rwrite extends HttpServlet {
 		//응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(rboards); System.out.println("서블릿"+rboards);
-		
+		*/
 	}
 	private static final long serialVersionUID = 1L;
        

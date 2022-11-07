@@ -24,7 +24,7 @@
 		</table>
 		
 		<div class="rbtnbox">
-			<a href="rwrite.jsp"><button>목록보기</button> </a>
+			<a href="rwrite.jsp"><button>글목록</button> </a>
 		</div>
 		
 		<div class="rcommentbox"> 
