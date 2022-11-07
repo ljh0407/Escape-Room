@@ -74,7 +74,7 @@ public class nlist extends HttpServlet {
 		JSONObject boards = new JSONObject();
 		
 		// 형변환
-		ArrayList<NDTO> list =  ndao.getInstance().getlist(startrow,listsize);
+		ArrayList<NDTO> list =  ndao.getInstance().getlist(startrow,listsize , key , keyword);
 		JSONArray array = new JSONArray();
 		for(int i = 0; i<list.size(); i++) {
 			JSONObject object = new JSONObject();
@@ -94,6 +94,8 @@ public class nlist extends HttpServlet {
 		boards.put("data", array);
 		boards.put("starbtn",starbtn);
 		boards.put("endbtn", endbtn);
+		
+		
 		//응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(boards);

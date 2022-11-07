@@ -8,7 +8,7 @@ let pageinfo= {
 	listsize : 5, //한페이지당 게시물 개수
 	page : 1,
 	key : '',
-	keyword: ''
+	keyword: '',
 }
 
 
@@ -19,9 +19,7 @@ function bsearch(){
 	
 	pageinfo.key = key
 	pageinfo.keyword = keyword
-	
 	list(1) //검색후 첫페이지 
-
 }
 
 
@@ -84,6 +82,7 @@ function list(page){
 		}
 	})
 }
+
 
 
 function viewload(nno){

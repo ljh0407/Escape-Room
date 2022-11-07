@@ -24,6 +24,7 @@
 				<select class="key">
 					<option value="n.ntitle">제목</option>
 					<option value="n.content">내용</option>
+					<option value="m.mid">작성자</option>
 				</select>
 				<input class="keyword" type="text" placeholder="검색어">
 				<button type="button" onclick="bsearch()">검색</button>

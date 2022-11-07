@@ -30,11 +30,21 @@ public class ndao extends Dao{
 	
 	//글 출력
 	// 글 출력한뒤 글 페이지 하기위에 코드가 좀 바뀜 -주혁- 11 03
-	public ArrayList<NDTO> getlist( int startrow, int listsize){
+	public ArrayList<NDTO> getlist( int startrow, int listsize ,String key, String keyword){
 		ArrayList<NDTO> list = new ArrayList<>();
-		String sql = "select notice.* , room.mid from notice , room "
-				+ " where notice.mno = room.mno "
-				+ " order by notice.ndate desc limit "+startrow+","+listsize;
+		
+		String sql = "";
+		if( !key.equals("") && !keyword.equals("") ) { // 검색이 있을경우 
+			sql = "select n.* , r.mid "
+					+ "from room r , notice b "
+					+ "where r.mno = n.mno and "+key+" like '%"+keyword+"%' "
+					+ "order by n.ndate desc "
+					+ "limit "+startrow+" , "+listsize;
+		}else { // 검색이 없을경우
+			sql = "select n.* , r.mid from room r , notice n "
+					+ "where r.mno = n.mno "
+					+ "order by n.ndate desc limit "+startrow+" , "+listsize;	
+		}	
 		try {
 			ps= con.prepareStatement(sql);
 			rs= ps.executeQuery();
@@ -116,13 +126,12 @@ public class ndao extends Dao{
 	
 	//7. 페이지( 전체게시물수)
 	public int gettotalsize(String key , String keyword) {
-		String sql = null;
+		String sql = "";
 		// 검색이 있을경우
-		if(!key.equals("") && !keyword.equals("")) {
-		 sql ="select count(*) from notice where "+key+" like '%"+keyword+"%'";
-		}else {
-		// 검색이 없을경우
-		 sql ="select count(*) from notice";
+		if( !key.equals("") && !keyword.equals("") ) { // 검색이 있을경우
+			 sql = "select count(*) from room r , notice n where r.mno = n.mno and "+key+" like '%"+keyword+"%'";
+		}else { // 검색이 없을경우 
+			 sql = "select count(*) from room r , notice n where r.mno = n.mno";
 		}
 		 try {
 			ps = con.prepareStatement(sql);
