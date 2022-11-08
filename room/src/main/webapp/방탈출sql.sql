@@ -47,12 +47,12 @@ create table Questions(
 
 create table notice(
    nno int auto_increment primary key,
-   ntitle      varchar(1000) NOT NULL,       -- 제목
-   ncontent   longtext NULL,            -- 내용
-   ndate       datetime default now() NOT NULL   , -- 작성일
-   nview      int default 0 NOT NULL,   -- 조회수
-   mno int not null,
-   constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
+    ntitle      varchar(1000) NOT NULL,       -- 제목
+    ncontent   longtext NULL,            -- 내용
+    ndate       datetime default now() NOT NULL   , -- 작성일
+    nview      int default 0 NOT NULL,   -- 조회수
+    mno int not null,
+    constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
 
 select * from notice;

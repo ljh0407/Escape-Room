@@ -15,23 +15,36 @@ public class ndao extends Dao{
 	
 	
 	// 글 입력
-	public boolean nwirte(String ntitle , String ncontent  , int mno) {
-	String sql = "insert into notice( ntitle , ncontent ,  mno) values(?,?,?)";
-	try {
-		ps=con.prepareStatement(sql);
-		ps.setString(1, ntitle);
-		ps.setString(2, ncontent);
-		ps.setInt(3, mno);
-		ps.executeUpdate(); 
-		return true;
-	} catch (Exception e) {System.out.println(e);}
-		return false;
-	}
+		public boolean nwirte(String ntitle , String ncontent  , int mno) {
+		String sql = "insert into notice( ntitle , ncontent ,  mno) values(?,?,?)";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, ntitle);
+			ps.setString(2, ncontent);
+			ps.setInt(3, mno);
+			ps.executeUpdate(); 
+			return true;
+		} catch (Exception e) {System.out.println(e);}
+			return false;
+		}
 	
 	//글 출력
-	public ArrayList<NDTO> getlist(){
+	// 글 출력한뒤 글 페이지 하기위에 코드가 좀 바뀜 -주혁- 11 03
+	public ArrayList<NDTO> getlist( int startrow, int listsize ,String key, String keyword){
 		ArrayList<NDTO> list = new ArrayList<>();
-		String sql = "select notice.* , room.mid from notice , room where notice.mno = room.mno";
+		
+		String sql = "";
+		if( !key.equals("") && !keyword.equals("") ) { // 검색이 있을경우 
+			sql = "select n.* , r.mid "
+					+ " from room r , notice n "
+					+ " where r.mno = n.mno and "+key+" like '%"+keyword+"%' "
+					+ " order by n.ndate desc "
+					+ " limit "+startrow+" , "+listsize;
+		}else { // 검색이 없을경우
+			sql = "select n.* , r.mid from room r , notice n "
+					+ " where r.mno = n.mno "
+					+ " order by n.ndate desc limit "+startrow+" , "+listsize;	
+		}	
 		try {
 			ps= con.prepareStatement(sql);
 			rs= ps.executeQuery();
@@ -42,6 +55,7 @@ public class ndao extends Dao{
 					rs.getInt(5),rs.getInt(6),
 					rs.getString(7));
 				list.add(dto);
+
 			}
 			return list;
 		} catch (Exception e) {System.out.println("출력되나"+e);}
@@ -112,9 +126,15 @@ public class ndao extends Dao{
 	}
 	
 	//7. 페이지( 전체게시물수)
-	public int gettotalsize() {
-		String sql ="select count(*) from notice";
-		try {
+	public int gettotalsize(String key , String keyword) {
+		String sql = "";
+		// 검색이 있을경우
+		if( !key.equals("") && !keyword.equals("") ) { // 검색이 있을경우
+			 sql = "select count(*) from room r , notice n where r.mno = n.mno and "+key+" like '%"+keyword+"%'";
+		}else { // 검색이 없을경우 
+			 sql = "select count(*) from room r , notice n where r.mno = n.mno";
+		}
+		 try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			if(rs.next()) return rs.getInt(1);
