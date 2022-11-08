@@ -12,6 +12,16 @@
 		
 	<div class="webbox">
 	<a href="write.jsp"> 글쓰기 </a>
+		<!-- 모든글 출력 -->
+		<table class="rlisttable">
+				<tr>
+					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
+				</tr>
+			</table>
+				<button type="button">글목록</button>			
+		
+		
+		
 		<!-- 5.게시물 표시 개수 -->
 		<div> 게시물 수 : <span class="totalsize"></span> </div>
 		<!-- 6.화면에 표시할 게시물 수 -->
@@ -50,6 +60,8 @@
 		</div>
 		
 	</div>
+		
+		<script type="text/javascript" src="js/rlist.js"></script>
 
 </body>
 </html>

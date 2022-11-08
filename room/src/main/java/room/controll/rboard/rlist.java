@@ -21,13 +21,12 @@ import room.model.dto.RDTO;
 @WebServlet("/rboard/rlist")
 public class rlist extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("서블릿");
+		
 		// 글리스트 출력 모든글
 		
 				// 페이징처리
 						request.setCharacterEncoding("UTF-8"); // 한글인코딩
-						int rno = Integer.parseInt(request.getParameter("rno")) ;
-						System.out.println(rno);
+						
 						// 검색처리
 						String key = request.getParameter("key");
 						String keyword = request.getParameter("keyword");
@@ -36,14 +35,14 @@ public class rlist extends HttpServlet {
 						
 						// 페이지당 게시물수
 						int listsize = Integer.parseInt(request.getParameter("listsize") );
-						
+						System.out.println("listsize : "+listsize);
 						// 2. 전체페이지수
 						int totalsize = rdao.getInstance().gettotalsize(key, keyword);
 						
 						// 3. 전체 페이지수 계산
 						int totalpage = 0;	
 						//  전체페이지수 / 페이지당 게시물수가 나머지가 0이면   
-						if(totalsize % listsize == 0) { totalpage = totalsize / listsize; // 나머지가 없으면
+						if(  totalsize % listsize == 0) { totalpage = totalsize / listsize; // 나머지가 없으면
 						}else {totalpage = totalsize / listsize + 1 ;} // 나머지가 존재하면 페이지 1개 추가 
 						
 						// 현재 페이지수
@@ -88,7 +87,7 @@ public class rlist extends HttpServlet {
 				rboards.put("totalsize", totalsize);	// 5. 전체 게시물 수
 				//응답
 				response.setCharacterEncoding("UTF-8");
-				response.getWriter().print(rboards); System.out.println("서블릿"+rboards);	
+				response.getWriter().print(rboards); System.out.println("서블릿 : "+rboards);	
 		 
 	}
 	private static final long serialVersionUID = 1L;
@@ -102,8 +101,7 @@ public class rlist extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

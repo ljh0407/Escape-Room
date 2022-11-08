@@ -24,11 +24,11 @@ function rsearch(){
 	console.log(pageinfo)
 	list(1)
 }
-
+/*
 // 1. 게시물 출력함수
 list(1) // 메소드 1번 실행
 function list(page){
-	
+	alert('제발')
 	pageinfo.page = page ; // 객체 정보 변경
 	
 	$.ajax({
@@ -43,18 +43,18 @@ function list(page){
 
 			let boardlist = boards.data
 			
-			console.log(boardlist)
+			console.log(re)
 			
 			let html = '';
 			// 반복문 boardlist 하나씩 꺼내기
 			for(let i = 0 ; i<boardlist.length ; i++){
 				// i 번째 객체 호출
 				let r = boardlist[i]
-				console.log(r)
+				alert(r)
 				// i번쨰 객체의 정보를 HTMl 형식으로 변환후 문자열에 저장
 				html += '<tr>' +
 							'<td>'+r.rno+'</td>'+
-							'<td><a href="/room/rboard/rview.jsp?rno='+r.rno+'">'+r.rtitle+'</a></td>'+
+							'<td on></td>'+
 							'<td onclick="rviewload('+r.rno+')">'+r.rtitle+'</td>'+
 							'<td>'+r.mno+'</td>'+
 							'<td>'+r.rdate+'</td>'+
@@ -63,7 +63,7 @@ function list(page){
 				
 			}// for end
 			console.log(html)
-			document.querySelector('.rtable').innerHTML = html
+			document.querySelector('.rlisttable').innerHTML = html
 			
 			let pagehtml = '';
 			// 이전 버튼
@@ -85,7 +85,7 @@ function list(page){
 		
 	})
 }
-
+*/
 // 상세페이지 이동 함수
 function rviewload(rno){
 	$.ajax({
