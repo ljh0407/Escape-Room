@@ -36,14 +36,14 @@ public class ndao extends Dao{
 		String sql = "";
 		if( !key.equals("") && !keyword.equals("") ) { // 검색이 있을경우 
 			sql = "select n.* , r.mid "
-					+ "from room r , notice b "
-					+ "where r.mno = n.mno and "+key+" like '%"+keyword+"%' "
-					+ "order by n.ndate desc "
-					+ "limit "+startrow+" , "+listsize;
+					+ " from room r , notice n "
+					+ " where r.mno = n.mno and "+key+" like '%"+keyword+"%' "
+					+ " order by n.ndate desc "
+					+ " limit "+startrow+" , "+listsize;
 		}else { // 검색이 없을경우
 			sql = "select n.* , r.mid from room r , notice n "
-					+ "where r.mno = n.mno "
-					+ "order by n.ndate desc limit "+startrow+" , "+listsize;	
+					+ " where r.mno = n.mno "
+					+ " order by n.ndate desc limit "+startrow+" , "+listsize;	
 		}	
 		try {
 			ps= con.prepareStatement(sql);
@@ -55,6 +55,7 @@ public class ndao extends Dao{
 					rs.getInt(5),rs.getInt(6),
 					rs.getString(7));
 				list.add(dto);
+
 			}
 			return list;
 		} catch (Exception e) {System.out.println("출력되나"+e);}
