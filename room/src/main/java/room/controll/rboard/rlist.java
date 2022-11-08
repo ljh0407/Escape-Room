@@ -23,10 +23,9 @@ public class rlist extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("서블릿");
 		// 글리스트 출력 모든글
-		
 				// 페이징처리
 						request.setCharacterEncoding("UTF-8"); // 한글인코딩
-						int rno = Integer.parseInt(request.getParameter("rno")) ;
+						int rno = Integer.parseInt(request.getParameter("rno")) ;// ??????
 						System.out.println(rno);
 						// 검색처리
 						String key = request.getParameter("key");
@@ -63,7 +62,8 @@ public class rlist extends HttpServlet {
 						// 페이징에 필요한 정보를 담는 객체생성
 							JSONObject rboards = new JSONObject();
 				
-				ArrayList<RDTO> list = new rdao().getInstance().getrlist(startrow , listsize , key , keyword);	
+				ArrayList<RDTO> list = rdao.getInstance().getrlist(startrow , listsize , key , keyword);	
+				
 				// 변환
 				JSONArray array = new JSONArray();
 				for( int i = 0 ; i<list.size(); i++) {
