@@ -11,14 +11,14 @@
 	<%@include file="../../header.jsp" %>
 		
 	<div class="webbox">
-	<a href="write.jsp"> 글쓰기 </a>
+	<a href="rwrite.jsp"> 글쓰기 </a>
 		<!-- 모든글 출력 -->
 		<table class="rlisttable">
 				<tr>
 					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
 				</tr>
 			</table>
-				<button type="button">글목록</button>			
+				<button type="button" onclick="list()">글목록</button>			
 		
 		
 		
@@ -49,9 +49,9 @@
 		</div>
 		<div> <!-- 4.검색처리 -->
 			<select class="key">
-				<option value="r.btitle">제목</option>
-				<option value="r.content">내용</option>
-				<option value="r.mid">작성자</option>
+				<option value="r.rtitle">제목</option>
+				<option value="r.rcontent">내용</option>
+				<option value="r.mno">작성자</option>
 			</select>
 			
 			<input class="keyword" type="text" placeholder="검색어">

@@ -1,12 +1,12 @@
 
-
+/*
 let pageinfo = {
 	listsize : 3 , // 한페이지당 게시물 표시 개수
 	page : 1, 		// 현재페이지
 	key : '',		// 검색 키
 	keyword : ''	// 검색 키워드
 }
-
+*/
 
 getrlist()
 
@@ -64,10 +64,10 @@ function getrlist(page){
 						'</tr>';
 			}
 			document.querySelector('.rlisttable').innerHTML += html
-			
+			// 페이징 html 구성
 			let pagehtml = '';
 			// 이전 버튼
-				if(page <=1){pagehtml += '<button onclick="list('+(page)+')">이전</button>';}
+				if(page <= 1){pagehtml += '<button onclick="list('+(page)+')">이전</button>';}
 				else{ pagehtml += '<button onclick="list('+(page-1)+')">이전</button>'; }
 			// 4. 페이지번호 버튼 [ 시작버튼 ~ 마지막버튼 ]
 				for( let page = r.startbtn ; page<= r.endbtn ; page++ ){

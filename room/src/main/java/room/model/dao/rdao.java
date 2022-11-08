@@ -34,11 +34,12 @@ public class rdao extends Dao{
 	      if(!key.equals("") && !keyword.equals("") ) { // 검색이 있을경우 / 공백이 아닐경우
 	    	  sql = "select rb.* , r.mid "
 	    	  		+ "	 from room r , rboard rb "
-	    	  		+ "	 where r.mno = rb.mno and "+key+" like '%"+keyword+"%' "
+	    	  		+ "	 where r.mno = rb.mno and "+key+" like '%"+keyword+"%'"
 	    	  		+ "	 order by rb.rdate desc "
 	    	  		+ "	 limit "+startrow+" , "+listsize;     
 	      }else { // 검색이 없을경우
-	    	  sql = "select rb.* , r.mid from room r , rboard rb "
+	    	  sql = "select rb.* , r.mid "
+	    	  		  +" from room r , rboard rb "
 	    			  +" where r.mno = rb.mno "
 	    			  +" order by rb.rdate desc limit "+startrow+" , "+listsize;
 	      }
@@ -53,7 +54,7 @@ public class rdao extends Dao{
 	    				  rs.getString(5), rs.getString(6), 
 	    				  rs.getString(7),  rs.getInt(8),
 	    				  rs.getInt(9) ) ; 
-	    			list.add(dto); System.out.println(dto);
+	    			list.add(dto); System.out.println("다오 : "+list);
 	    			  }
 	    		 return list; 
 	      }catch (Exception e) {System.out.println(e);
