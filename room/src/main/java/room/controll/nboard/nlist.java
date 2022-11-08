@@ -34,10 +34,6 @@ public class nlist extends HttpServlet {
 		String key	=request.getParameter("key");
 		String keyword = request.getParameter("keyword");
 		
-		
-		
-		
-		
 		//주혁 
 		//1.요청 이 요청은 페이징처리 요청입니다
 		

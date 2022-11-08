@@ -42,7 +42,7 @@ function list(page){
 			let boardlist = boards.data
 			
 			console.log(boardlist)
-			let html = ""
+			let html = '<tr> <th width="5%"> 번호 </th> <th > 제목 </th> <th width="10%"> 작성자 </th> <th width="15%"> 작성일 </th> <th width="5%"> 조회수 </th> </tr>'
 			for(let i = 0; i < boardlist.length; i++){
 				let n = boardlist[i] // 보더리스트 n으로 변수값 바꿔줌 -주혁-
 				console.log(n)
@@ -64,18 +64,18 @@ function list(page){
 		
 			// - + 든 더이상 게시물이 없는데도 계속가기때문에 막아주는 코드 작성
 			// 2.이전버튼
-			if(page <= 1){pagehtml +='<button onclick="list('+(page)+')">이전</button>'}
-			else{pagehtml +='<button onclick="list('+(page-1)+')">이전</button>'}
+			if(page <= 1){pagehtml +='<li class="page-item"><button class="page-link" onclick="list('+(page)+')">이전</button><li>'}
+			else{pagehtml +='<li class="page-item"><button class="page-link" onclick="list('+(page-1)+')">이전</button><li>'}
 			
 	
 			//4. 페이지번호 버튼
 			for ( let page = boards.starbtn; page<=boards.endbtn ; page++){
-				pagehtml += '<button type="button" onclick="list('+page+')" >'+page+'</button>'
+				pagehtml += '<li class="page-item"><button class="page-link" type="button" onclick="list('+page+')" >'+page+'</button><li>'
 			}
 			// - + 든 더이상 게시물이 없는데도 계속가기때문에 막아주는 코드 작성
 			// 3.다음버튼
-			if(page >= boards.totalpage){pagehtml +='<button onclick="list('+(page)+')">다음</button>'}
-			else{pagehtml +='<button onclick="list('+(page+1)+')">다음</button>';}
+			if(page >= boards.totalpage){pagehtml +='<li class="page-item"><button class="page-link" onclick="list('+(page)+')">다음</button><li>'}
+			else{pagehtml +='<li class="page-item"><button class="page-link" onclick="list('+(page+1)+')">다음</button><li>';}
 		
 		document.querySelector('.pagebox').innerHTML = pagehtml	
 		 
