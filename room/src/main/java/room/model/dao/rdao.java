@@ -54,11 +54,12 @@ public class rdao extends Dao{
 	    				  rs.getString(5), rs.getString(6), 
 	    				  rs.getString(7),  rs.getInt(8),
 	    				  rs.getInt(9) ) ; 
-	    			list.add(dto); System.out.println("다오 : "+list);
+	    			list.add(dto); 
+	    			System.out.println("다오 : "+list);
 	    			  }
 	    		 return list; 
 	      }catch (Exception e) {System.out.println(e);
-	      return list; 
+	      return null; 
 	      }
 	     
 

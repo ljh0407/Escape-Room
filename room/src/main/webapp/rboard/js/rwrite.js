@@ -38,7 +38,7 @@ function setwrite(){   // 글쓰기 메소드 이종훈
 
 
 // 글 리스트
-
+/*
 function getrlist(page){
 	alert('dd')
 	pageinfo.page = page; 
@@ -85,7 +85,7 @@ function getrlist(page){
 		
 	})
 }
-		
+*/		
 						
 
 // 상세페이지 이동 함수

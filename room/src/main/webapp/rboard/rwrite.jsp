@@ -20,14 +20,14 @@
 				<button type="button" onclick="setwrite()">글등록</button>
 				
 			</form>
-			<!--  
+			 
 			<table class="rlisttable">
 				<tr>
 					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
 				</tr>
 			</table>
-				<button type="button">글목록</button>		
-				-->	
+				<button type="button"><a href="/room/rboard/rlist.jsp">  글목록</a></button>		
+					
 		</div>
 
 
