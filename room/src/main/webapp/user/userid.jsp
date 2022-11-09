@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>방탈출카페</title>
 
 		<!-- 사용자 정의 css 호출  -->
 		<link rel="stylesheet" href="/room/css/user/userid.css">

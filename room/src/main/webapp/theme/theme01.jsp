@@ -11,60 +11,41 @@
 <body>
 		<%@include file="../../header.jsp" %>
 		
-		<div class="theme01">	<!-- 전체 div -->
-			
-			<!-- <h4>[Theme01]</h4>
-			<div class="themeimg">
-					<div>
-						<img alt="" src="/room/img/Room1.jpg">
-					</div>
-			
-			
-				<div class="writing">
-					<h3> 설명란젓 </h3>
+		
+		<div class="passwordbox">
+				<div id="nav">
+					<ul>
+						<li><a href="/room/theme/theme01.jsp">액자</a></li>	
+						<li><a href="/room/theme/theme02.jsp">무도회</a></li>
+						<li><a href="/room/theme/theme03.jsp">504탈출</a></li>
+						<li><a href="/room/theme/theme04.jsp">비상탈출구</a></li>
+						<li><a href="/room/qboard/qlist.jsp">Questions</a></li>
+						<li><a href="/room/nboard/nlist.jsp">Notice</a></li>
+						<li><a href="/room/rboard/rwrite.jsp">review</a></li>
+					</ul>
+				</div> <!-- nav -->	
+				<h3 class="hdpassword">액자</h3> <br>
+					
 				
-				</div>
-			</div> -->
-			
-			<!-- <div class="left" >
-				<h3> < Room1 > </h3>
-					<img alt="" src="/room/img/Room1.jpg">
+				 	<div id="cont">
+						<img alt="" src="/room/img/Room1.jpg">
+						<p>액자 속 그림이 어디론가 사라지고  해질녘 쯤 누군가의 비명이 들리면서<br>
+							<span> "액자가 움직인다!" 라고 비명을 질렸다.</span> <br>
+							그 날 밤 탐정들은 액자에서 없어진 그림을 찾으러 어두운 방 속으로 들어가고 <br>
+							<span>그 안에 같혀버린 탐정들</span> <br>
+							 과연 그 방을 무사히 탈출 할 수 있을까 ?  <br>
+						</p>
+						<p>There will be no sound<br>
+							<span> "It is not liquid crystal!" to find the scream.</span> <br>
+							Find the bankrupt picture in the detective that night
+							<span>Just like it</span> <br>
+							Can you exceed that room? <br>
+						</p>
+					</div>
+					
 			</div>
-			<div class="right">
-				<h4>< 테마 소개 ></h4>
-					<p> 안녕하세요 여러분.  </p>
-					<p> 안녕하세요 여러분.  </p>
-					<p> 안녕하세요 여러분.  </p>
-			</div> -->
-			
-			<h4>첼시가 짱이야</h4>
-			<span>
-				<img alt="" src="/room/img/Room1.jpg">
-			</span>
-			<p class="example">
-			  스털링 오바메양 브로야 풀리식 지예흐.<br>
-			  ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ.<br>
-			  Vestibulum ac leo vitae metus faucibus gravida ac in neque.<br>
-			  Nullam est eros, suscipit sed dictum quis, accumsan a ligula.<br>
-			</p>
 			
 
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		</div>	<!--  div : END -->
-	
-	
-	
 		<%@include file="../../Footer.jsp" %> 
 </body>
 </html>
