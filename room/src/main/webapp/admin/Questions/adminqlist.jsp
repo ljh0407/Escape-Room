@@ -11,14 +11,14 @@
 	<%@include file="../../admin/dashboard.jsp" %>
 	
 	<div>
-		<table>
+		<table class="qtable">
 			<tr>
 				 <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>답변확인</th>
 			</tr>
 		</table>
 		<div> <a href="/room/admin/Questions/adminreply.jsp" >답변하기</a> </div>
 	</div>	
-	
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="/room/qboard/qjs/qlist.js"></script>
 	
 </body>

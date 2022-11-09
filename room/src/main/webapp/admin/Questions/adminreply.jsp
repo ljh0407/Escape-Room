@@ -23,6 +23,7 @@
 		</table>
 	</div>
 	
+	
 	<div> <a href="/room/admin/adminqlist.jsp">목록돌아가기</a> </div>
 	
 	<div class="replybox"> <!-- 고은시[11/01] 관리자만 댓글 수정중 -->
@@ -30,6 +31,7 @@
 		<button type="button" onclick="rwrite()">댓글작성</button>
 	</div>
 	
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="js/adminqreply.js"></script>
 	
 </body>

@@ -24,24 +24,15 @@ public class rlist extends HttpServlet {
 		
 		// 글리스트 출력 모든글
 				// 페이징처리
-<<<<<<< HEAD
-						request.setCharacterEncoding("UTF-8"); // 한글인코딩
-						int rno = Integer.parseInt(request.getParameter("rno")) ;// ??????
-						System.out.println(rno);
-						// 검색처리
-						String key = request.getParameter("key");
-						String keyword = request.getParameter("keyword");
-						System.out.println("키워드 : "+ key );
-						System.out.println("키워드 : "+ keyword );
-=======
 				request.setCharacterEncoding("UTF-8"); // 한글인코딩
->>>>>>> branch '1103jonghun' of https://github.com/ljh0407/escape-room
-						
+				int rno = Integer.parseInt(request.getParameter("rno")) ;// ??????
+				System.out.println(rno);
 				// 검색처리
 				String key = request.getParameter("key");
 				String keyword = request.getParameter("keyword");
-				System.out.println("키 : "+ key );
+				System.out.println("키워드 : "+ key );
 				System.out.println("키워드 : "+ keyword );
+				request.setCharacterEncoding("UTF-8"); // 한글인코딩
 						
 				// 페이지당 게시물수
 				int listsize = Integer.parseInt(request.getParameter("listsize") );
@@ -73,10 +64,7 @@ public class rlist extends HttpServlet {
 				JSONObject rboards = new JSONObject();
 				
 				ArrayList<RDTO> list = rdao.getInstance().getrlist(startrow , listsize , key , keyword);	
-<<<<<<< HEAD
-				
-=======
->>>>>>> branch '1103jonghun' of https://github.com/ljh0407/escape-room
+
 				// 변환
 				JSONArray array = new JSONArray();
 					for( int i = 0 ; i<list.size(); i++) {

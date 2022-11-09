@@ -34,10 +34,37 @@ public class qlist extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<QDTO> list = qDao.getIncetance().getlist();
+		//페이징처리[고은시 11/04]
+		request.setCharacterEncoding("UTF-8");
+		//요청
+		int listsize = Integer.parseInt(request.getParameter("listsize"));
 		
+		//전체페이지
+		int totalsize = qDao.getIncetance().gettotalsize();
+		
+		int totalpage = 0;
+		if(totalsize % listsize == 0) {totalpage = totalsize / listsize;}
+		else {totalpage = totalsize / listsize+1;}
+		
+		int page = Integer.parseInt(request.getParameter("page"));
+		
+		//페이지 시작 게시물번호
+		int startrow = (page-1)*listsize;
+		
+		//화면에 표시할 최대버튼 5칸
+		int btnsize = 5; 
+		//버튼 시작
+		int startbtn = ((page-1)/btnsize)*btnsize+1;
+		
+		//버튼 끝
+		int endbtn = startbtn+(btnsize-1);
+		if(endbtn > totalpage) {endbtn = totalpage;}
+		
+		//페이징처리에 필요한 정보담기
+		JSONObject boards = new JSONObject();
+		
+		ArrayList<QDTO> list = qDao.getIncetance().getlist(startrow,listsize);
 		JSONArray array = new JSONArray();
-		
 		for( int i = 0 ;i<list.size() ; i++ ) {
 			JSONObject object = new JSONObject();
 			object.put("bno", list.get(i).getBno() );
@@ -51,9 +78,14 @@ public class qlist extends HttpServlet {
 			object.put("mid", list.get(i).getMid() );
 			array.add(object);
 		}
+		boards.put("totalpage", totalpage);	//전체 페이지
+		boards.put("data", array);			//게시물 리스트
+		boards.put("startbtn", startbtn);	//버튼의 시작번호
+		boards.put("endbtn", endbtn);		//버튼의 끝 번호
+		boards.put("totalsize", totalsize);	//게시물 수
 		
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(array);		
+		response.getWriter().print(boards);
 	}
 
 	/**

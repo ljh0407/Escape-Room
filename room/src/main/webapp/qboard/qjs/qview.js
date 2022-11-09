@@ -20,6 +20,11 @@
 			document.querySelector('.reply').innerHTML = q.reply;
 			
 			//삭제고은시[11/02]완성 확인용코드 삭제
+			//파일추가[고은시 11/07]
+			if( q.bfile !== null ){	// null , undefined , 0 , false
+				let filelink = '<a href="../qboard/filedown?bfile='+q.bfile+'">'+q.bfile+'</a>'
+				document.querySelector('.bfile').innerHTML = filelink;
+			}
 			let btnbox = document.querySelector('.btnbox')
 			
 			if( q.btnaction == true ){
@@ -27,6 +32,9 @@
 				// 삭제 버튼 활성화
 				let deletebtn = '<button onclick="qdelete('+q.bno+')"> 삭제 </button>'
 				btnbox.innerHTML += deletebtn;
+				// 수정 버튼 활성화 [고은시 11/07 수정버튼]
+				let updatebtn = '<button><a href="/room/qboard/upload.jsp">수정</a></button>'
+				btnbox.innerHTML += updatebtn;
 			}
 		}
 	})

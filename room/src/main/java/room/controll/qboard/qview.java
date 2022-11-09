@@ -25,7 +25,6 @@ public class qview extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//고은시 새 서블릿(기존 서블릿 삭제)[10/28] 개별 글 조회
 		int bno = (Integer) request.getSession().getAttribute("bno") ;
-		System.out.println("ddd : " + bno );
 		//다오 처리
 		QDTO qdto = qDao.getIncetance().getqboard(bno);
 		
@@ -46,12 +45,10 @@ public class qview extends HttpServlet {
 		if(mid != null && mid.equals(qdto.getMid())) {
 			object.put("btnaction", true);
 		}
-		response.setCharacterEncoding(mid);
-		object.put("button", true);
+		
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
-		System.out.println("서블렛"+object);
 		
 	}
 	/////[고은시 11/02]아이디 세션저장//////////////////////////////////////////////////////////////////////////////////////////////////////////////

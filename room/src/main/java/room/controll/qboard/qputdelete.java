@@ -35,7 +35,7 @@ public class qputdelete extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 	
-	//////고은시[10/31]  삭제미완//////////
+	//////고은시[10/31]  삭제//////////
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//삭제요청
 		int bno = (Integer)request.getSession().getAttribute("bno");
