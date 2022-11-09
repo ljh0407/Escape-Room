@@ -1,8 +1,12 @@
 package room.model.dao;
 
+import java.util.ArrayList;
+
+import room.controll.rboard.rewrite;
 import room.model.dto.USERDTO;
 
 public class userDao extends Dao{
+	
 	private static userDao udao = new userDao();
 	public static userDao getInstance() {return udao;}
 	
@@ -103,4 +107,28 @@ public class userDao extends Dao{
 		} catch (Exception e) {System.out.println("회원번호 오류"+e);}
 			return 0;
 	}
+	
+	//8.유저출력 리스트
+	public ArrayList<USERDTO> userlist() {	
+		ArrayList<USERDTO> list = new ArrayList<>();	
+		String sql= "select * from room";
+		
+		try {
+			ps= con.prepareStatement(sql);
+			rs =ps.executeQuery();
+			while(rs.next()) {
+				USERDTO dto = new USERDTO(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), rs.getString(5));
+				list.add(dto);
+			}
+			return list;
+			
+		} 
+		catch (Exception e) {System.out.println("연결안대"+e);} return list;
+		
+	}
+	
+	
+	
+	
 }
