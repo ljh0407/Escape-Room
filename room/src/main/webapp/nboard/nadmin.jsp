@@ -30,17 +30,24 @@
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-		<%@include file="../header.jsp" %>
-			<div class= "webbox container">
+
+	<%@include file="../admin/dashboard.jsp" %>
+
+
+		<div class= "webbox container">
 			
-			<h1 class="box_title"> Notice </h1>
+			
+			<h3 class="box_title"> 목록 </h3>
 			
 			<table class="ntable table my-3" >		
 				
 			</table>	
-			
 			<nav aria-label="Page navigation example">
 			  <ul class=" pagebox pagination justify-content-center">
 			    <li class="page-item disabled">
@@ -68,13 +75,50 @@
 				</div>
 				<div class="col-md-1">
 					<button type="button" class="btn btn-dark form-control" onclick="bsearch()">검색</button>
+					
 				</div>
-				
+				<div class="webbox container"><a href="/room/nboard/nwrite.jsp">글쓰기</a></div>
 			</div>
-			</div>
+		</div>
+		
+		
+			<!--  수정 모달  -->
+			<!-- Button trigger modal -->
+			<button style="display: none;" type="button" class="updatemodalhtn btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 			
-		<script src="../nboard/njs/nlist.js"  type="text/javascript"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+			</button>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+	        	
+						<h2> 수정 </h2>
+							제목	<input type="text" name="ntitle" class="ntitle form-control" >
+							<div class="ncontent"></div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+			        <button type="button" class="btn btn-primary" onclick="nupdate()">수정하기</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+						
+	
 
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	
+	<script src="../nboard/njs/nadmin.js" type="text/javascript"></script>
+	
 </body>
 </html>

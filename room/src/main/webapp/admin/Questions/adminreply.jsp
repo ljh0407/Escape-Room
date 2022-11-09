@@ -8,14 +8,8 @@
 </head>
 <body>
 	
+	<%@include file="../../admin/dashboard.jsp" %>
 	
-	<%	
-		// 세션은 오브젝트로 들어가기때문에 형변환 필수
-		String mid = (String)session.getAttribute("mid");
-		if(mid == null || !mid.equals("admin")){
-			response.sendRedirect("/room/user/userlogin.jsp");
-		}
-	%>
 	
 	<div> <!-- 글조회 -->
 		<h3>글조회</h3>

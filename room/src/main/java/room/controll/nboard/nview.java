@@ -51,7 +51,7 @@ public class nview extends HttpServlet {
 		//응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
-		System.out.println("서브렛"+object);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

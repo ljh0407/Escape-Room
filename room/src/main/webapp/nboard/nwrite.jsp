@@ -10,9 +10,10 @@
 
 </head>
 <body>
-		<%@include file="../header.jsp" %>
+
+		<%@include file="../admin/dashboard.jsp" %>
 		
-	<div class="webbox">	
+		<div class="webbox container">	
 		<form>
 		<h2> 공지사항 </h2>
 			제목	<input type="text" name="ntitle" class="ntitle">

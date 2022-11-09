@@ -6,7 +6,6 @@
 nview() //  게시물 상세페이지가 열렸을때 실행되는 함수
 // 1. 해당 게시물 출력
 function nview(){
-	alert('asd')
 	$.ajax({
 		url :"/room/nview",
 		type : "get" , 
@@ -26,7 +25,7 @@ function nview(){
 		let deletebtn = '<button onclick="ndelete('+n.nno+')"> 삭제 </button>'	
 		btnbox.innerHTML += deletebtn;	
 		//수정버튼
-		let updatebtn = '<button><a href="../nboard/nupdate.jsp">수정</a></button>'	
+		let updatebtn = '<button onclick="nupdate('+n.nno+')><a href="../nboard/nupdate.jsp">수정</a></button>'	
 		btnbox.innerHTML += updatebtn;	
 		}
 	
@@ -34,17 +33,3 @@ function nview(){
 	})
 }
 
-// 2. 게시물 삭제 함수
-function ndelete(nno){
-	$.ajax({
-		url:"/room/ndelete",
-		data : {"nno":nno},
-		success : function(re){
-			if( re==='true'){
-				alert('글삭제 성공');
-				location.href="/room/nboard/nlist.jsp"
-			}
-			else{alert('글삭제 실패')}
-		}
-	})
-}
