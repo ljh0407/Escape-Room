@@ -12,7 +12,7 @@
 		
 </head>
 <body>
-	
+				
 	<!-- <img alt="" src="/room/img/로고.png"> 로고 늘까 말까 고민중 -->
 
 	<div class="webbox">	<!-- 웹 박스권 --> 
