@@ -23,19 +23,19 @@
 					<!-- div : poster -->
 		<br><br> 	<div class="poster" >
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/theme/theme01.jsp"> <img src="/room/img/Room1.jpg"/><span>room1</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme01.jsp"> <img src="/room/img/Room1.jpg"/><span>액자</span></a></div>
 						 </div>
 						  
 						 <div class="thumbex">    
-						   <div class="thumbnail"><a href="/room/nboard/nlist.jsp"><img src="/room/img/Room2.png"/><span>room2</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme02.jsp"><img src="/room/img/Room2.png"/><span>ball party</span></a></div>
 						 </div>
 						  
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/rboard/rwrite.jsp"><img src="/room/img/Room3.png"/><span>room3</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme03.jsp"><img src="/room/img/Room3.png"/><span>504탈출</span></a></div>
 						 </div>
 						 
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/rboard/rwrite.jsp"><img src="/room/img/Room4.jpg"/><span>room4</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme04.jsp"><img src="/room/img/Room4.jpg"/><span>비상탈출구</span></a></div>
 						 </div>
 						
 					</div>
