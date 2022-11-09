@@ -1,5 +1,10 @@
 
-
+	let pageinfo = { 	// js 객체선언
+			listsize : 3, 	// 한페이지당 게시물 표시개수
+			page : 1, 		// 현재페이지 
+			key : '', 		// 검색 키
+			keyword : '' 	// 검색 키워드
+	}
 // 전역변수
 
 
@@ -22,12 +27,7 @@ function rsearch(){
 // 1. 게시물 출력함수
 list(1) // 메소드 1첫페이지
 function list(page){
-		let pageinfo = { 	// js 객체선언
-			listsize : 3, 	// 한페이지당 게시물 표시개수
-			page : 1, 		// 현재페이지 
-			key : '', 		// 검색 키
-			keyword : '' 	// 검색 키워드
-	}
+	
 	
 	console.log(pageinfo)
 	
@@ -42,7 +42,9 @@ function list(page){
 			// object내 게시물리스트 먼저 호출
 			let boardlist = boards.data
 			
-			let html = '';
+			let html = '<tr>'+
+					'<th>게시글번호</th> <th>제목</th> <th>회원번호</th> <th>작성일</th>'+
+					   '</tr>';
 			// 반복문 boardlist 하나씩 꺼내기
 			for(let i = 0 ; i<boardlist.length ; i++){
 				// i 번째 객체 호출
@@ -54,7 +56,7 @@ function list(page){
 							'<td onclick="rviewload('+r.rno+')">'+r.rtitle+'</td>'+
 							'<td>'+r.mno+'</td>'+
 							'<td>'+r.rdate+'</td>'+
-							'<td>'+r.rview+'</td>'+
+							//'<td>'+r.rview+'</td>'+
 						'</tr>';
 				
 			}// for end

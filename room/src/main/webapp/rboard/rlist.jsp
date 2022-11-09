@@ -14,9 +14,11 @@
 	<a href="rwrite.jsp"> 글쓰기 </a>
 		<!-- 모든글 출력 -->
 		<table class="rlisttable">
+			<!--  
 				<tr>
-					<th>게시글번호</th> <th>제목</th> <th>작성일</th> <th>조회수</th> <th>회원번호</th>
+					<th>게시글번호</th> <th>제목</th> <th>회원번호</th> <th>작성일</th> 
 				</tr>
+				-->
 			</table>
 							
 		
