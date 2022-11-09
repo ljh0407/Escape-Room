@@ -26,7 +26,7 @@
 				</div> <!-- nav -->	
 				<h3 class="hdpassword">비상탈출구</h3> <br>
 					
-				
+				 
 				 	<div id="cont">
 						<img alt="" src="/room/img/Room4.jpg">
 						<p>누군가 건물에서 담배를 피워서 담배 불시가 제대로 꺼지지 않아서 불이 크게 번지고 있다 ..<br>

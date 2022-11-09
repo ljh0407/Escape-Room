@@ -26,7 +26,7 @@
 				</div> <!-- nav -->	
 				<h3 class="hdpassword">504탈출</h3> <br>
 					
-				
+				 
 				 	<div id="cont">
 						<img alt="" src="/room/img/Room3.png">
 						<p>어느 컴퓨터 학원 강의실 한 학생은 이 곳에서 탈출해서 집으로 가고 싶어한다.<br>

@@ -40,7 +40,7 @@
 							But a woman who was aware of this atrocity told them <br>
 							<span>They tell you this, but they don't listen..</span> <br>
 							Is their ballroom really...? <br>
-						</p>
+						</p> 
 					</div>
 					
 			</div>
