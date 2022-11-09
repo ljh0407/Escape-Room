@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.passwordbox{
+	background-color: #fafafa;
+	height: 800px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;	
+    font-size: 20px;
+    font-family: 'GongGothicMedium';	
+}
+
+
+.hdpassword{
+	font-family: 'GongGothicMedium';
+	font-size: 30px;
+	color: #525ddd;	
+	margin-bottom: 2%;
+}
+
+/*==============*/
+
+#cont img{
+	float: left;
+	margin: 0 15px 20px;
+	border-radius: 54px;
+	background: #c9c9c9;
+	box-shadow: -22px -22px 44px #525252, 22px 22px 44px #ffffff;
+	display: flex;
+	height: 400px;
+	/* position: absolute;
+    top: 30%;
+    left: 30%; */
+}
+#cont p{
+	line-height: 1.5em;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 10px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 42px 36px 2px #c9c9c9, -41px -41px 82px #ffffff;
+    
+}
+
+
+#cont span{
+	color: #525ddd;
+	font-weight: bold;
+}
+
+/*================*/
+
+
+#nav{
+	display: flex;	
+	justify-content: space-around;
+	margin: 0px 10px 30px 5px;
+	color: white;	
+	
+}
+
+#nav ul{
+	display: flex;
+	font-size: 13px;
+	align-items: center;
+}
+
+#nav li{
+	margin-left: 20px;
+}
+
+
+
