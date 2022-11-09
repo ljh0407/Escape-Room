@@ -29,17 +29,17 @@
 				
 				 	<div id="cont">
 						<img alt="" src="/room/img/Room4.jpg">
-						<p>액자 속 그림이 어디론가 사라지고  해질녘 쯤 누군가의 비명이 들리면서<br>
-							<span> "액자가 움직인다!" 라고 비명을 질렸다.</span> <br>
-							그 날 밤 탐정들은 액자에서 없어진 그림을 찾으러 어두운 방 속으로 들어가고 <br>
-							<span>그 안에 같혀버린 탐정들</span> <br>
-							 과연 그 방을 무사히 탈출 할 수 있을까 ?  <br>
+						<p>누군가 건물에서 담배를 피워서 담배 불시가 제대로 꺼지지 않아서 불이 크게 번지고 있다 ..<br>
+							<span> 사람들은 비상구로 탈출을 해야하는데 연기 때문에</span> <br>
+							탈출구가 보이지 않고 있다.. 빨리 대피를 해야하는 <br>
+							<span>긴박한 상황 .!!! </span> <br>
+							 빨리 비상구를 찾아 탈출 하세요 !!  <br>
 						</p>
-						<p>There will be no sound<br>
-							<span> "It is not liquid crystal!" to find the scream.</span> <br>
-							Find the bankrupt picture in the detective that night
-							<span>Just like it</span> <br>
-							Can you exceed that room? <br>
+						<p>Someone is smoking in the building and the cigarette is not extinguished properly, so the fire is spreading..<br>
+							<span>People have to escape through emergency exits because of the smoke</span> <br>
+							There is no way out. <br> You need to evacuate quickly.
+							<span>A dire situation .!!! </span> <br>
+							Find the emergency exit and escape!! <br>
 						</p>
 					</div>
 					

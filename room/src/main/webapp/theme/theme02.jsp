@@ -29,17 +29,17 @@
 				
 				 	<div id="cont">
 						<img alt="" src="/room/img/Room2.png">
-						<p>액자 속 그림이 어디론가 사라지고  해질녘 쯤 누군가의 비명이 들리면서<br>
-							<span> "액자가 움직인다!" 라고 비명을 질렸다.</span> <br>
-							그 날 밤 탐정들은 액자에서 없어진 그림을 찾으러 어두운 방 속으로 들어가고 <br>
-							<span>그 안에 같혀버린 탐정들</span> <br>
-							 과연 그 방을 무사히 탈출 할 수 있을까 ?  <br>
+						<p>18세기 어느 한 무도회장에서 이상한 분장을 한 여성이 나타난다.<br>
+							<span> 그 여성은 그들이 자신을 초대하지 않아.</span> <br>
+							하지만 이 만행 알고있던 한 여성은 그들에게  <br>
+							<span>이 소식을 알려주지만 그들은 듣지도 않는다 ..</span> <br>
+							 과연 그들의 무도회장은 ... ? <br>
 						</p>
-						<p>There will be no sound<br>
-							<span> "It is not liquid crystal!" to find the scream.</span> <br>
-							Find the bankrupt picture in the detective that night
-							<span>Just like it</span> <br>
-							Can you exceed that room? <br>
+						<p>A woman wearing a strange makeup appears in a ballroom in the 18th century.<br>
+							<span> The woman doesn't invite them.</span> <br>
+							But a woman who was aware of this atrocity told them <br>
+							<span>They tell you this, but they don't listen..</span> <br>
+							Is their ballroom really...? <br>
 						</p>
 					</div>
 					
