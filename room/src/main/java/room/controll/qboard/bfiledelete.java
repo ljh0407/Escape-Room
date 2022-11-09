@@ -51,7 +51,6 @@ public class bfiledelete extends HttpServlet {
 		//반환
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(result);
-		System.out.println("파일삭제 확인"+result);
 	}
 
 	/**
@@ -60,25 +59,18 @@ public class bfiledelete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//고은시수정[11/07]
 		String uploadpath = request.getSession().getServletContext().getRealPath("/qboard/qupload");
-		System.out.println("경로"+uploadpath);
 		//파일 저장및 용량 설정
 		MultipartRequest multi = new MultipartRequest(request,uploadpath,1024*1024*10,"UTF-8",new DefaultFileRenamePolicy());
-		System.out.println("멀티"+multi);
 		//수정요청
 		String btitle = multi.getParameter("btitle");
 		String bcontent = multi.getParameter("bcontent");
 		String bfile = multi.getFilesystemName("bfile");
-		System.out.println("요청"+btitle);
-		System.out.println("요청"+bcontent);
-		System.out.println("요청"+bfile);
 		
 		//수정게시물 번호호출
 		int bno = (Integer)request.getSession().getAttribute("bno");
-		System.out.println("호출"+bno);
 		
 		//수정되기전 게시물 정보 호출(다오에서 게시물 가져오기)
 		QDTO qdto = qDao.getIncetance().getqboard(bno);
-		System.out.println("수정전"+qdto);
 		
 		//기존첨부파일 변경 여부판단
 		boolean bfiledhange = true;
@@ -100,7 +92,6 @@ public class bfiledelete extends HttpServlet {
 		}
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(result);
-		System.out.println("완료"+result);
 	}
 	
 }

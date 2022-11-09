@@ -104,5 +104,18 @@ public class qDao extends Dao{
 		} catch (Exception e) {System.out.println("페이징 오류"+e);}
 			return 0;
 	}
+	//8.관리자 댓글달기 [고은시 11/09]
+	public boolean rwrite( String reply , int mno , int bno) {
+		String sql = " insert into Questions( reply , mno , bno ) values( ? , ? , ? )";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString( 1 , reply ); 
+			ps.setInt( 2 , mno ); 
+			ps.setInt( 3 , bno );
+			ps.executeUpdate(); 
+			return true;
+		} catch (Exception e) {System.out.println("관리자 댓글오류"+e);}
+			return false;
+	}
 	
 }

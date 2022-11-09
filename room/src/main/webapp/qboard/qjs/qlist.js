@@ -29,7 +29,7 @@ function blistsize(){
 			//object내 게시물리스트 먼저 호출
 			let boardlist = qboard.data
 			console.log( boardlist )
-			html = '<tr> <th width="5%"> 번호 </th> <th > 제목 </th> <th width="10%"> 작성자 </th> <th width="15%"> 작성일 </th> <th width="5%"> 조회수 </th> </tr>'
+			html = '<tr> <th width="5%"> 번호 </th> <th > 제목 </th> <th width="10%"> 작성자 </th> <th width="15%"> 작성일 </th> <th width="5%"> 답변상태 </th> <th width="5%"> 비고 </th> </tr>'
 			for(let i = 0 ; i < boardlist.length ; i++){
 				let q = boardlist[i]
 				 html += 
@@ -38,7 +38,8 @@ function blistsize(){
 						'<td onclick="viewload('+q.bno+')">'+q.btitle+'</td>'+ //게시글 제목
 						'<td>'+q.mid+'</td>'+ //게시글 작성자 아이디 
 						'<td>'+q.bdate+'</td>'+ //게시글 날짜
-						'<td>'+q.reply+'</td>'+ //댓글
+						'<td>'+q.reply+'</td>'+ // 답변상태
+						'<td><button onclick="replymodal('+q.bno+')">답변달기</button></td>'+ //댓글
 					'<tr>';
 			}
 			//테이블에 list담기[고은시 11/4]
@@ -83,3 +84,90 @@ function blistsize(){
 		}
 	})
 }
+
+//고은시 모달창띄우기[11/09]
+function replymodal(bno){ 
+	document.querySelector(".replybtn").click() // 해당 버튼을 강제클릭하는 이벤트 실행
+	//상세조회를 불러오면 댓글 등록이 안됨
+	$.ajax({
+      url : "/room/qview" , 
+      type : "post",
+      async : false ,   /* 동기식 */
+      data : { "bno" : bno },
+      success : function( re ){
+         console.log(re)
+      }
+   })
+	
+	$.ajax({
+		url : "/room/qview",
+		async : false ,	/* 동기식 */
+		success : function( re ){
+			let q = JSON.parse(re)
+			//고은시[11/02] 순서 수정
+			document.querySelector('.bno').innerHTML = q.bno;
+			document.querySelector('.btitle').innerHTML = q.btitle;
+			document.querySelector('.bcontent').innerHTML = q.bcontent;
+			document.querySelector('.mid').innerHTML = q.mid;
+			document.querySelector('.bfile').innerHTML = q.bfile;
+			document.querySelector('.reply').innerHTML = q.reply;
+			
+			//삭제고은시[11/02]완성 확인용코드 삭제
+			//파일추가[고은시 11/07]
+			if( q.bfile !== null ){	// null , undefined , 0 , false
+				let filelink = '<a href="../qboard/filedown?bfile='+q.bfile+'">'+q.bfile+'</a>'
+				document.querySelector('.bfile').innerHTML = filelink;
+			}
+	
+		}
+	})
+}
+
+function replywrite(){
+	let rcontent = document.querySelector(".reply").value;
+	$.ajax({
+		url : "/room/qrwrite" ,
+		data : {"rcontent" :  rcontent , "type" : "reply" } , 
+		type : "POST" , /* HTTP 메소드 : 1.GET방식=기본값 2. POST방식 */
+		success : function( re ){
+			 if( re == 1 ){
+				alert('댓글작성') // location.reload();
+			}else if( re == 0){
+				alert('로그인후 작성가능합니다.')
+				location.href='../member/login.jsp'
+			}else{
+				alert('댓글실패')
+			}
+		}
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

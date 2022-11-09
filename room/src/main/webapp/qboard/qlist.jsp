@@ -4,9 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 	<style type="text/css">
-	
 		.box_title{
 			font-family: 'yg-jalnan';
 			text-align: center;	/* 내용물 가운데 배치 */
@@ -17,16 +15,13 @@
 			padding-bottom: 1%;
 			font-family: 'GangwonEduPowerExtraBoldA';
 		}
-		
 		@font-face {
 		    font-family: 'GangwonEduPowerExtraBoldA';
 		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
-	
 	</style>
-	
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 </head>
@@ -37,16 +32,12 @@
 			
 			<h1 class="box_title">Questions</h1>
 			
-			<table class="qtable table my-3" >		
-				
-			</table>	
+			<table class="qtable table my-3" >	 </table>	
 			
 			 <a href="/room/qboard/qwrite.jsp"><button class="btn btn-dark">글쓰기</button></a> 
 			
 			<nav >
-			  <ul class=" pagebox pagination justify-content-center">
-			   	
-			  </ul>
+			  <ul class=" pagebox pagination justify-content-center"> </ul>
 			</nav>
 			
 			</div>
