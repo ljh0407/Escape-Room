@@ -13,16 +13,18 @@ public class rdao extends Dao{
 	
 	
 	  // 글등록
-	  public boolean setrwrite( String rtitle , String rcontent , String rfile , int mno ) {
-	      String sql = "insert into rboard( rtitle , rcontent , rfile , mno ) "
-	            + " values( ? , ? , ? , ? )";
+	  public boolean setrwrite( String rtitle , String rcontent , String rfile , String mid , int star , int mno) {
+	      String sql = "insert into rboard( rtitle , rcontent , rfile , mid , rscore , mno ) "
+	            + " values( ? , ? , ? , ? , ? , ? )";
 	      try {
 	         ps = con.prepareStatement(sql);
 	         ps.setString( 1 , rtitle );
 	         ps.setString( 2 , rcontent );
 	         ps.setString( 3 , rfile );
-	         ps.setInt(4, mno);
-	         ps.executeUpdate(); return true;
+	         ps.setString(4, mid);
+	         ps.setInt(5, star);
+	         ps.setInt(6, mno);
+	         ps.executeUpdate(); System.out.println("글등록dao : "+ sql ); return true;
 	      }catch (Exception e) { System.out.println(e); } return false;
 	   }
 	  
@@ -53,7 +55,7 @@ public class rdao extends Dao{
 	    				  rs.getString(3), rs.getInt(4),
 	    				  rs.getString(5), rs.getString(6), 
 	    				  rs.getString(7),  rs.getInt(8),
-	    				  rs.getInt(9) ) ; 
+	    				  rs.getInt(9) , rs.getString(10) ); 
 	    			list.add(dto); System.out.println("다오 : "+list);
 	    			  }
 	    		 return list; 
@@ -67,8 +69,7 @@ public class rdao extends Dao{
 	  // 게시글 상세보기
 	  public RDTO getrview(int rno) {
 		  String sql = "select rb.* , r.mid from room r , rboard rb where r.mno = rb.mno and rb.rno = "+rno;
-		  System.out.println("sql : "+sql);
-		  System.out.println("rno : "+rno);
+		  
 		  try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -78,7 +79,7 @@ public class rdao extends Dao{
 	    				rs.getString(3), rs.getInt(4),
 	    				rs.getString(5), rs.getString(6), 
 	    				rs.getString(7), rs.getInt(8),
-	    				rs.getInt(9) ) ; 
+	    				rs.getInt(9) , rs.getString(10)) ; 
 					return dto; 
 			}
 		} catch (Exception e) {System.out.println(e);}

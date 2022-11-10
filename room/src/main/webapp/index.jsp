@@ -10,6 +10,7 @@
 		 
 </head>
 <body>
+
 		<%@include file="header.jsp" %>
 		
 		<!-- <ul class="hd_menu">
@@ -58,7 +59,7 @@
 						 </div>
 						  
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/rboard/rwrite.jsp"><img src="/room/img/리뷰.jpg"/><span>review</span></a></div>
+						   <div class="thumbnail"><a href="/room/rboard/rlist.jsp"><img src="/room/img/리뷰.jpg"/><span>review</span></a></div>
 						 </div>
 					</div>
 					

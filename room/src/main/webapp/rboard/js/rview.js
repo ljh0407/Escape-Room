@@ -13,30 +13,24 @@ function rview(){
 			document.querySelector('.rtitle').innerHTML = rboard.rtitle;
 			document.querySelector('.rcontent').innerHTML = rboard.rcontent;
 			document.querySelector('.rscore').innerHTML = rboard.rscore;
-			document.querySelector('.rfile').innerHTML = rboard.rfile;
 			document.querySelector('.rdate').innerHTML = rboard.rdate;
-			document.querySelector('.rview').innerHTML = rboard.rview;
 			document.querySelector('.mno').innerHTML = rboard.mno;
-			
-			console.log( rboard.rfile )
+			document.querySelector('.rcomment').innerHTML = rboard.rcomment;
 			
 			if(rboard.rfile !== null ){
-				let filelink = '<a href="../rupload?rfile="'+rboard.rfile+'></a>'
-				console.log(filelink)
-				
-				document.querySelector('.rfile').innerHTML = filelink;
+				document.querySelector('.rfile').src = '/room/rboard/rupload/'+rboard.rfile;
 			}
 			
-			console.log(rboard.btnaction)
+			console.log("btn : "+rboard.btnaction)
 			let btnbox = document.querySelector('.btnbox')
-			console.log(btnbox)
+			console.log("btnbox : "+btnbox)
 			if(rboard.btnaction == true ){
-				
 				
 			}
 		}
 	})
 }
+			
 
 // 댓글작성
 function rewrite(){
@@ -49,6 +43,7 @@ function rewrite(){
 			console.log('댓글내용 : '+rcomment)
 			if(re == 'true'){
 				alert('댓글작성')
+				location.reload()
 				// relist()
 		//	}else if( re == 0 ){
 		//		alert('로그인 해주세요')
