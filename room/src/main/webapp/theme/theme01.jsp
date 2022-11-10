@@ -41,7 +41,7 @@
 							<span>Just like it</span> <br>
 							Can you exceed that room? <br>
 						</p>
-						<button>예약하기</button>
+						
 					</div>
 					
 			</div>
