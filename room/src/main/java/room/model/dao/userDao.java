@@ -128,7 +128,17 @@ public class userDao extends Dao{
 		
 	}
 	
-	
+
+	public boolean delete(int mno) {
+		String sql = "delete from room "
+				+ " where mno="+mno;
+		try {
+			ps = con.prepareStatement(sql);
+			int count = ps.executeUpdate();
+			if (count == 1) return true;
+		} catch (Exception e) {System.out.println(e);}
+		return false;
+	}
 	
 	
 }

@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-			<%@include file="../header.jsp" %>
+
+	
+		<%@include file="dashboard.jsp" %>
 			
 		<div class="webbox container">
 			
@@ -16,8 +18,8 @@
 					  <tr>
 					  <th> 번호 </th> <th> 이름 </th>  <th> 아이디 </th><th> 핸드폰번호 </th>
 					  </tr> 
+					 
 				</table>
-					
 		</div>
 			
 			<script  src="http://code.jquery.com/jquery-latest.min.js"></script>	

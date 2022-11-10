@@ -55,7 +55,7 @@ function list(page){
 							'<td>'+n.mid+'</td>'+  		//작성자
 							'<td>'+n.ndate+'</td>'+ 	// 작성일
 							'<td>'+n.nview+'</td>'+ 	// 조회수
-							'<td><button type="bytton" class="btn-dark" onclick="updatechoi('+n.nno+')" >수정</button><button class="btn-dark" onclick="ndelete('+n.nno+')" >삭제</button></td>'+
+							'<td><button type="button" class="btn-dark" onclick="updatechoi('+n.nno+')" >수정</button><button class="btn-dark" onclick="ndelete('+n.nno+')" >삭제</button></td>'+
 					'</tr>';
 			}
 		document.querySelector('.ntable').innerHTML = html
