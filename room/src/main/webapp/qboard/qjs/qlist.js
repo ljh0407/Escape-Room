@@ -87,6 +87,7 @@ function blistsize(){
 
 //고은시 모달창띄우기[11/09]
 function replymodal(bno){ 
+	alert('모달')
 	document.querySelector(".replybtn").click() // 해당 버튼을 강제클릭하는 이벤트 실행
 	//상세조회를 불러오면 댓글 등록이 안됨
 	$.ajax({
@@ -103,6 +104,7 @@ function replymodal(bno){
 		url : "/room/qview",
 		async : false ,	/* 동기식 */
 		success : function( re ){
+			alert('모달2')
 			let q = JSON.parse(re)
 			//고은시[11/02] 순서 수정
 			document.querySelector('.bno').innerHTML = q.bno;
@@ -111,7 +113,7 @@ function replymodal(bno){
 			document.querySelector('.mid').innerHTML = q.mid;
 			document.querySelector('.bfile').innerHTML = q.bfile;
 			document.querySelector('.reply').innerHTML = q.reply;
-			
+			console.log(reply)
 			//삭제고은시[11/02]완성 확인용코드 삭제
 			//파일추가[고은시 11/07]
 			if( q.bfile !== null ){	// null , undefined , 0 , false
@@ -122,19 +124,20 @@ function replymodal(bno){
 		}
 	})
 }
-
+//댓글작성[고은시 11/10]
 function replywrite(){
-	let rcontent = document.querySelector(".reply").value;
+	let rcontent = document.querySelector(".rcontent").value;
 	$.ajax({
 		url : "/room/qrwrite" ,
 		data : {"rcontent" :  rcontent , "type" : "reply" } , 
 		type : "POST" , /* HTTP 메소드 : 1.GET방식=기본값 2. POST방식 */
 		success : function( re ){
 			 if( re == 1 ){
-				alert('댓글작성') // location.reload();
-			}else if( re == 0){
+				alert('댓글작성')
+				location.reload();
+			}else if( re == 0){ 
 				alert('로그인후 작성가능합니다.')
-				location.href='../member/login.jsp'
+				location.href='/room/user/userlogin.jsp'
 			}else{
 				alert('댓글실패')
 			}

@@ -25,6 +25,7 @@
 			<li class="side_item"> <a onclick="pagechange('.jsp')">리뷰</a> </li>
 			<li class="side_item"> <a href = "/room/nboard/nadmin.jsp">공지사항</a> </li>
 			<li class="side_item"> <a href = "#">회원관리[회원 목록(탈퇴) ]</a> </li>
+			<li class="side_item"> <a href = "/room/header.jsp">홈페이지로 돌아가기</a> </li>
 			<li class="side_item"> <a href="/room/user/userlogout.jsp">로그아웃</a> </li>
 		</ul>
 	</div>	

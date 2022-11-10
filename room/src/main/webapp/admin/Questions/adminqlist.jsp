@@ -23,7 +23,6 @@
 		  <ul class=" pagebox pagination justify-content-center">
 		  </ul>
 		</nav>
-		<div> <a href="/room/admin/Questions/adminreply.jsp" >답변하기</a> </div>
 	</div>	
 
 	
@@ -47,14 +46,14 @@
 						<tr> <td> 번호	</td>	<td class="bno">		</td> </tr>
 						<tr> <td> 제목	</td>	<td class="btitle">		</td> </tr>
 						<tr> <td> 내용	</td>	<td class="bcontent">	</td> </tr>
-						<tr> <td> 작성자	</td>	<td class="mid">		<td> </tr>
-						<tr> <td> 파일	</td>	<td class="bfile">		<td> </tr>
-						<tr> <td> 댓글	</td>	<td class="reply">		<td> </tr>
+						<tr> <td> 작성자	</td>	<td class="mid">		</td> </tr>
+						<tr> <td> 파일	</td>	<td class="bfile">		</td> </tr>
+						<tr> <td> 댓글	</td>	<td class="reply">		</td> </tr>
 					</table>
 				</div>
 		      </div>
 		      <div class="modal-footer">
-		      	<textarea rows="" cols=""> </textarea>
+		      	<textarea rows="" cols="" class="rcontent"> </textarea>
 		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
 		        <button type="button" class="btn btn-primary" onclick="replywrite()">댓글작성</button>
 		      </div>

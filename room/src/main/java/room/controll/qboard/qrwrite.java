@@ -38,7 +38,9 @@ public class qrwrite extends HttpServlet {
 		//요청
 		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
-		String reply = request.getParameter("reply");
+		String rcontent = request.getParameter("rcontent");
+		System.out.println("요청1"+type);
+		System.out.println("요청2"+rcontent);
 		
 		String mid = (String)request.getSession().getAttribute("mid"); 
 	    int mno = userDao.getInstance().getMno(mid);
@@ -46,13 +48,15 @@ public class qrwrite extends HttpServlet {
 	    if( mno == 0) { response.getWriter().print(0); return; }
 	    
 	    int bno = (Integer)request.getSession().getAttribute("bno");
+	    System.out.println("번호"+bno);
 	    
 	    boolean result = false;
 		//디비처리
-		if(type.equals("reply")) {result = qDao.getIncetance().rwrite(reply , mno , bno);}
+		if(type.equals("reply")) {result = qDao.getIncetance().rwrite(rcontent , bno);}
 		//결과
 		if(result) {response.getWriter().print("1");}
 		else {response.getWriter().print("2");} // db오류
+		System.out.println("서블릿"+result);
 	}
 
 }
