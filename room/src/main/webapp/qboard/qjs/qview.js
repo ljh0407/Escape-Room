@@ -22,9 +22,10 @@
 			//삭제고은시[11/02]완성 확인용코드 삭제
 			//파일추가[고은시 11/07]
 			if( q.bfile !== null ){	// null , undefined , 0 , false
-				let filelink = '<a href="../qboard/filedown?bfile='+q.bfile+'">'+q.bfile+'</a>'
+				let filelink = '<a href="/room/qboard/qupload/'+q.bfile+'"download>'+q.bfile+'</a>'
 				document.querySelector('.bfile').innerHTML = filelink;
 			}
+			console.log( q.btnaction )
 			let btnbox = document.querySelector('.btnbox')
 			
 			if( q.btnaction == true ){

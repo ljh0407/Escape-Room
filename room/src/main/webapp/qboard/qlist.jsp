@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>사용자</title>
 <meta charset="UTF-8">
 	<style type="text/css">
 		.box_title{
@@ -28,20 +29,22 @@
 <body>
    <!-- 고은시 10/26 문의사항 목록 출력성공 -->
    <%@include file="../header.jsp" %>
+   
    <div class= "webbox container">
 			
-			<h1 class="box_title">Questions</h1>
+		<h1 class="box_title">Questions</h1>
 			
-			<table class="qtable table my-3" >	 </table>	
+		<table class="qtable table my-3" >	 </table>	
 			
-			 <a href="/room/qboard/qwrite.jsp"><button class="btn btn-dark">글쓰기</button></a> 
+			<a href="/room/qboard/qwrite.jsp"><button class="btn btn-dark">글쓰기</button></a> 
 			
 			<nav >
 			  <ul class=" pagebox pagination justify-content-center"> </ul>
 			</nav>
 			
-			</div>
-	   <script type="text/javascript" src="../qboard/qjs/qlist.js"></script>
+	</div>
+	
+	<script type="text/javascript" src="../qboard/qjs/qlist.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </body>
