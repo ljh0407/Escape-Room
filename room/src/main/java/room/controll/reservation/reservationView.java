@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.cj.conf.IntegerProperty;
 
+import room.model.dao.userDao;
+
 
 @WebServlet("/reservationView")
 public class reservationView extends HttpServlet {
@@ -23,10 +25,11 @@ public class reservationView extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String gname = request.getParameter("gname");
+		String gdate = request.getParameter("gdate");
+	
+		int mno = userDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
 		
-	
-	
-	
 	}
 
 	/**
