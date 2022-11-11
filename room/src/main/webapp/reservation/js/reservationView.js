@@ -14,7 +14,7 @@ function review(){
 		success: function(re){
 			if(re == 'true'){
 				alert('예약완료 현장결제')
-				location.href="/room/header.jsp"
+				location.href="/room/index.jsp"
 			}else{
 				alert('예약실패')
 			}

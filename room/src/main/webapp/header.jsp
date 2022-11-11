@@ -35,7 +35,7 @@
 		<%}else{//로그인 햇다 %>
 				<li> <%= loginid %>님 안녕하세요 </li>
 				<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>			<!-- 로그아웃 -->
-				
+				<li> <a href="/room/reservation/reservationView.jsp">예약하기</a> </li>
 		<% } %>
 					<!--  예약페이지 이동 주혁 -->
 				<!-- <li> <a href="/room/user/userid.jsp">find ID</a> </li>		아이디 찾기
