@@ -35,7 +35,7 @@
 						 </div>
 						 
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/theme/theme04.jsp"><img src="/room/img/Room4.jpg"/><span>비상탈출구</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme04.jsp"><img src="/room/img/Room4.jpg"/><span>비상탈출</span></a></div>
 						 </div>
 						
 					</div>

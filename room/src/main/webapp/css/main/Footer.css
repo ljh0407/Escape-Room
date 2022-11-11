@@ -1,14 +1,31 @@
 @charset "UTF-8";
 
-.Footer{
-	color: black;
-	height: 200px;
-	width: 80%;
-	margin: 0 auto;
+
+footer{
+	background:#ffffff;
+	text-align: center;
+	padding: 3rem;
 }
 
-.Footer i{
-	font-size: 25px;
+footer ul{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
 }
 
+footer li{
+	margin: 0 12px;
+}
 
+footr a{
+	color: #c7c3ba;
+}
+
+footer a:hover {
+	color: #c7c3ba;
+}
+
+footer small{
+	color: #c7c3ba;
+	font-size: .875rem;
+}

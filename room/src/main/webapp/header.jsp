@@ -22,7 +22,7 @@
 					<a href="/room/index.jsp">room escape</a>	
 				</span>	
 			</div>
-		<!-- 고은시[10/25] -->
+		<!-- 고은시[10/25] --> 
 		<% String loginid = (String)session.getAttribute("mid"); %>	
 		<ul class="hd_sub">	<!-- 상단메뉴 -->
 		<!-- 비로그인 메뉴 -->
@@ -46,7 +46,10 @@
 				<li class="three"> <a href="#">리뷰</a> </li>
 			</ul> -->	<!-- index로 이동 -->
 	</div>	<!-- webbox div end -->
-
+	<hr size="2px">
+	
+	
+	
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
