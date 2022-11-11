@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.cj.conf.IntegerProperty;
 
+import room.model.dao.reDao;
 import room.model.dao.userDao;
 
 
@@ -29,7 +30,13 @@ public class reservationView extends HttpServlet {
 		String gdate = request.getParameter("gdate");
 	
 		int mno = userDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
+		boolean result=
+				reDao.getIncetance().rewirte(gname,gdate,mno);
 		
+		//응답
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(result);
+				
 	}
 
 	/**

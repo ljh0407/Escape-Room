@@ -128,6 +128,7 @@ public class userDao extends Dao{
 		
 	}
 	
+	//관리자페이지 에서 회원 삭제
 
 	public boolean delete(int mno) {
 		String sql = "delete from room "
