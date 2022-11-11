@@ -22,8 +22,7 @@ function rsearch(){
 	
 	pageinfo.key = document.querySelector('.key').value
 	pageinfo.keyword = document.querySelector('.keyword').value
-	console.log(pageinfo.key)
-	console.log(pageinfo.keyword)
+	
 	list(1)
 	
 }
@@ -112,9 +111,9 @@ function rviewload(rno){
 }
 
 
+
 //이종훈 모달창띄우기[11/09]
 function replymodal(bno){ 
-   alert('모달')
    document.querySelector(".replybtn").click() // 해당 버튼을 강제클릭하는 이벤트 실행
    //상세보기
    $.ajax({
@@ -131,15 +130,13 @@ function replymodal(bno){
       url : "/room/rboard/rview",
       async : false ,   /* 동기식 */
       success : function( re ){
-         alert('모달2')
-         let q = JSON.parse(re)
-         //고은시[11/02] 순서 수정
-         document.querySelector('.rno').innerHTML = q.bno;
-         document.querySelector('.rtitle').innerHTML = q.btitle;
-         document.querySelector('.rcontent').innerHTML = q.bcontent;
-         document.querySelector('.mid').innerHTML = q.mid;
-         document.querySelector('.rfile').innerHTML = q.bfile;
-         document.querySelector('.rcomment').innerHTML = q.reply;
+         let r = JSON.parse(re)
+         document.querySelector('.rno').innerHTML = r.bno;
+         document.querySelector('.rtitle').innerHTML = r.btitle;
+         document.querySelector('.rcontent').innerHTML = r.bcontent;
+         document.querySelector('.mid').innerHTML = r.mid;
+         document.querySelector('.rfile').innerHTML = r.bfile;
+         document.querySelector('.rcomment').innerHTML = r.reply;
          console.log(reply)
       }
    })

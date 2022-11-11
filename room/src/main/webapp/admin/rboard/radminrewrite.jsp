@@ -13,9 +13,9 @@
    <%@include file="../../admin/dashboard.jsp" %>
    
    <div>
-      <table class="rtable">
+      <table class="rtable table">
          <tr>
-             <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>답변확인</th> 
+             <th>번호</th> <th>제목</th> <th>아이디</th> <th>작성일</th> <th>댓글달기</th> 
          </tr>
       </table>
       
@@ -27,8 +27,8 @@
 
    
       <!-- Button trigger modal -->
-      <button style="display: none;" type="button" class="replybtn btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Launch static backdrop modal
+      <button type="button" class="replybtn btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+       수정
       </button>
       
       <!-- Modal -->
@@ -53,17 +53,30 @@
             </div>
             </div>
             <div class="modal-footer">
-               <textarea rows="" cols="" class="rcontent"> </textarea>
+               <textarea rows="" cols="" class="rcomment"> </textarea>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
               <button type="button" class="btn btn-primary" onclick="replywrite()" id="replybox">댓글작성</button>
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- 5.게시물 표시 개수 -->
+		<div> 게시물 수 : <span class="totalsize"></span> </div>
+		<!-- 6.화면에 표시할 게시물 수 -->
+		<div>
+			<select class="listsize" onchange="rlistsize()">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+			</select>
+		
+		</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-   <script type="text/javascript" src="/room/rboard/js/rlist.js"></script>
+   <script type="text/javascript" src="../rboard/js/adminrlist.js"></script>
    
 </body>
 </html>

@@ -24,7 +24,8 @@ public class rdao extends Dao{
 	         ps.setString(4, mid);
 	         ps.setInt(5, star);
 	         ps.setInt(6, mno);
-	         ps.executeUpdate(); System.out.println("글등록dao : "+ sql ); return true;
+	         ps.executeUpdate(); 
+	         return true;
 	      }catch (Exception e) { System.out.println(e); } return false;
 	   }
 	  
@@ -56,7 +57,7 @@ public class rdao extends Dao{
 	    				  rs.getString(5), rs.getString(6), 
 	    				  rs.getString(7),  rs.getInt(8),
 	    				  rs.getInt(9) , rs.getString(10) ); 
-	    			list.add(dto); System.out.println("다오 : "+list);
+	    			list.add(dto); 
 	    			  }
 	    		 return list; 
 	      }catch (Exception e) {System.out.println(e);
@@ -103,12 +104,14 @@ public class rdao extends Dao{
 	  
 	  // 댓글작성 
 	  public boolean rewrite(String rcomment , int rno ) {
-		 String sql = "update rboard set rcomment = ? where rno = ? ";
+		 String sql = " update rboard set rcomment = ? where rno = ? ";
 		  try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, rcomment);
 			ps.setInt(2, rno );
-			ps.executeUpdate(); return true;
+			ps.executeUpdate(); 
+			System.out.println("다오댓글 : "+rcomment); 
+			return true; 
 		} catch (Exception e) {System.out.println(e);} return false;
 	  }
 	  

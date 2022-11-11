@@ -22,7 +22,6 @@ public class rview extends HttpServlet {
 		
 		// 세션 요청
 	int rno = (Integer)request.getSession().getAttribute("rno");
-	System.out.println("서블릿"+rno);
 	// db 처리
 	RDTO dto = 
 			rdao.getInstance().getrview(rno);
