@@ -9,9 +9,7 @@ create table room(
     mpw varchar(20),
     mphone varchar(15)
 );
-
 select * from room;
-delete from room where mid = 'qweqweqwe';
 
 
 drop table if exists rboard;
@@ -28,21 +26,19 @@ create table rboard(
 	constraint rno_pk primary key (rno),
     constraint rmno_fk foreign key (mno) references room(mno) on update cascade on delete cascade
 );
-
 select * from rboard;
 
 
 drop table if exists Questions;
-
 create table Questions(
-   bno int auto_increment primary key ,
+    bno int auto_increment primary key ,
     btitle varchar(100) ,
     bcontent varchar(100) ,
     bfile longtext, -- 첨부파일
     bdate datetime default now(),
     reply varchar(1000), -- 댓글
     mno int not null,
-    constraint mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade   -- 회원 탈퇴시 
+    constraint mno_fk foreign key (mno) references room (mno) on update cascade on delete cascade   -- 회원 탈퇴시 
 );
 
 
@@ -56,8 +52,8 @@ create table notice(
     mno int not null,
     constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
+select * from notice;
 
-use room;
 drop table if exists reservation;
 create table reservation(
 	gno int auto_increment primary key,
@@ -66,20 +62,4 @@ create table reservation(
     mno int,
 	constraint reservation_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
-
-
-
-select * from notice;
-
-select notice.* , room.mid from notice , room  where notice.mno = room.mno order by notice.ndate desc limit startrow , listsize;
-
-select count(*) from notice;
-
-select * from notice limit 0,3;
-select * from notice order by ndate desc;
---
-select * from notice order by ndate desc limit  0 , 3;
-
-select notice.* , room.mid from notice , room where notice.mno = room.mno order by notice.ndate desc;
-
-
+select * from reservation;

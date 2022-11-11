@@ -11,11 +11,12 @@ public class RDTO {
     private String rdate;
     private int rview ;
     private int mno ;
+    private String mid;
     
     public RDTO() {}
 
 	public RDTO(int rno, String rtitle, String rcontent, int rscore, String rfile, String rcomment, String rdate,
-			int rview, int mno) {
+			int rview, int mno, String mid) {
 		super();
 		this.rno = rno;
 		this.rtitle = rtitle;
@@ -26,6 +27,7 @@ public class RDTO {
 		this.rdate = rdate;
 		this.rview = rview;
 		this.mno = mno;
+		this.mid = mid;
 	}
 
 	public int getRno() {
@@ -100,11 +102,21 @@ public class RDTO {
 		this.mno = mno;
 	}
 
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+
 	@Override
 	public String toString() {
 		return "RDTO [rno=" + rno + ", rtitle=" + rtitle + ", rcontent=" + rcontent + ", rscore=" + rscore + ", rfile="
-				+ rfile + ", rcomment=" + rcomment + ", rdate=" + rdate + ", rview=" + rview + ", mno=" + mno + "]";
+				+ rfile + ", rcomment=" + rcomment + ", rdate=" + rdate + ", rview=" + rview + ", mno=" + mno + ", mid="
+				+ mid + "]";
 	}
+
 	
     
     

@@ -36,7 +36,10 @@ public class rwrite extends HttpServlet {
 		
 		String rtitle = multi.getParameter("rtitle"); 
 		String rcontent = multi.getParameter("rcontent"); 
-		String rfile = multi.getParameter("rfile"); 	
+		int star = Integer.parseInt( multi.getParameter("star") ); 
+		
+		
+		String rfile = multi.getFilesystemName("rfile"); // 첨부파일만 다름.~~~ 	
 		//로그인 성공한 아이디 [세션] 호출
 		//String mid = (String)request.getAttribute("mid"); 
 		// 일단 세션 호출 하실때
@@ -44,7 +47,7 @@ public class rwrite extends HttpServlet {
 		
 		int mno = userDao.getInstance().getMno(mid); 
 		
-		boolean result = rdao.getInstance().setrwrite(rtitle, rcontent, rfile , mno);
+		boolean result = rdao.getInstance().setrwrite(rtitle, rcontent, rfile , mid , star ,mno );
 		
 		response.getWriter().print(result);
 	

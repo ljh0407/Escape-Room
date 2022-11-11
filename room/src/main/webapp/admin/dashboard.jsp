@@ -22,7 +22,7 @@
 		<h1>관리자메뉴</h1>
 		<ul class="side_menu"> 
 			<li class="side_item"> <a href="/room/admin/Questions/adminqlist.jsp">문의사항</a> </li>
-			<li class="side_item"> <a onclick="pagechange('.jsp')">리뷰</a> </li>
+			<li class="side_item"> <a href="/room/admin/adminrewrite.jsp">리뷰</a> </li>
 			<li class="side_item"> <a href = "/room/nboard/nadmin.jsp">공지사항</a> </li>
 			<li class="side_item"> <a href = "/room/admin/userlist.jsp">회원관리[회원 목록(탈퇴) ]</a> </li>
 			<li class="side_item"> <a href="/room/user/userlogout.jsp">로그아웃</a> </li>
