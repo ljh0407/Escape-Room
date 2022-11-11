@@ -53,6 +53,7 @@ public class qrwrite extends HttpServlet {
 	    boolean result = false;
 		//디비처리
 		if(type.equals("reply")) {result = qDao.getIncetance().rwrite(rcontent , bno);}
+
 		//결과
 		if(result) {response.getWriter().print("1");}
 		else {response.getWriter().print("2");} // db오류

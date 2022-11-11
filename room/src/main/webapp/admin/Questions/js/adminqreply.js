@@ -16,7 +16,7 @@ function rwrite(){
 				rlist()
 			}else if( re == 0){
 				alert('로그인후 작성가능합니다.')
-				location.href='../member/login.jsp'
+				location.href='/room/user/userlogin.jsp'
 			}else{
 				alert('댓글실패')
 			}
