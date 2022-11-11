@@ -17,7 +17,7 @@
 			<option>테마4</option>
 		</select>
 			날짜: <input class="gdate" type="datetime-local">
-			<button class="review()">예약하기</button>
+			<button onclick="review()">예약하기</button>
 		</div>
 		
 		
