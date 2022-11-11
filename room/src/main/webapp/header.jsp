@@ -35,8 +35,11 @@
 				<li> <%= loginid %>님 안녕하세요 </li>
 				<li> <a href="/room/header.jsp">Log out</a> </li>			<!-- 로그아웃 -->
 		<% } %>
-				<li> <a href="/room/user/userid.jsp">find ID</a> </li>		<!-- 아이디 찾기 -->
-				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	<!-- 비밀번호 찾기 -->
+		
+		
+				<!-- <li> <a href="/room/user/userid.jsp">find ID</a> </li>		아이디 찾기
+				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	비밀번호 찾기 -->	<!-- 로그인 페이지로 이동 -->
+				
 			</ul>	<!-- 상단메뉴 끝 -->
 			
 		</div>	<!-- 상단 헤더 div end -->

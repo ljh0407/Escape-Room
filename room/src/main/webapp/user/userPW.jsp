@@ -18,7 +18,11 @@
 		user ID <input class="passw" type="text" id="mid" placeholder="Please enter your ID"> <br>
 		phone number <input class="passw" type="text" id="mphone" placeholder="Please phone number ?">
 		<div id="findPW"></div> <!-- 결과메세지 -->
-		<br><button type="button" onclick="finepw()">let's go find !</button>
+		<br><button type="button" onclick="finepw()">let's go find !</button> <br>
+			<div class="singup_btn">
+						<button class="find_btn1" type="button" onclick="formsubmit()"><a href="/room/user/userid.jsp">아이디 찾기</button> 	<!-- 아이디 찾기 -->
+						<button class="find_btn1" type="reset"><a href="/room/user/userlogin.jsp">로그인</button> 	<!-- 로그인 페이진 -->
+			</div>	
 	</div>
 	
 	

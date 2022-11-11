@@ -17,8 +17,11 @@
 		user name <input class="find" type="text" id="mname"  placeholder="What's your name?"> <br>
 		phone number<input class="find" type="text" id="mphone" placeholder="Please phone number ?">
 		<div id="findID"></div>  
-		<br> <button type="button" onclick="IDfind()">let's go find !</button>
-		
+		<br> <button type="button" onclick="IDfind()">let's go find !</button> <br>
+			<div class="singup_btn">
+						<button class="find_btn1" type="button" onclick="formsubmit()"><a href="/room/user/userPW.jsp">비밀번호 찾기</button> 	<!-- 비밀번호 찾기 -->
+						<button class="find_btn1" type="reset"><a href="/room/user/userlogin.jsp">login</button> 	<!-- 로그인 -->
+			</div>	
 	</div>
 	
 	

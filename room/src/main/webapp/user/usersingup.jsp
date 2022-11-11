@@ -33,7 +33,7 @@
 						운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.</textarea> <br>
 						<input id="confirm1" type="checkbox"> <span>[필수] 이용약관 동의</span> <br>
 						<br>
-						<textarea readonly="readonly">개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 
+						<textarea readonly="readonly">개인정보보호법에 따라 room escape 에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 
 						동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.</textarea> <br>
 						
 						<input id="confirm2" type="checkbox">  <span>[필수] 개인정보 수집 동의</span>
