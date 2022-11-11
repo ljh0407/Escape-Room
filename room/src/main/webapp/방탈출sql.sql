@@ -11,6 +11,8 @@ create table room(
 );
 
 select * from room;
+delete from room where mid = 'qweqweqwe';
+
 
 drop table if exists rboard;
 create table rboard(
@@ -24,7 +26,7 @@ create table rboard(
     rview int,								-- 조회수
     mno int, 								-- 회원번호
 	constraint rno_pk primary key (rno),
-    constraint rmno_fk foreign key (mno) references room(mno) on update cascade
+    constraint rmno_fk foreign key (mno) references room(mno) on update cascade on delete cascade
 );
 
 select * from rboard;
@@ -33,7 +35,7 @@ select * from rboard;
 drop table if exists Questions;
 
 create table Questions(
-   	bno int auto_increment primary key ,
+   bno int auto_increment primary key ,
     btitle varchar(100) ,
     bcontent varchar(100) ,
     bfile longtext, -- 첨부파일
@@ -44,7 +46,7 @@ create table Questions(
 );
 
 
-
+drop table if exists notice;
 create table notice(
    nno int auto_increment primary key,
     ntitle      varchar(1000) NOT NULL,       -- 제목
@@ -55,20 +57,29 @@ create table notice(
     constraint notice_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
 
-select * from notice;
-
-create table admin(
-    replyno int auto_increment not null,
-    reply text not null,
-    bno int not null,
-    rno int not null,
-    constraint replyno_pk primary key ( replyno ),
-    constraint bno_fk1 foreign key ( bno ) references Questions( bno ) ,
-    constraint rno_fk1 foreign key ( rno ) references rboard( rno )
+use room;
+drop table if exists reservation;
+create table reservation(
+	gno int auto_increment primary key,
+    gname  varchar(100),
+    gdate 	datetime,
+    mno int,
+	constraint reservation_mno_fk foreign key (mno) references room(mno) on update cascade on delete cascade 
 );
 
-select * from admin;
 
 
-select count(*) from room m , rboard rb where r.mno = rb.mno and "+key+" like '%"+keyword+"%'; -- 게시물 검색 할때 쓰는 문법
+select * from notice;
+
+select notice.* , room.mid from notice , room  where notice.mno = room.mno order by notice.ndate desc limit startrow , listsize;
+
+select count(*) from notice;
+
+select * from notice limit 0,3;
+select * from notice order by ndate desc;
+--
+select * from notice order by ndate desc limit  0 , 3;
+
+select notice.* , room.mid from notice , room where notice.mno = room.mno order by notice.ndate desc;
+
 
