@@ -11,19 +11,23 @@
 		<script src="https://kit.fontawesome.com/274b11aa35.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<hr size="3px">	
+		<footer>
+			<ul class="footer_nav">
+				<li><a href="https://twitter.com/">Twitter</a></li>
+				<li><a href="https://www.youtube.com/">YouTube</a></li>
+				<li><a href="https://www.instagram.com/">Instagram</a></li>
+				<li><a href="https://www.facebook.com/">FaceBook</a></li>
+			</ul>
+			<p><small>문의전화 : 010-1234-5678 </small></p>
+			<p><small>계좌이체 : 국민 999999-00-999999 </small></p>
+			<p><small>자세한 설명은 전화로 주세요</small></p>
+			<p><small>ⓒ room escape </small></p>
+			
+		</footer>
 		
-		<hr size="2px">
-		<div class="Footer">
-			<p style="text-align:left; ">문의전화 : 010-9999-9999</p> 
-			<p style="text-align:left; ">오시는길 : 경기도 안산시 단원구 강우빌딩 5층</p> 
-			<p style="text-align:left; ">등등 더 추가하기 </p> 
-			<!-- font Awesome  -->
-			<i class="fa-brands fa-instagram"></i>
-			<i class="fa-brands fa-twitter"></i>
-			<i class="fa-brands fa-facebook"></i>
-		</div>	
 		
-		
+	
 			
 </body>
 </html>

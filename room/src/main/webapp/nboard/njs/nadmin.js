@@ -110,7 +110,7 @@ function ndelete(nno){
 		success : function(re){
 			if( re==='true'){
 				alert('글삭제 성공');
-				location.href='/room/nboard/nadmin.jsp'
+				location.href='/room/admin/dashboard.jsp.jsp'
 			}
 			else{alert('글삭제 실패')}
 		}
@@ -170,7 +170,7 @@ function nupdate(){
 		success:function(re){
 			
 			if( re == 'true'){alert('수정성공');
-			location.href='/room/nboard/nadmin.jsp'}
+			location.href='/room/admin/dashboard.jsp.jsp'}
 			else{alert('수정실패')}
 		}
 		

@@ -8,10 +8,7 @@
 </head>
 <body>
 	
-	<%@include file="../../admin/dashboard.jsp" %>
-	
-	
-	<div> <!-- 글조회 -->
+	<div  class="container"> <!-- 글조회 -->
 		<h3>글조회</h3>
 		<table>
 			<tr> <td> 번호	</td>	<td class="bno">		</td> </tr>

@@ -11,8 +11,6 @@
 </head>
 <body>
 
-		<%@include file="../admin/dashboard.jsp" %>
-		
 		<div class="webbox container">	
 		<form>
 		<h2> 공지사항 </h2>

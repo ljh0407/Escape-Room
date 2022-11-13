@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 		<!-- 사용자 정의 css 호출  -->
 		<link rel="stylesheet" href="/room/css/user/userlogin.css">
+		
 </head>
 <body>
 	
@@ -18,7 +19,11 @@
 			<div class="idbox">
 				ID	<input class="mloginbox" type="text" id="mid" placeholder="Please enter your ID"><br>
 				Password <input class="mloginbox" type="password" id="mpw" placeholder="Please enter a password"> <br>
-				<input class="loginbutton" type="submit" onclick="login()" value="Login">
+				<input class="loginbutton" type="submit" onclick="login()" value="Login">	<br>
+				<div class="singup_btn">
+						<button class="find_btn1" type="button" onclick="formsubmit()"><a href="/room/user/userid.jsp">find ID</button> 	<!-- 아이디 찾기 -->
+						<button class="find_btn1" type="reset"><a href="/room/user/userPW.jsp">Forgot your password</button> 	<!-- 비밀번호 찾기 -->
+				</div>	
 			</div>
 		<div id="loginbox"></div> <!-- 결과 메세지  -->
 	</div>	

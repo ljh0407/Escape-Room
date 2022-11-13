@@ -10,7 +10,6 @@
 		 
 </head>
 <body>
-
 		<%@include file="header.jsp" %>
 		
 		<!-- <ul class="hd_menu">
@@ -20,7 +19,7 @@
 				
 		</ul> -->	<!-- 아래로 코드 변경 이상 무 -->
 		
-			<div class="hd_menu">
+			<div class="hd_menu">	
 					<!-- div : poster -->
 		<br><br> 	<div class="poster" >
 						 <div class="thumbex">
@@ -36,9 +35,8 @@
 						 </div>
 						 
 						 <div class="thumbex">
-						   <div class="thumbnail"><a href="/room/theme/theme04.jsp"><img src="/room/img/Room4.jpg"/><span>비상탈출구</span></a></div>
+						   <div class="thumbnail"><a href="/room/theme/theme04.jsp"><img src="/room/img/Room4.jpg"/><span>비상탈출</span></a></div>
 						 </div>
-						
 					</div>
 					
 					

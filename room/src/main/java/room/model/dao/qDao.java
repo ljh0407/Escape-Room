@@ -2,6 +2,8 @@ package room.model.dao;
 
 import java.util.ArrayList;
 
+import org.json.simple.JSONArray;
+
 import room.model.dto.QDTO;
 
 public class qDao extends Dao{
@@ -24,6 +26,9 @@ public class qDao extends Dao{
 	}
 	//2.문의사항list 고은시 [11/04] 페이징 추가(고은시 11/08 sql문 수정)
 	public ArrayList<QDTO> getlist(int startrow , int listsize){
+		System.out.println( startrow );
+		System.out.println( listsize);
+		
 		ArrayList<QDTO> list = new ArrayList<>();
 		String sql = "select Questions.* , room.mid from Questions , room where Questions.mno = room.mno order by Questions.bdate desc limit "+startrow+" , "+listsize;
 		try {
@@ -34,10 +39,11 @@ public class qDao extends Dao{
 						rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getString(4), 
 						rs.getString(5), rs.getString(6), 
-						rs.getInt(7), rs.getInt(8), rs.getString(9));
+						0, rs.getInt(7), rs.getString(8));
 				list.add(qdto);
 			}
 		}catch (Exception e) {System.out.println(e);}
+		System.out.println( list.toString() );
 		return list;
 	}
 	//3.고은시[10/28] 개별글조회(11/01 dto수정해서 필드 수정)
@@ -48,9 +54,10 @@ public class qDao extends Dao{
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				QDTO qdto = new QDTO(
-						rs.getInt(1), rs.getString(2), rs.getString(3),
-						rs.getString(4), rs.getString(5), rs.getString(6),
-						rs.getInt(7),  rs.getInt( 8 ) ,rs.getString(9));
+						rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), 
+						rs.getString(5), rs.getString(6), 
+						0, rs.getInt(7), rs.getString(8));
 				return qdto;
 			}
 		} catch (Exception e) {System.out.println("글조회"+e);}
@@ -103,6 +110,18 @@ public class qDao extends Dao{
 			if(rs.next()) {return rs.getInt(1);}
 		} catch (Exception e) {System.out.println("페이징 오류"+e);}
 			return 0;
+	}
+	//8.관리자 댓글달기 [고은시 11/10]
+	public boolean rwrite( String reply , int bno) {
+		String sql = " update Questions set reply = ? where bno = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString( 1 , reply ); 
+			ps.setInt( 2 , bno );
+			ps.executeUpdate(); 
+			return true;
+		} catch (Exception e) {System.out.println("관리자 댓글오류"+e);}
+			return false;
 	}
 	
 }

@@ -32,28 +32,7 @@ function rview(){
 }
 			
 
-// 댓글작성
-function rewrite(){
-	let rcomment = document.querySelector('.rcomment').value;
-	$.ajax({
-		url : '/room/rboard/rewrite',
-		data : {"rcomment" : rcomment },
-		type : "post",
-		success : function(re){
-			console.log('댓글내용 : '+rcomment)
-			if(re == 'true'){
-				alert('댓글작성')
-				location.reload()
-				// relist()
-		//	}else if( re == 0 ){
-		//		alert('로그인 해주세요')
-		//		location.href='../../user/serlogin.jsp'
-			}else{
-				alert('작성실패')
-			}
-		}
-	})
-}
+
 
 // 4. 댓글출력	
 function relist(){

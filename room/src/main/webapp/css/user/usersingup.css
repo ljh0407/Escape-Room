@@ -15,6 +15,7 @@
 .pagetitle{
 	text-align: center;
 	font-size: 30px;
+	color: #525ddd;
 }
 
 
@@ -56,20 +57,36 @@
 }
 
 
-/*  button css  */
 
-.signupbtnbox {
-	background: #c9db57;
-	width: 15%;
-	padding: 15px 10px;
-	font-size: 20px;
-	border-radius: 50px;
+
+
+textarea{	/*	이용약관 박스 고정	*/
+	width: 100%;
+	resize: none;
+	height: 3.25em;
+	
 }
 
+/*==============*/
+
+
+
+/*  button css  */
 
 
 
 
+.find_btn{
+	text-align: center;
+}
+.find_btn1{
+	display :inline-block;
+	padding: 3px 5px;
+	font-size: 19px;
+	background: #fafafa;
+    box-shadow: -15px 15px 29px #b2b2b2, 15px -15px 29px #ffffff;
+    border-radius: 50px;
+}
 
 
 

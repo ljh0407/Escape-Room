@@ -17,7 +17,7 @@
 				//고은시[10/24]
 				alert('성공')
 				
-				location.href = "/room/header.jsp";
+				location.href = "/room/index.jsp";
 				
 			}else if(re === '2'){
 				alert('비밀번호가 다릅니다')

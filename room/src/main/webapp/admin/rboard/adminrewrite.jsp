@@ -10,7 +10,6 @@
 </head>
 <body>
    
-   <%@include file="../../admin/dashboard.jsp" %>
    
    <div class="container">      
       

@@ -29,12 +29,10 @@ public class rlist extends HttpServlet {
 		// 검색처리
 		String key = request.getParameter("key");
 		String keyword = request.getParameter("keyword");
-		System.out.println("키 : "+ key );
-		System.out.println("키워드 : "+ keyword );
 				
 		// 페이지당 게시물수
 		int listsize = Integer.parseInt(request.getParameter("listsize") );
-		System.out.println("listsize : "+listsize);
+
 		// 2. 전체페이지수
 		int totalsize = rdao.getInstance().gettotalsize(key, keyword);
 				
@@ -46,7 +44,7 @@ public class rlist extends HttpServlet {
 				
 		// 현재 페이지수
 		int page = Integer.parseInt(request.getParameter("page"));
-		System.out.println("페이지 : "+page);
+
 		// 페이지별 시작 게시물 행번호
 		int startrow = (page-1)*listsize;
 		// 화면에 표시할 최대 버튼수
@@ -77,7 +75,6 @@ public class rlist extends HttpServlet {
 				object.put("mno", list.get(i).getMno());
 				object.put("mid", list.get(i).getMid());
 				array.add(object);
-				System.out.println("서블릿 : "+ array);
 			}
 		
 				rboards.put("totalpage", totalpage);	// 1. 전체페이지수
@@ -88,7 +85,6 @@ public class rlist extends HttpServlet {
 				//응답
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().print(rboards); 
-				System.out.println("서블릿 : "+rboards);	
 		 
 	}
 	private static final long serialVersionUID = 1L;

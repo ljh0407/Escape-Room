@@ -30,6 +30,7 @@ public class qwrite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파일추가
 	      String upload = request.getSession().getServletContext().getRealPath("/qboard/qupload");
+	      System.out.println("서블릿"+upload);
 	      MultipartRequest multi = new MultipartRequest(
 	            request, 
 	            upload,

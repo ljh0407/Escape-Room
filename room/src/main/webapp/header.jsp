@@ -19,24 +19,28 @@
 		<div class="hd_top">	<!-- 상단 헤더 -->
 			<div> <!-- 로고 -->
 				<span class="hd_title">
-					<a href="/room/index.jsp">room escape</a>	
+					<a class="nav-link" href="/room/index.jsp">room escape</a>	
 				</span>	
 			</div>
-		<!-- 고은시[10/25] -->
+		<!-- 고은시[10/25] --> 
 		<% String loginid = (String)session.getAttribute("mid"); %>	
 		<ul class="hd_sub">	<!-- 상단메뉴 -->
 		<!-- 비로그인 메뉴 -->
 		<% if(loginid == null){ %>
-				<li> <a href="/room/user/usersingup.jsp">Sign Up</a> </li>	<!-- 회원가입 -->
-				<li> <a href="/room/user/userlogin.jsp">login</a> </li>		<!-- 로그인 -->
+				<li> <a class="nav-link" href="/room/user/usersingup.jsp">회원가입</a> </li>	<!-- 회원가입 -->
+				<li> <a class="nav-link" href="/room/user/userlogin.jsp">로그인</a> </li>		<!-- 로그인 -->
 		<%}else if(loginid.equals("admin")){//관리자로그인 햇다 %>
 					<li> <a href="/room/admin/dashboard.jsp">관리자페이지</a> </li>
 		<%}else{//로그인 햇다 %>
 				<li> <%= loginid %>님 안녕하세요 </li>
-				<li> <a href="/room/user/userlogout.jsp">Log out</a> </li>			<!-- 로그아웃 -->
+				<li> <a class="nav-link" href="/room/reservation/reservationView.jsp">예약하기</a> </li>
+				<li> <a class="nav-link" href="/room/user/userlogout.jsp">로그아웃</a> </li>			<!-- 로그아웃 -->
 		<% } %>
-				<li> <a href="/room/user/userid.jsp">find ID</a> </li>		<!-- 아이디 찾기 -->
-				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	<!-- 비밀번호 찾기 -->
+		
+		
+				<!-- <li> <a href="/room/user/userid.jsp">find ID</a> </li>		아이디 찾기
+				<li> <a href="/room/user/userPW.jsp">Forgot your password</a> </li>	비밀번호 찾기 -->	<!-- 로그인 페이지로 이동 -->
+				
 			</ul>	<!-- 상단메뉴 끝 -->
 			
 		</div>	<!-- 상단 헤더 div end -->
@@ -46,7 +50,10 @@
 				<li class="three"> <a href="#">리뷰</a> </li>
 			</ul> -->	<!-- index로 이동 -->
 	</div>	<!-- webbox div end -->
-
+	<hr size="2px">
+	
+	
+	
 	<!-- jquery 라이브러리 (api)-->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
