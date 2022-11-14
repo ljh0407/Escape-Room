@@ -123,7 +123,7 @@ function rviewload(rno){
 		type : "post",
 		success : function (re){
 			
-			alert(re)
+			console.log(re)
 			location.href = "/room/rboard/rview.jsp"
 		}
 	})

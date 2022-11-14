@@ -1,7 +1,6 @@
 /**
  * 
  */
- alert('회원가입을 해주세요')
  
  let col = document.querySelectorAll('.col')
  /*이름 *---------------------------------------*/

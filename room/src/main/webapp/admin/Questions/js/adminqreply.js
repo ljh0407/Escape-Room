@@ -1,7 +1,6 @@
 /**
  * 
  */
- alert('댓글달기') 
  
  // 3. 댓글 작성함수 
 function rwrite(){
@@ -12,7 +11,8 @@ function rwrite(){
 		type : "POST" , /* HTTP 메소드 : 1.GET방식=기본값 2. POST방식 */
 		success : function( re ){
 			 if( re == 1 ){
-				alert('댓글작성') // location.reload();
+				alert('댓글작성') 
+				location.reload();
 				rlist()
 			}else if( re == 0){
 				alert('로그인후 작성가능합니다.')

@@ -1,7 +1,7 @@
 /**
  * 
  */
- alert('아이디찾기입니다')
+ 
  
  function IDfind(){
 	

@@ -50,7 +50,6 @@
 				<li class="three"> <a href="#">리뷰</a> </li>
 			</ul> -->	<!-- index로 이동 -->
 	</div>	<!-- webbox div end -->
-	<hr size="2px">
 	
 	
 	

@@ -27,14 +27,13 @@ function list(){
 }
 // 회원삭제
 function ndelete(mno){
-	alert(mno)
 	$.ajax({
 		url:"/room/userDelete",
 		data : {"mno":mno},
 		success : function(re){
 			if( re=='true'){
 				alert('회원삭제 성공');
-				location.href='/room/nboard/nadmin.jsp'
+				location.href='/room/admin/dashboard.jsp'
 			}
 			else{alert('회원삭제 실패')}
 		}

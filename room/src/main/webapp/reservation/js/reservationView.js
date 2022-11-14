@@ -1,4 +1,3 @@
-alert('asd')
 
 function review(){	
 	

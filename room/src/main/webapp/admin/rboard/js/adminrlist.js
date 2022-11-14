@@ -5,7 +5,6 @@ let pageinfo = { 	// js 객체선언
 		keyword : '' 	// 검색 키워드
 	}
 
- alert('관리자페이지 연동확인')
 // 전역변수
 
 	console.log(pageinfo)
@@ -44,7 +43,7 @@ function list(page){
 			// object내 게시물리스트 먼저 호출
 			let boardlist = boards.data
 			
-			let html = '<tr> <th width="5%"> 번호 </th><th > 별점 </th> <th > 제목 </th>  <th width="15%"> 작성자 </th><th width="5%"> 작성일 </th> <th width="5%"> 댓글 </th> </tr>'
+			let html = '<tr> <th width="5%"> 번호 </th><th > 별점 </th> <th > 제목 </th>  <th width="15%"> 작성자 </th><th width="5%"> 작성일 </th> <th width="15%"> 댓글 </th> </tr>'
 			// 반복문 boardlist 하나씩 꺼내기
 			for(let i = 0 ; i<boardlist.length ; i++){
 				// i 번째 객체 호출
@@ -112,7 +111,6 @@ function rviewload(rno){
 
 //이종훈 모달창띄우기[11/09]
 function replymodal(rno){ 
-	alert(rno)
    document.querySelector(".replybtn").click() // 해당 버튼을 강제클릭하는 이벤트 실행
    //상세보기
    $.ajax({
@@ -146,7 +144,6 @@ function replymodal(rno){
 // 댓글작성
 function replywrite(){
 	let rcomment = document.querySelector('.modalrcomment').value
-	alert(rcomment)
 	$.ajax({
 		url : '/room/rboard/rewrite',
 		data : {"rcomment" : rcomment , "type" : "rcomment"},
@@ -154,7 +151,8 @@ function replywrite(){
 		success : function(re){
 			console.log('댓글내용 : '+rcomment)
 			if( re == 1 ){
-            alert('댓글작성')  
+            alert('댓글작성') 
+            location.reload(); 
          }else if( re == 0){
             alert('로그인후 작성가능합니다.')
             location.href='../user/login.jsp'

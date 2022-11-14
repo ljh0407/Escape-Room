@@ -11,7 +11,6 @@
 		<script src="https://kit.fontawesome.com/274b11aa35.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<hr size="3px">	
 		<footer>
 			<ul class="footer_nav">
 				<li><a href="https://twitter.com/">Twitter</a></li>

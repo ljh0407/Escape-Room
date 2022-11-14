@@ -40,7 +40,6 @@ function relist(){
 		url : "/room/rboard/rewrite",
 		type : 'get',
 		success : function(re){
-			alert(re)
 			let html = ''
 			let rcomment = JSON.parse(re)
 			

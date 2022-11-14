@@ -40,8 +40,8 @@
 					</span>
 					<br>
 					<div class="singup_btn">
-						<button class="find_btn1" type="button" onclick="formsubmit()">Sign Up Go!!</button> 	<!-- 회원가입 -->
-						<button class="find_btn1" type="reset">cancellation</button> 	<!-- 취소 -->
+						<button class="find_btn1" type="button" onclick="formsubmit()">회원가입 하기</button> 	<!-- 회원가입 -->
+						<button class="find_btn1" type="reset">취소</button> 	<!-- 취소 -->
 					</div>
 			</div>	<!-- 전체 div -->	
 		</form>

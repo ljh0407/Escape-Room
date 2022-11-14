@@ -72,15 +72,19 @@
 		<div class="pagebox pagination justify-content-center"> <!-- 3.페이징처리 -->
 		
 		</div>
-		<div> <!-- 4.검색처리 -->
+		<!--  
+		<div> 
 			<select class="key">
 				<option value="r.rtitle">제목</option>
 				<option value="r.rcontent">내용</option>
 				<option value="r.mid">작성자</option>
 			</select>
-			
+			-->
+			<!--  
 			<input class="keyword" type="text" placeholder="검색어">
 			<button type="button" onclick="rsearch()" class="btn btn-dark">검색</button>
+			-->
+			
 			<a href="rwrite.jsp"><button class="btn btn-dark">글쓰기</button></a>
 			<a href="/room/rboard/rlist.jsp"><button type="button" class="btn btn-dark">글목록</button></a>		
 			

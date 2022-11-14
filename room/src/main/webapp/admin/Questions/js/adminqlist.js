@@ -133,7 +133,7 @@ function replywrite(){
 		success : function( re ){
 			 if( re == 1 ){
 				alert('댓글작성')
-				//location.reload();
+				location.reload();
 			}else if( re == 0){ 
 				alert('로그인후 작성가능합니다.')
 				location.href='/room/user/userlogin.jsp'

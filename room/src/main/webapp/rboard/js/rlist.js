@@ -7,7 +7,6 @@ let pageinfo = { 	// js 객체선언
 	}
 	console.log(pageinfo)
 
-alert('관리자페이지 연동확인')
 // 전역변수
 
 
@@ -46,7 +45,7 @@ function list(page){
 			let boardlist = boards.data
 			
 			let html = '<tr>'+
-					'<td width="10%">게시글번호</td><td>별점</td> <td>제목</td> <td width="10%">작성자</td> <td width="15%">작성일</td>'+
+					'<td width="10%">게시글번호</td><td>별점</td> <td>제목</td> <td width="10%">답변확인</td> <td width="15%">작성일</td>'+
 					   '</tr>';
 			// 반복문 boardlist 하나씩 꺼내기
 			for(let i = 0 ; i<boardlist.length ; i++){
@@ -104,7 +103,6 @@ function rviewload(rno){
 		type : "post",
 		success : function (re){
 			console.log("문자")
-			alert(re)
 			location.href = "/room/rboard/rview.jsp"
 		}
 	})

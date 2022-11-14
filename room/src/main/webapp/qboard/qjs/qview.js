@@ -1,11 +1,9 @@
 /**
  * 
  */
- alert('내 게시글')
  
  qview()
  function qview(){
-	alert('조회')
 	$.ajax({
 		url : "/room/qview",
 		async : false ,	/* 동기식 */

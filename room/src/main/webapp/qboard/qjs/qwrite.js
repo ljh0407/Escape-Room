@@ -1,10 +1,8 @@
 /**
  * 
  */
- alert('문의사항')
  
  function bwrite(){
-   alert('버튼')
    
    let form = document.querySelector('form')
    console.log(form)

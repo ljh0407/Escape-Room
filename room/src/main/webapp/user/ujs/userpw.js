@@ -1,7 +1,7 @@
 /**
  * 
  */
- alert('비번찾기입니다')
+
  function finepw(){
 	
 	let mid = document.querySelector('#mid').value

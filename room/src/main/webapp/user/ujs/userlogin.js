@@ -1,7 +1,7 @@
 /**
  * 
  */
- alert('로그인해주세요')
+
  
   function login(){
 	let mid = document.querySelector('#mid').value
@@ -15,7 +15,7 @@
 			console.log(re)
 			if(re === '1'){
 				//고은시[10/24]
-				alert('성공')
+				
 				
 				location.href = "/room/index.jsp";
 				
