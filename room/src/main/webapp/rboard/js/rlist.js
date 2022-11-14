@@ -7,7 +7,6 @@ let pageinfo = { 	// js 객체선언
 	}
 	console.log(pageinfo)
 
-// 전역변수
 
 
 //  게시물 표시 개수 
