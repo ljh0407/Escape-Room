@@ -21,7 +21,7 @@
    [11/04] : 페이징 수정<br>
    [11/07] : 관리자페이지 생성<br>
    [11/08] : 사용자 화면 구현 완료<br>
->>>>>>> branch 'main' of https://github.com/ljh0407/escape-room
+branch 'main' of https://github.com/ljh0407/escape-room <br>
 
 시연 영상링크<br>
 https://www.youtube.com/watch?v=hokoT-thKeE<br>
