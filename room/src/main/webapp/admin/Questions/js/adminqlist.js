@@ -51,21 +51,21 @@ function blistsize(){
 			let pagehtml = ''
 				//이전버튼
 				if(page <= 1){ 
-					pagehtml += '<li class="page-item"><button onclick="list('+(page)+')">이전</button></li>'
+					pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page)+')">이전</button></li>'
 				}else{
-					pagehtml += '<li class="page-item"><button onclick="list('+(page-1)+')">이전</button></li>'
+					pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page-1)+')">이전</button></li>'
 				}
 				
 				//페이지 번호
 				for(let page = qboard.startbtn ; page <= qboard.endbtn ; page++){
-					pagehtml += '<li class="page-item"><button type="button" onclick="list('+page+')">'+page+'</button></li>'
+					pagehtml += '<li class="page-item"><button type="button" class="btn btn-dark" onclick="list('+page+')">'+page+'</button></li>'
 				}
 				console.log(page)
 				//다음
 				if(page >= qboard.totalpage){
-					pagehtml += '<li class="page-item"><button onclick="list('+page+')">다음</button></li>'
+					pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+page+')">다음</button></li>'
 				}else{
-					pagehtml += '<li class="page-item"><button onclick="list('+page+1+')">다음</button></li>'
+					pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+page+1+')">다음</button></li>'
 				}
 			//전체
 			console.log(page)

@@ -27,12 +27,11 @@
 			let btnbox = document.querySelector('.btnbox')
 			
 			if( q.btnaction == true ){
-				alert('삭제')
 				// 삭제 버튼 활성화
-				let deletebtn = '<button onclick="qdelete('+q.bno+')"> 삭제 </button>'
+				let deletebtn = '<button class="btn btn-dark" onclick="qdelete('+q.bno+')"> 삭제 </button>'
 				btnbox.innerHTML += deletebtn;
 				// 수정 버튼 활성화 [고은시 11/07 수정버튼]
-				let updatebtn = '<button><a href="/room/qboard/upload.jsp">수정</a></button>'
+				let updatebtn = '<button class="btn btn-dark"><a href="/room/qboard/upload.jsp">수정</a></button>'
 				btnbox.innerHTML += updatebtn;
 			}
 		}

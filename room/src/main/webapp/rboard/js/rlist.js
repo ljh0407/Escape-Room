@@ -74,17 +74,17 @@ function list(page){
 			// 페이징버튼 html 구성
 			let pagehtml = '';
 			// 이전 버튼
-				if(page <= 1){pagehtml += '<li class="page-item"><button class="btn btn-primary" onclick="list('+(page)+')">이전</button></li>';}
-				else{ pagehtml += '<li class="page-item"><button class="btn btn-primary" onclick="list('+(page-1)+')">이전</button></li>'; }
+				if(page <= 1){pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page)+')">이전</button></li>';}
+				else{ pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page-1)+')">이전</button></li>'; }
 				
 			// 4. 페이지번호 버튼 [ 시작버튼 ~ 마지막버튼 ]
 				for( let page = boards.startbtn ; page<= boards.endbtn ; page++ ){
-					pagehtml += '<li class="page-item"><button class="btn btn-primary" type="button" onclick="list('+page+')">'+page+'</button></li>' 
+					pagehtml += '<li class="page-item"><button class="btn btn-dark" type="button" onclick="list('+page+')">'+page+'</button></li>' 
 				}
 				
 				// 다음 버튼 만일 현재페이지가 마지막페이지면 다음페이지 불가
-				if(page >= boards.totalpage){pagehtml += '<li class="page-item"><button class="btn btn-primary" onclick="list('+(page)+')">다음</button></li>'; } 
-				else{ pagehtml += '<li class="page-item"><button class="btn btn-primary" onclick="list('+(page+1)+')">다음</button></li>'; }
+				if(page >= boards.totalpage){pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page)+')">다음</button></li>'; } 
+				else{ pagehtml += '<li class="page-item"><button class="btn btn-dark" onclick="list('+(page+1)+')">다음</button></li>'; }
 				
 				document.querySelector('.pagebox').innerHTML = pagehtml
 				

@@ -54,7 +54,7 @@
 	</div>
 	
 	<div class="btnbox"> <!-- 목록으로 돌아가기 -->
-		<a href="/room/qboard/qlist.jsp"><button>목록보기</button></a>	
+		<a href="/room/qboard/qlist.jsp"><button class="btn btn-dark">목록보기</button></a>	
 	</div>
 	
 	<div class="replylist"> </div><!-- 댓글출력 -->
